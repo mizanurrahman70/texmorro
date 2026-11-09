@@ -366,6 +366,392 @@
       animation-play-state: paused;
     }
 
+    .pathways-section {
+      padding: clamp(72px, 9vw, 124px) 24px clamp(84px, 10vw, 140px);
+      background: #f2f0eb;
+    }
+
+    .pathways-inner {
+      width: min(100%, 1240px);
+      margin-inline: auto;
+    }
+
+    .pathways-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.65fr);
+      align-items: end;
+      gap: 48px;
+      margin-bottom: 42px;
+    }
+
+    .pathways-kicker {
+      display: block;
+      margin-bottom: 15px;
+      color: #947b48;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .pathways-heading {
+      max-width: 660px;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      font-size: clamp(38px, 4.7vw, 62px);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .pathways-summary {
+      max-width: 370px;
+      margin: 0 0 5px;
+      color: #62676b;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .pathway-card {
+      overflow: hidden;
+      border: 1px solid rgba(20, 42, 70, 0.1);
+      background: #fbfaf7;
+    }
+
+    .pathway-image {
+      position: relative;
+      height: clamp(250px, 31vw, 390px);
+      overflow: hidden;
+      background: #d7d4cb;
+    }
+
+    .pathway-image::after {
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(0deg, rgba(10, 17, 26, 0.46), transparent);
+      content: "";
+      pointer-events: none;
+    }
+
+    .pathway-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .pathway-card:hover .pathway-image img {
+      transform: scale(1.035);
+    }
+
+    .pathway-card:first-child .pathway-image img {
+      object-position: center 24%;
+    }
+
+    .pathway-card:last-child .pathway-image img {
+      object-position: center 22%;
+    }
+
+    .pathway-image-index {
+      position: absolute;
+      z-index: 1;
+      top: 18px;
+      left: 18px;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: #fff;
+      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      font-size: 17px;
+    }
+
+    .pathway-image-caption {
+      position: absolute;
+      z-index: 1;
+      right: 20px;
+      bottom: 17px;
+      left: 20px;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .pathway-content {
+      padding: clamp(24px, 3vw, 36px);
+    }
+
+    .pathway-label {
+      display: block;
+      margin-bottom: 11px;
+      color: #947b48;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .pathway-content h3 {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      font-size: clamp(27px, 3vw, 36px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .pathway-content p {
+      max-width: 480px;
+      margin: 13px 0 0;
+      color: #62676b;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .pathway-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(20, 42, 70, 0.12);
+    }
+
+    .pathway-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pathway-tags span {
+      padding: 7px 9px;
+      border: 1px solid rgba(20, 42, 70, 0.13);
+      color: #475460;
+      font-size: 9px;
+      line-height: 1;
+    }
+
+    .pathway-link {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(20, 42, 70, 0.25);
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1;
+      text-decoration: none;
+      transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .pathway-link:hover,
+    .pathway-link:focus-visible {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .make-section {
+      padding: clamp(72px, 8vw, 112px) 24px clamp(84px, 9vw, 128px);
+      background: #fff;
+    }
+
+    .make-inner {
+      width: min(100%, 1440px);
+      margin-inline: auto;
+    }
+
+    .make-intro {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .make-kicker {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      gap: 10px;
+      padding: 0 15px;
+      border: 1px solid rgba(20, 42, 70, 0.22);
+      border-radius: 999px;
+      color: #31475b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .make-kicker::before {
+      width: 6px;
+      height: 6px;
+      background: #e4c85e;
+      content: "";
+    }
+
+    .make-heading {
+      margin: 24px 0 16px;
+      color: #102b3e;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 600;
+      letter-spacing: -0.055em;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .make-summary {
+      max-width: 790px;
+      margin: 0 auto;
+      color: #72777b;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .make-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 54px auto 46px;
+    }
+
+    .make-tab {
+      min-height: 42px;
+      padding: 0 19px;
+      border: 1px solid #c8d0d5;
+      border-radius: 999px;
+      background: #fff;
+      color: #18374d;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .make-tab:hover,
+    .make-tab:focus-visible {
+      border-color: #17364b;
+      outline: none;
+    }
+
+    .make-tab[aria-selected="true"] {
+      border-color: #e6ca61;
+      background: #102b3e;
+      color: #fff;
+    }
+
+    .make-current {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 27px;
+    }
+
+    .make-current-label {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #f5df76;
+      color: #17364b;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .make-current::after {
+      height: 1px;
+      flex: 1;
+      background: #d3d8da;
+      content: "";
+    }
+
+    .make-panel {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .make-card {
+      position: relative;
+      min-width: 0;
+      aspect-ratio: 0.82;
+      overflow: hidden;
+      border: 1px solid #d5d9d9;
+      border-radius: 11px;
+      background: #eef0ef;
+      isolation: isolate;
+      outline: none;
+    }
+
+    .make-card::after {
+      position: absolute;
+      z-index: 0;
+      inset: 36% 0 0;
+      background: linear-gradient(0deg, rgba(10, 25, 36, 0.76), transparent);
+      content: "";
+      opacity: 0;
+      transition: opacity 240ms ease;
+    }
+
+    .make-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .make-card:hover img,
+    .make-card:focus-visible img {
+      transform: scale(1.055);
+    }
+
+    .make-card:hover::after,
+    .make-card:focus-visible::after {
+      opacity: 1;
+    }
+
+    .make-card:focus-visible {
+      box-shadow: 0 0 0 3px #e6ca61;
+    }
+
+    .make-card-name {
+      position: absolute;
+      z-index: 1;
+      right: 16px;
+      bottom: 17px;
+      left: 16px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 650;
+      line-height: 1.35;
+      opacity: 0;
+      transform: translateY(7px);
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .make-card:hover .make-card-name,
+    .make-card:focus-visible .make-card-name {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @keyframes marquee-scroll {
       to {
         transform: translateX(-50%);
@@ -455,6 +841,33 @@
         padding: 24px 0 26px;
       }
 
+      .pathways-intro {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      .pathways-summary {
+        max-width: 560px;
+      }
+
+      .pathway-image {
+        height: clamp(240px, 39vw, 340px);
+      }
+
+      .pathway-footer {
+        align-items: flex-end;
+      }
+
+      .make-tabs {
+        margin-block: 36px;
+      }
+
+      .make-panel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
       .banner-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -505,6 +918,95 @@
         font-size: 8px;
       }
 
+      .pathways-section {
+        padding: 66px 18px 78px;
+      }
+
+      .make-section {
+        padding: 68px 18px 78px;
+      }
+
+      .make-heading {
+        margin-top: 20px;
+        font-size: 40px;
+      }
+
+      .make-summary {
+        font-size: 13px;
+      }
+
+      .make-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin: 30px -18px 32px;
+        padding: 0 18px 5px;
+        scrollbar-width: none;
+      }
+
+      .make-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .make-tab {
+        flex: 0 0 auto;
+        min-height: 40px;
+        padding-inline: 15px;
+        font-size: 12px;
+      }
+
+      .make-current {
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .make-current-label {
+        padding: 7px 10px;
+        font-size: 9px;
+      }
+
+      .make-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .make-card-name {
+        right: 11px;
+        bottom: 12px;
+        left: 11px;
+        font-size: 12px;
+      }
+
+      .pathways-intro {
+        gap: 13px;
+        margin-bottom: 25px;
+      }
+
+      .pathways-heading {
+        font-size: 42px;
+      }
+
+      .pathway-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .pathway-image {
+        height: 270px;
+      }
+
+      .pathway-content {
+        padding: 23px;
+      }
+
+      .pathway-content h3 {
+        font-size: 31px;
+      }
+
+      .pathway-footer {
+        margin-top: 20px;
+      }
+
       .marquee-group {
         gap: 30px;
         padding-right: 30px;
@@ -551,6 +1053,17 @@
         width: min(100%, 290px);
       }
 
+    }
+
+    @media (hover: none) {
+      .make-card::after,
+      .make-card-name {
+        opacity: 1;
+      }
+
+      .make-card-name {
+        transform: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -639,6 +1152,221 @@
         </div>
       </div>
     </section>
+
+    <section class="pathways-section" aria-labelledby="pathways-heading">
+      <div class="pathways-inner">
+        <div class="pathways-intro">
+          <div>
+            <span class="pathways-kicker">A production partner for what comes next</span>
+            <h2 class="pathways-heading" id="pathways-heading">What brings you here?</h2>
+          </div>
+          <p class="pathways-summary">
+            Whether you are building a label or outfitting a team, we bring the right people and production support around your next apparel project.
+          </p>
+        </div>
+
+        <div class="pathway-grid">
+          <article class="pathway-card">
+            <div class="pathway-image">
+              <img src="apparel-brand-collection.svg" alt="Illustration of a detailed blue designer jacket, collection sketch, and fabric swatches" loading="lazy">
+              <span class="pathway-image-index" aria-hidden="true">01</span>
+              <span class="pathway-image-caption">For independent labels</span>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-label">Apparel brands</span>
+              <h3>Turn your point of view into a collection.</h3>
+              <p>
+                Develop a distinctive range with considered product development, sampling, and production support for your brand.
+              </p>
+              <div class="pathway-footer">
+                <div class="pathway-tags" aria-label="Services">
+                  <span>Development</span>
+                  <span>Sampling</span>
+                  <span>Private label</span>
+                </div>
+                <a class="pathway-link" href="brand_services_index.html" aria-label="Explore apparel brand services">&rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pathway-card">
+            <div class="pathway-image">
+              <img src="organization-apparel.svg" alt="Illustration of coordinated work shirts and team apparel ready for production" loading="lazy">
+              <span class="pathway-image-index" aria-hidden="true">02</span>
+              <span class="pathway-image-caption">For teams and organizations</span>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-label">Corporate &amp; institutional</span>
+              <h3>Apparel that brings your team together.</h3>
+              <p>
+                Plan apparel for teams, events, and organizations with clear requirements, dependable production, and consistent quality.
+              </p>
+              <div class="pathway-footer">
+                <div class="pathway-tags" aria-label="Use cases">
+                  <span>Teamwear</span>
+                  <span>Events</span>
+                  <span>Bulk orders</span>
+                </div>
+                <a class="pathway-link" href="https://texmorro.netlify.app/contact" aria-label="Discuss an organizational apparel order">&rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="make-section" aria-labelledby="make-heading">
+      <div class="make-inner">
+        <div class="make-intro">
+          <span class="make-kicker">What We Make</span>
+          <h2 class="make-heading" id="make-heading">From everyday basics to finished merchandise — we produce it all</h2>
+          <p class="make-summary">
+            Explore the apparel we make, from everyday essentials and tailored layers to complete team uniforms.
+          </p>
+        </div>
+
+        <div class="make-tabs" role="tablist" aria-label="Product categories">
+          <button class="make-tab" id="make-tab-tops" type="button" role="tab" aria-selected="true" aria-controls="make-panel" tabindex="0" data-category="tops">Tops &amp; Tees</button>
+          <button class="make-tab" id="make-tab-bottoms" type="button" role="tab" aria-selected="false" aria-controls="make-panel" tabindex="-1" data-category="bottoms">Bottoms</button>
+          <button class="make-tab" id="make-tab-shirts" type="button" role="tab" aria-selected="false" aria-controls="make-panel" tabindex="-1" data-category="shirts">Shirts &amp; Polos</button>
+          <button class="make-tab" id="make-tab-layers" type="button" role="tab" aria-selected="false" aria-controls="make-panel" tabindex="-1" data-category="layers">Hoodies &amp; Knitwear</button>
+          <button class="make-tab" id="make-tab-outerwear" type="button" role="tab" aria-selected="false" aria-controls="make-panel" tabindex="-1" data-category="outerwear">Jackets &amp; Outerwear</button>
+          <button class="make-tab" id="make-tab-uniforms" type="button" role="tab" aria-selected="false" aria-controls="make-panel" tabindex="-1" data-category="uniforms">Sets &amp; Uniforms</button>
+        </div>
+
+        <div class="make-current">
+          <span class="make-current-label" id="make-current-label">Tops &amp; Outerwear</span>
+        </div>
+        <div class="make-panel" id="make-panel" role="tabpanel" aria-labelledby="make-tab-tops"></div>
+      </div>
+    </section>
   </main>
+  <script>
+    const makeProducts = {
+      tops: [
+        ["T-shirts", "tee-classic.jpg"],
+        ["Premium cotton tees", "tee-premium.jpg"],
+        ["Graphic tees", "collection.jpg"],
+        ["Relaxed-fit tees", "model-look.jpg"],
+        ["Long-sleeve tops", "shirt-rack.jpg"],
+        ["Layering tops", "fashion-flatlay.jpg"],
+        ["Everyday essentials", "garment-detail.jpg"],
+        ["Collection tops", "outerwear.jpg"],
+        ["Casual tops", "teamwear.jpg"],
+        ["Custom-fit tees", "knitwear.jpg"]
+      ],
+      bottoms: [
+        ["Denim", "denim.jpg"],
+        ["Trousers", "trousers.jpg"],
+        ["Everyday bottoms", "model-look.jpg"],
+        ["Coordinated separates", "fashion-flatlay.jpg"],
+        ["Casual pants", "outerwear.jpg"],
+        ["Tailored bottoms", "shirt-rack.jpg"],
+        ["Relaxed-fit trousers", "teamwear.jpg"],
+        ["Denim styles", "collection.jpg"],
+        ["Seasonal bottoms", "garment-detail.jpg"],
+        ["Collection separates", "tee-premium.jpg"]
+      ],
+      shirts: [
+        ["Classic shirts", "shirt-rack.jpg"],
+        ["Polo shirts", "polo-shirt.jpg"],
+        ["Smart-casual shirts", "tee-premium.jpg"],
+        ["Work shirts", "teamwear.jpg"],
+        ["Overshirts", "outerwear.jpg"],
+        ["Everyday polos", "tee-classic.jpg"],
+        ["Relaxed shirts", "fashion-flatlay.jpg"],
+        ["Custom shirts", "collection.jpg"],
+        ["Layering shirts", "knitwear.jpg"],
+        ["Shirt details", "garment-detail.jpg"]
+      ],
+      layers: [
+        ["Hoodies", "knitwear.jpg"],
+        ["Sweatshirts", "outerwear.jpg"],
+        ["Knit sweaters", "fashion-flatlay.jpg"],
+        ["Pullover layers", "model-look.jpg"],
+        ["Everyday fleece", "teamwear.jpg"],
+        ["Relaxed knitwear", "tee-premium.jpg"],
+        ["Layering essentials", "shirt-rack.jpg"],
+        ["Collection knits", "collection.jpg"],
+        ["Custom hoodies", "tee-classic.jpg"],
+        ["Knit details", "garment-detail.jpg"]
+      ],
+      outerwear: [
+        ["Jackets", "leather-jacket.jpg"],
+        ["Denim jackets", "denim.jpg"],
+        ["Lightweight layers", "outerwear.jpg"],
+        ["Statement outerwear", "model-look.jpg"],
+        ["Everyday jackets", "teamwear.jpg"],
+        ["Seasonal layers", "fashion-flatlay.jpg"],
+        ["Collection outerwear", "collection.jpg"],
+        ["Relaxed jackets", "knitwear.jpg"],
+        ["Shirt jackets", "shirt-rack.jpg"],
+        ["Outerwear details", "garment-detail.jpg"]
+      ],
+      uniforms: [
+        ["Team uniforms", "teamwear.jpg"],
+        ["Work shirts", "shirt-rack.jpg"],
+        ["Custom polos", "polo-shirt.jpg"],
+        ["Uniform tops", "tee-classic.jpg"],
+        ["Coordinated layers", "outerwear.jpg"],
+        ["Team hoodies", "knitwear.jpg"],
+        ["Workwear jackets", "leather-jacket.jpg"],
+        ["Uniform bottoms", "trousers.jpg"],
+        ["Denim workwear", "denim.jpg"],
+        ["Custom uniform sets", "collection.jpg"]
+      ]
+    };
+
+    const makeTabs = [...document.querySelectorAll(".make-tab")];
+    const makePanel = document.querySelector("#make-panel");
+    const makeCurrentLabel = document.querySelector("#make-current-label");
+
+    function selectMakeCategory(tab) {
+      makeTabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute("aria-selected", String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+
+      const label = tab.textContent.trim();
+      const products = makeProducts[tab.dataset.category];
+      makeCurrentLabel.textContent = label;
+      makePanel.setAttribute("aria-labelledby", tab.id);
+      makePanel.replaceChildren(...products.map(([name, image]) => {
+        const card = document.createElement("article");
+        card.className = "make-card";
+        card.tabIndex = 0;
+
+        const photo = document.createElement("img");
+        photo.src = `images/what-we-make/${image}`;
+        photo.alt = name;
+
+        const caption = document.createElement("span");
+        caption.className = "make-card-name";
+        caption.textContent = name;
+
+        card.append(photo, caption);
+        return card;
+      }));
+    }
+
+    makeTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectMakeCategory(tab));
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % makeTabs.length;
+        if (event.key === "ArrowLeft") nextIndex = (index - 1 + makeTabs.length) % makeTabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = makeTabs.length - 1;
+        if (nextIndex !== undefined) {
+          event.preventDefault();
+          makeTabs[nextIndex].focus();
+          selectMakeCategory(makeTabs[nextIndex]);
+        }
+      });
+    });
+
+    selectMakeCategory(makeTabs[0]);
+  </script>
 </body>
 </html>

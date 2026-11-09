@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" fill="none">
+  <defs>
+    <linearGradient id="room" x1="1082" y1="38" x2="133" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9E1DE"/>
+      <stop offset="1" stop-color="#EEEAE1"/>
+    </linearGradient>
+    <linearGradient id="navy-shirt" x1="618" y1="163" x2="618" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#244E64"/>
+      <stop offset="1" stop-color="#142A46"/>
+    </linearGradient>
+    <linearGradient id="cream-shirt" x1="333" y1="222" x2="333" y2="588" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF8EF"/>
+      <stop offset="1" stop-color="#DCD8CA"/>
+    </linearGradient>
+    <linearGradient id="olive-shirt" x1="885" y1="215" x2="885" y2="586" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#79816D"/>
+      <stop offset="1" stop-color="#485747"/>
+    </linearGradient>
+    <pattern id="fine-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" stroke="#142A46" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+  <path fill="url(#room)" d="M0 0h1200v760H0z"/>
+  <path fill="url(#fine-grid)" d="M0 0h1200v760H0z"/>
+  <path d="M0 580h1200v180H0z" fill="#D4D5CC"/>
+  <path d="M0 614h1200M0 683h1200" stroke="#142A46" stroke-opacity=".08" stroke-width="2"/>
+
+  <path d="M83 146h1034v438H83z" fill="#F5F2E9" stroke="#142A46" stroke-opacity=".22" stroke-width="4"/>
+  <path d="M111 177h978v365H111z" fill="#E8E6DD"/>
+  <path d="M111 177h978v365H111z" fill="url(#fine-grid)"/>
+  <path d="M111 537h978" stroke="#142A46" stroke-opacity=".2" stroke-width="3"/>
+
+  <g opacity=".72">
+    <path d="M152 112h885M186 112v24m80-24v24m80-24v24m80-24v24m80-24v24m80-24v24m80-24v24m80-24v24m80-24v24m80-24v24" stroke="#142A46" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M196 132v53m80-53v53m80-53v53m80-53v53m80-53v53m80-53v53m80-53v53m80-53v53m80-53v53m80-53v53" stroke="#A68D54" stroke-width="2"/>
+  </g>
+
+  <g>
+    <path d="M238 210h190l39 54-22 63-19 222H240l-19-222-22-63 39-54Z" fill="url(#cream-shirt)" stroke="#24384A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m238 210 48 73 47-34 47 34 48-73" fill="#F8F5EC" stroke="#24384A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m333 249 20 38-20 27-20-27 20-38Z" fill="#A68D54"/>
+    <path d="M333 314v201" stroke="#7C817B" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M244 397h49v46h-49z" fill="#E8E1CF" stroke="#24384A" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M256 410h24m-24 9h24m-24 9h17" stroke="#A68D54" stroke-width="2"/>
+    <circle cx="333" cy="366" r="4" fill="#A68D54"/>
+    <circle cx="333" cy="399" r="4" fill="#A68D54"/>
+    <circle cx="333" cy="432" r="4" fill="#A68D54"/>
+    <path d="M233 359h26m148 0h26" stroke="#A68D54" stroke-width="3"/>
+  </g>
+
+  <g>
+    <path d="M526 171h184l45 60-27 69-22 250H526l-22-250-27-69 49-60Z" fill="url(#navy-shirt)" stroke="#10243A" stroke-width="5" stroke-linejoin="round"/>
+    <path d="m526 171 49 75 43-34 43 34 43-75" fill="#E8E4D8" stroke="#10243A" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m618 212 19 38-19 27-19-27 19-38Z" fill="#C4A765"/>
+    <path d="M618 277v257" stroke="#D8D1BF" stroke-opacity=".8" stroke-width="3"/>
+    <path d="M628 339h52v49h-52z" fill="#1B3B53" stroke="#D8D1BF" stroke-opacity=".8" stroke-width="2"/>
+    <path d="M638 351h32m-32 10h32m-32 10h22" stroke="#C4A765" stroke-width="2"/>
+    <circle cx="618" cy="326" r="4" fill="#E8D4A0"/>
+    <circle cx="618" cy="365" r="4" fill="#E8D4A0"/>
+    <circle cx="618" cy="404" r="4" fill="#E8D4A0"/>
+    <path d="M515 326h35m168 0h35" stroke="#C4A765" stroke-width="3"/>
+  </g>
+
+  <g>
+    <path d="M807 210h155l42 54-22 63-18 222H805l-18-222-22-63 42-54Z" fill="url(#olive-shirt)" stroke="#354333" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m807 210 41 73 39-34 39 34 36-73" fill="#D8DCCF" stroke="#354333" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m887 249 17 37-17 26-17-26 17-37Z" fill="#A68D54"/>
+    <path d="M887 312v203" stroke="#E4E2D6" stroke-opacity=".7" stroke-width="3"/>
+    <path d="M899 389h43v43h-43z" fill="#65715C" stroke="#E4E2D6" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M907 400h27m-27 9h27m-27 9h18" stroke="#C4A765" stroke-width="2"/>
+    <circle cx="887" cy="366" r="4" fill="#E8D4A0"/>
+    <circle cx="887" cy="399" r="4" fill="#E8D4A0"/>
+    <path d="M798 359h29m119 0h29" stroke="#C4A765" stroke-width="3"/>
+  </g>
+
+  <g opacity=".82">
+    <path d="M111 585h978" stroke="#142A46" stroke-opacity=".35" stroke-width="4"/>
+    <path d="M151 585v53m927-53v53" stroke="#142A46" stroke-opacity=".35" stroke-width="4"/>
+    <path d="M185 590h203v27H185z" fill="#F9F6ED" stroke="#142A46" stroke-opacity=".22" stroke-width="2"/>
+    <path d="M198 603h76m17 0h76" stroke="#A68D54" stroke-width="3"/>
+    <path d="M817 591h216v26H817z" fill="#142A46"/>
+    <path d="M834 604h78m18 0h83" stroke="#E8D4A0" stroke-width="3"/>
+  </g>
+
+  <g fill="#142A46">
+    <text x="52" y="707" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="3">TEAMWEAR / EVENT APPAREL</text>
+    <text x="888" y="707" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="3">CONSISTENT BY DESIGN</text>
+  </g>
+  <path d="M52 680h221M888 680h260" stroke="#A68D54" stroke-width="2"/>
+</svg>
