@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" role="img" aria-labelledby="title description">
+  <title id="title">Development and sampling studio</title>
+  <desc id="description">An original editorial illustration of a sample garment, fabric swatches, and a design sketch in a calm apparel studio.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8d1c4"/>
+      <stop offset="0.55" stop-color="#b7ad9d"/>
+      <stop offset="1" stop-color="#958d81"/>
+    </linearGradient>
+    <linearGradient id="light" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#fff9eb" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#fff9eb" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#766b5d"/>
+      <stop offset="1" stop-color="#403d39"/>
+    </linearGradient>
+    <linearGradient id="garment" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4eee0"/>
+      <stop offset=".55" stop-color="#d9cfbd"/>
+      <stop offset="1" stop-color="#b9ac98"/>
+    </linearGradient>
+    <linearGradient id="blue-fabric" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#64778b"/>
+      <stop offset="1" stop-color="#344b60"/>
+    </linearGradient>
+    <linearGradient id="gold-fabric" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d1b56c"/>
+      <stop offset="1" stop-color="#a3833f"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-.3" y="-.3" width="1.6" height="1.7">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <pattern id="linen" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M0 3h14M0 10h14" stroke="#fff" stroke-opacity=".12" stroke-width="1"/>
+      <path d="M3 0v14M10 0v14" stroke="#6b6358" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <path fill="url(#wall)" d="M0 0h960v1200H0z"/>
+  <path fill="url(#light)" d="M0 0h610L330 860H0z"/>
+  <path fill="#eee7da" fill-opacity=".26" d="M676 0h284v650H676z"/>
+  <path fill="#837a6e" fill-opacity=".2" d="M704 0h12v650h-12zM932 0h8v650h-8z"/>
+  <path fill="#514c45" fill-opacity=".18" d="M0 735h960v18H0z"/>
+
+  <ellipse cx="474" cy="939" rx="322" ry="78" fill="#222524" fill-opacity=".32" filter="url(#soft-shadow)"/>
+
+  <g>
+    <path d="M452 169c0-38 19-64 46-64s46 26 46 64" fill="none" stroke="#3b3b38" stroke-width="12" stroke-linecap="round"/>
+    <path d="M498 104v-51" fill="none" stroke="#343633" stroke-width="11" stroke-linecap="round"/>
+    <path d="M498 53c0-21 27-26 35-8" fill="none" stroke="#343633" stroke-width="9" stroke-linecap="round"/>
+    <path d="M412 225c31-42 63-64 86-64s55 22 86 64l75 107-73 55-32-37v432H355V350l-32 37-73-55z" fill="#353a3a" fill-opacity=".25" transform="translate(18 24)"/>
+    <path d="M412 225c31-42 63-64 86-64s55 22 86 64l75 107-73 55-32-37v432H355V350l-32 37-73-55z" fill="url(#garment)"/>
+    <path d="M412 225c31-42 63-64 86-64s55 22 86 64l75 107-73 55-32-37v432H355V350l-32 37-73-55z" fill="url(#linen)" opacity=".55"/>
+    <path d="M412 225c25 23 54 35 86 35s61-12 86-35l-42 90-44 35-44-35z" fill="#f7f1e4" fill-opacity=".85"/>
+    <path d="m498 350 32-35v431h-64V315z" fill="#c6baa7" fill-opacity=".6"/>
+    <path d="m412 225-19 107 69 67-71 245M584 225l19 107-69 67 71 245" fill="none" stroke="#aa9e8d" stroke-opacity=".58" stroke-width="4"/>
+    <path d="M322 332 249 387l47 37 69-72M674 332l73 55-47 37-69-72" fill="#d4c9b8"/>
+    <path d="M355 744h286v37H355z" fill="#8f8577" fill-opacity=".36"/>
+    <circle cx="502" cy="392" r="4" fill="#9b7b42"/>
+    <circle cx="502" cy="426" r="4" fill="#9b7b42"/>
+    <circle cx="502" cy="460" r="4" fill="#9b7b42"/>
+  </g>
+
+  <path fill="url(#table)" d="M0 866h960v334H0z"/>
+  <path fill="#b9aa91" fill-opacity=".2" d="M0 866h960v12H0z"/>
+  <path fill="#282b2a" fill-opacity=".3" d="M76 866h808v18H76z"/>
+
+  <g transform="rotate(-8 211 941)">
+    <rect x="76" y="862" width="274" height="220" rx="5" fill="#312e2a" fill-opacity=".3"/>
+    <rect x="66" y="850" width="274" height="220" rx="4" fill="#eee7d9"/>
+    <path d="M92 875h218v170H92z" fill="#e4dccd"/>
+    <path d="M132 1006c20-48 18-88 38-105 19 18 18 46 23 59 12-29 21-48 38-59 15 31 16 67 28 105" fill="none" stroke="#7d817c" stroke-width="3"/>
+    <path d="m169 901 22 4 14 18-10 15-24-9-17 13-16-12 12-21z" fill="none" stroke="#a2854f" stroke-width="2"/>
+    <path d="M112 1020h170M112 1032h128" stroke="#aaa393" stroke-width="2"/>
+    <path d="m100 896 16-8m-14 17 20-9m-19 20 18-9" stroke="#a18b60" stroke-width="2" opacity=".7"/>
+  </g>
+
+  <g transform="rotate(7 699 944)">
+    <path d="M580 842h282v202H580z" fill="#292a28" fill-opacity=".25"/>
+    <path d="M570 830h282v202H570z" fill="#e5ddcd"/>
+    <path d="M592 852h238v158H592z" fill="#d1c7b5"/>
+    <path d="M592 852h238v158H592z" fill="url(#linen)" opacity=".8"/>
+    <path d="M615 876h78v57h-78z" fill="url(#blue-fabric)"/>
+    <path d="M711 876h93v57h-93z" fill="url(#gold-fabric)"/>
+    <path d="M615 949h91v42h-91z" fill="#b5a48a"/>
+    <path d="M724 949h80v42h-80z" fill="#59675f"/>
+    <path d="M615 876h78v57h-78zM711 876h93v57h-93zM615 949h91v42h-91zM724 949h80v42h-80z" fill="url(#linen)" opacity=".38"/>
+  </g>
+
+  <g transform="translate(405 898)">
+    <path d="M0 76h143l23 24H-18z" fill="#ded5c5"/>
+    <path d="M24 75V36c0-17 12-28 29-28h41v20H61c-7 0-11 5-11 12v35" fill="none" stroke="#333b3d" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M79 28h39v49H79z" fill="#7f8a87"/>
+    <path d="M91 39h15v23H91z" fill="#d9d2c4"/>
+    <path d="M113 72h23v10h-23z" fill="#354148"/>
+    <path d="M-5 102h154l-13 100H12z" fill="#4a4943"/>
+    <path d="M11 107h122" stroke="#b09b6d" stroke-width="3"/>
+    <circle cx="130" cy="36" r="21" fill="none" stroke="#c6a85e" stroke-width="7"/>
+    <circle cx="130" cy="36" r="7" fill="#4b4c47"/>
+  </g>
+
+  <path d="M0 1134c171-29 310-7 473 4s315-7 487-39v101H0z" fill="#242a2b" fill-opacity=".27"/>
+  <path d="M54 1113h246" stroke="#d4b459" stroke-opacity=".72" stroke-width="3"/>
+</svg>

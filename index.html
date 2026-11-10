@@ -2379,6 +2379,31 @@
       transform: translateY(-100%);
     }
 
+    .site-header .brand {
+      width: fit-content;
+      min-height: 0;
+      justify-content: flex-start;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      transition: none;
+    }
+
+    .site-header .brand img {
+      width: clamp(138px, 12vw, 172px);
+      height: auto;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      object-fit: contain;
+      mix-blend-mode: normal;
+      opacity: 1;
+      transition: width 300ms ease, opacity 300ms ease;
+    }
+
     .brand img {
       width: 58px;
       height: 58px;
@@ -2387,8 +2412,9 @@
     }
 
     .site-header.is-scrolled .brand img {
-      width: 48px;
-      height: 48px;
+      width: clamp(128px, 10.5vw, 150px);
+      height: auto;
+      opacity: 0.9;
     }
 
     .contact-link {
@@ -3101,19 +3127,6 @@
       gap: 22px;
     }
 
-    .svc-counter {
-      font-family: var(--serif);
-      font-size: 22px;
-      color: rgba(255, 255, 255, 0.5);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .svc-counter b {
-      color: #fff;
-      font-size: 46px;
-      font-weight: 400;
-    }
-
     .svc-arrow {
       display: grid;
       width: 56px;
@@ -3207,19 +3220,6 @@
       background: var(--sun);
       box-shadow: 0 0 0 4px rgba(245, 223, 118, 0.22);
       content: "";
-    }
-
-    .svc-big-num {
-      position: absolute;
-      bottom: 18px;
-      left: 26px;
-      font-family: var(--serif);
-      font-size: clamp(120px, 14vw, 200px);
-      font-style: italic;
-      line-height: 0.8;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.75);
-      pointer-events: none;
     }
 
     .svc-next {
@@ -3443,7 +3443,7 @@
     }
 
     .svc-tab[aria-selected="true"] .svc-tab-bar i.is-running {
-      animation: hero-bar 6500ms linear forwards;
+      animation: hero-bar 3000ms linear forwards;
     }
 
     .svc.is-paused .svc-tab-bar i.is-running {
@@ -3456,14 +3456,6 @@
       gap: 12px;
       font-size: 14px;
       font-weight: 700;
-    }
-
-    .svc-tab span em {
-      color: var(--cream);
-      font-family: var(--serif);
-      font-size: 22px;
-      font-style: italic;
-      font-weight: 400;
     }
 
     .svc-tab:focus-visible span {
@@ -3502,10 +3494,6 @@
         justify-content: space-between;
       }
 
-      .svc-counter b {
-        font-size: 36px;
-      }
-
       .svc-arrow {
         width: 48px;
         height: 48px;
@@ -3532,12 +3520,6 @@
         width: 48px;
         height: 48px;
       }
-
-      .svc-big-num {
-        left: 16px;
-        bottom: 96px;
-        font-size: 110px;
-      }
     }
 
     [id] { scroll-margin-top: 90px; }
@@ -3547,7 +3529,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Texmorro home">
-        <img src="texmorro-logo.png" alt="Texmorro — Textiles for Tomorrow">
+        <img src="logo/texmorro-logo-header.svg" alt="Texmorro — Textiles for Tomorrow">
       </a>
 
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Toggle navigation">
@@ -3693,6 +3675,7 @@
       </div>
     </section>
 
+    <!-- Service photos: Unsplash License (free commercial use). Credits: EqualStock, Md Ishak Rahman, Anastasiya Doicheva, Erwin Bosman -->
     <section class="svc" id="services" aria-labelledby="services-heading">
       <div class="svc-inner">
         <div class="svc-head">
@@ -3701,7 +3684,6 @@
             <h2 class="tx-title split-words" id="services-heading">Everything you need to <em>make it</em> real</h2>
           </div>
           <div class="svc-nav">
-            <span class="svc-counter" aria-hidden="true"><b id="svc-num">01</b> / 04</span>
             <div style="display:flex;gap:10px">
               <button class="svc-arrow" id="svc-prev" type="button" aria-label="Previous service">&larr;</button>
               <button class="svc-arrow" id="svc-next-btn" type="button" aria-label="Next service">&rarr;</button>
@@ -3711,14 +3693,13 @@
 
         <div class="svc-body" id="svc-slider">
           <div class="svc-stage reveal">
-            <img class="is-active" src="fashion-banner-blue-detail.jpg" alt="Model in an embroidered blue jacket from a brand collection">
-            <img src="images/what-we-make/tee-classic.jpg" alt="Man wearing a plain white tee, an example of corporate teamwear" loading="lazy">
-            <img src="images/what-we-make/garment-detail.jpg" alt="Blank white sweatshirt ready for private-label branding" loading="lazy">
-            <img src="images/what-we-make/fashion-flatlay.jpg" alt="Garment samples hanging on a rail for review" loading="lazy">
+            <img class="is-active" src="images/services/garment-factory-floor.jpg" alt="Sewing machine operators producing garments on a factory floor">
+            <img src="images/services/corporate-polo-uniform.jpg" alt="Polo shirt on a mannequin, ready for a corporate uniform order" loading="lazy">
+            <img src="images/services/private-label-hang-tag.jpg" alt="Blank hang tag on fabric, ready for your own private label" loading="lazy">
+            <img src="images/services/pattern-cutting-sampling.jpg" alt="Hands cutting a paper sewing pattern during sample development" loading="lazy">
             <span class="svc-chip" id="svc-chip">Built around your brand</span>
-            <span class="svc-big-num" id="svc-big-num" aria-hidden="true">01</span>
             <button class="svc-next" id="svc-next" type="button">
-              <img id="svc-next-img" src="images/what-we-make/tee-classic.jpg" alt="">
+              <img id="svc-next-img" src="images/services/corporate-polo-uniform.jpg" alt="">
               <span><small>Next up</small><b id="svc-next-name">Corporate apparel</b></span>
               <i aria-hidden="true">&rarr;</i>
             </button>
@@ -3741,10 +3722,10 @@
         </div>
 
         <div class="svc-rail" role="tablist" aria-label="Services">
-          <button class="svc-tab" type="button" role="tab" aria-selected="true" aria-controls="svc-panel"><span class="svc-tab-bar"><i></i></span><span><em>01</em>Brand manufacturing</span></button>
-          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span><em>02</em>Corporate apparel</span></button>
-          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span><em>03</em>Private label</span></button>
-          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span><em>04</em>Development &amp; sampling</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="true" aria-controls="svc-panel"><span class="svc-tab-bar"><i></i></span><span>Brand manufacturing</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span>Corporate apparel</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span>Private label</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span>Development &amp; sampling</span></button>
         </div>
       </div>
     </section>
@@ -4212,7 +4193,6 @@
       const tabs = [...section.querySelectorAll(".svc-tab")];
       const panel = document.querySelector("#svc-panel");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const pad = (n) => String(n + 1).padStart(2, "0");
       let active = 0;
 
       const startBar = () => {
@@ -4229,8 +4209,6 @@
         const next = (active + 1) % serviceSlides.length;
 
         images.forEach((img, i) => img.classList.toggle("is-active", i === active));
-        document.querySelector("#svc-num").textContent = pad(active);
-        document.querySelector("#svc-big-num").textContent = pad(active);
         document.querySelector("#svc-chip").textContent = slide.caption;
         document.querySelector("#svc-eyebrow").textContent = slide.name;
         document.querySelector("#svc-title").textContent = slide.title;
@@ -4272,13 +4250,10 @@
       document.querySelector("#svc-next-btn").addEventListener("click", () => show(active + 1));
       document.querySelector("#svc-next").addEventListener("click", () => show(active + 1));
 
-      // Pause autoplay while hovered/focused or off-screen
-      let hovering = false;
+      // Pause autoplay while focused or off-screen
       let visible = false;
-      const syncPause = () => section.classList.toggle("is-paused", hovering || !visible || section.contains(document.activeElement));
+      const syncPause = () => section.classList.toggle("is-paused", !visible || section.contains(document.activeElement));
       const slider = section.querySelector(".svc-inner");
-      slider.addEventListener("pointerenter", () => { hovering = true; syncPause(); });
-      slider.addEventListener("pointerleave", () => { hovering = false; syncPause(); });
       slider.addEventListener("focusin", syncPause);
       slider.addEventListener("focusout", () => setTimeout(syncPause));
       if ("IntersectionObserver" in window) {
