@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f4ef">
+  <meta name="theme-color" content="#0b1c29">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>Texmorro — Fashion for Tomorrow</title>
   <style>
     :root {
@@ -155,157 +158,6 @@
       display: none;
     }
 
-    .fashion-banner {
-      position: relative;
-      display: grid;
-      min-height: 100vh;
-      min-height: 100svh;
-      place-items: center;
-      overflow: clip;
-      isolation: isolate;
-      background: #18202b;
-      color: #fff;
-    }
-
-    .banner-gallery {
-      position: absolute;
-      z-index: -2;
-      inset: 0;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .banner-gallery figure {
-      min-width: 0;
-      height: 100%;
-      margin: 0;
-      overflow: hidden;
-      background: #25303a;
-    }
-
-    .banner-gallery img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .banner-gallery figure:nth-child(1) img {
-      object-position: center 27%;
-    }
-
-    .banner-gallery figure:nth-child(2) img {
-      object-position: center 25%;
-    }
-
-    .banner-gallery figure:nth-child(3) img {
-      object-position: center 28%;
-    }
-
-    .banner-gallery figure:nth-child(4) img {
-      object-position: center 24%;
-    }
-
-    .banner-gallery figure:nth-child(n + 3) {
-      display: none;
-    }
-
-    .fashion-banner::after {
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(10, 17, 26, 0.58), rgba(10, 17, 26, 0.42) 50%, rgba(10, 17, 26, 0.58)),
-        linear-gradient(0deg, rgba(10, 17, 26, 0.36), rgba(10, 17, 26, 0.08) 42%, rgba(10, 17, 26, 0.32));
-      content: "";
-    }
-
-    .banner-content {
-      width: min(100% - 48px, 980px);
-      padding: 156px 0 88px;
-      text-align: center;
-    }
-
-    .banner-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
-      color: #e8d4a0;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
-    }
-
-    .banner-content h1 {
-      max-width: 920px;
-      margin: 0 auto;
-      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-      font-size: clamp(48px, 5.25vw, 76px);
-      font-weight: 400;
-      line-height: 1.04;
-      letter-spacing: -0.035em;
-      text-wrap: balance;
-      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.18);
-    }
-
-    .banner-content h1 em {
-      color: #e8d4a0;
-      font-weight: 400;
-    }
-
-    .banner-description {
-      max-width: 570px;
-      margin: 22px auto 0;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .banner-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .banner-button {
-      display: inline-flex;
-      min-height: 50px;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      padding: 0 22px;
-      border: 1px solid #e8d4a0;
-      background: #e8d4a0;
-      color: #142a46;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.075em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
-    }
-
-    .banner-button span {
-      color: var(--gold);
-      font-size: 18px;
-      transition: transform 160ms ease;
-    }
-
-    .banner-button:hover,
-    .banner-button:focus-visible {
-      border-color: #e8d4a0;
-      background: #f3ead4;
-      color: #142a46;
-    }
-
-    .banner-button:hover span {
-      transform: translateX(3px);
-    }
-
     .brand-marquee {
       overflow: hidden;
       padding: 27px 0 30px;
@@ -347,7 +199,7 @@
       align-items: center;
       gap: clamp(34px, 5vw, 76px);
       color: #263b51;
-      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      font-family: "Instrument Serif", "Iowan Old Style", Georgia, serif;
       font-size: clamp(17px, 2vw, 23px);
       font-weight: 400;
       letter-spacing: 0.015em;
@@ -364,207 +216,6 @@
 
     .marquee-viewport:hover .marquee-track {
       animation-play-state: paused;
-    }
-
-    .pathways-section {
-      padding: clamp(72px, 9vw, 124px) 24px clamp(84px, 10vw, 140px);
-      background: #f2f0eb;
-    }
-
-    .pathways-inner {
-      width: min(100%, 1240px);
-      margin-inline: auto;
-    }
-
-    .pathways-intro {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.65fr);
-      align-items: end;
-      gap: 48px;
-      margin-bottom: 42px;
-    }
-
-    .pathways-kicker {
-      display: block;
-      margin-bottom: 15px;
-      color: #947b48;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .pathways-heading {
-      max-width: 660px;
-      margin: 0;
-      color: var(--ink);
-      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-      font-size: clamp(38px, 4.7vw, 62px);
-      font-weight: 400;
-      line-height: 1.04;
-      letter-spacing: -0.035em;
-      text-wrap: balance;
-    }
-
-    .pathways-summary {
-      max-width: 370px;
-      margin: 0 0 5px;
-      color: #62676b;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .pathway-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .pathway-card {
-      overflow: hidden;
-      border: 1px solid rgba(20, 42, 70, 0.1);
-      background: #fbfaf7;
-    }
-
-    .pathway-image {
-      position: relative;
-      height: clamp(250px, 31vw, 390px);
-      overflow: hidden;
-      background: #d7d4cb;
-    }
-
-    .pathway-image::after {
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(0deg, rgba(10, 17, 26, 0.46), transparent);
-      content: "";
-      pointer-events: none;
-    }
-
-    .pathway-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
-    }
-
-    .pathway-card:hover .pathway-image img {
-      transform: scale(1.035);
-    }
-
-    .pathway-card:first-child .pathway-image img {
-      object-position: center 24%;
-    }
-
-    .pathway-card:last-child .pathway-image img {
-      object-position: center 22%;
-    }
-
-    .pathway-image-index {
-      position: absolute;
-      z-index: 1;
-      top: 18px;
-      left: 18px;
-      display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      color: #fff;
-      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-      font-size: 17px;
-    }
-
-    .pathway-image-caption {
-      position: absolute;
-      z-index: 1;
-      right: 20px;
-      bottom: 17px;
-      left: 20px;
-      color: #fff;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .pathway-content {
-      padding: clamp(24px, 3vw, 36px);
-    }
-
-    .pathway-label {
-      display: block;
-      margin-bottom: 11px;
-      color: #947b48;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .pathway-content h3 {
-      margin: 0;
-      color: var(--ink);
-      font-family: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-      font-size: clamp(27px, 3vw, 36px);
-      font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-    }
-
-    .pathway-content p {
-      max-width: 480px;
-      margin: 13px 0 0;
-      color: #62676b;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .pathway-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-top: 24px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(20, 42, 70, 0.12);
-    }
-
-    .pathway-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .pathway-tags span {
-      padding: 7px 9px;
-      border: 1px solid rgba(20, 42, 70, 0.13);
-      color: #475460;
-      font-size: 9px;
-      line-height: 1;
-    }
-
-    .pathway-link {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      flex: 0 0 38px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(20, 42, 70, 0.25);
-      color: var(--ink);
-      font-size: 19px;
-      line-height: 1;
-      text-decoration: none;
-      transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
-
-    .pathway-link:hover,
-    .pathway-link:focus-visible {
-      border-color: var(--ink);
-      background: var(--ink);
-      color: #fff;
     }
 
     .make-section {
@@ -832,31 +483,8 @@
         color: var(--ink);
       }
 
-      .fashion-banner {
-        min-height: max(720px, 100vh);
-        min-height: max(720px, 100svh);
-      }
-
       .brand-marquee {
         padding: 24px 0 26px;
-      }
-
-      .pathways-intro {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        margin-bottom: 30px;
-      }
-
-      .pathways-summary {
-        max-width: 560px;
-      }
-
-      .pathway-image {
-        height: clamp(240px, 39vw, 340px);
-      }
-
-      .pathway-footer {
-        align-items: flex-end;
       }
 
       .make-tabs {
@@ -868,30 +496,6 @@
         gap: 18px;
       }
 
-      .banner-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(2, minmax(0, 1fr));
-      }
-
-      .banner-gallery figure:nth-child(1) img {
-        object-position: center 30%;
-      }
-
-      .banner-gallery figure:nth-child(2) img {
-        object-position: center 25%;
-      }
-
-      .banner-gallery figure:nth-child(3) img {
-        object-position: center 23%;
-      }
-
-      .banner-gallery figure:nth-child(4) img {
-        object-position: center 24%;
-      }
-
-      .banner-content {
-        width: min(100% - 48px, 700px);
-      }
     }
 
     @media (max-width: 480px) {
@@ -909,17 +513,9 @@
         height: 70px;
       }
 
-      .fashion-banner {
-        min-height: max(720px, 100svh);
-      }
-
       .brand-marquee-label {
         margin-bottom: 15px;
         font-size: 8px;
-      }
-
-      .pathways-section {
-        padding: 66px 18px 78px;
       }
 
       .make-section {
@@ -977,36 +573,6 @@
         font-size: 12px;
       }
 
-      .pathways-intro {
-        gap: 13px;
-        margin-bottom: 25px;
-      }
-
-      .pathways-heading {
-        font-size: 42px;
-      }
-
-      .pathway-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .pathway-image {
-        height: 270px;
-      }
-
-      .pathway-content {
-        padding: 23px;
-      }
-
-      .pathway-content h3 {
-        font-size: 31px;
-      }
-
-      .pathway-footer {
-        margin-top: 20px;
-      }
-
       .marquee-group {
         gap: 30px;
         padding-right: 30px;
@@ -1015,42 +581,6 @@
       .marquee-item {
         gap: 30px;
         font-size: 18px;
-      }
-
-      .banner-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .banner-gallery figure:nth-child(2) {
-        display: none;
-      }
-
-      .banner-content {
-        width: calc(100% - 36px);
-        padding: 132px 0 90px;
-      }
-
-      .banner-eyebrow {
-        margin-bottom: 20px;
-        font-size: 9px;
-        letter-spacing: 0.15em;
-      }
-
-      .banner-content h1 {
-        font-size: clamp(44px, 11.5vw, 52px);
-      }
-
-      .banner-description {
-        max-width: 340px;
-        font-size: 14px;
-      }
-
-      .banner-actions {
-        margin-top: 26px;
-      }
-
-      .banner-button {
-        width: min(100%, 290px);
       }
 
     }
@@ -1076,6 +606,2496 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* ==========================================================
+       NEW SECTIONS — shared tokens & motion utilities
+       ========================================================== */
+    :root {
+      --night: #0b1c29;
+      --deep: #102b3e;
+      --cream: #e8d4a0;
+      --sun: #f5df76;
+      --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+      --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .tx-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--cream);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .tx-kicker::before {
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .tx-kicker.is-dark {
+      color: #947b48;
+    }
+
+    .tx-title {
+      margin: 18px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 68px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .tx-title em {
+      color: var(--cream);
+      font-style: italic;
+    }
+
+    .tx-title.is-dark em {
+      color: #947b48;
+    }
+
+    /* scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 900ms var(--ease-out), transform 900ms var(--ease-out);
+      transition-delay: var(--d, 0ms);
+    }
+
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* curtain reveal (transform-based; clip-path transitions are unreliable in Chrome) */
+    .mask-curtain {
+      position: absolute;
+      z-index: 6;
+      inset: -1px;
+      background: var(--curtain, var(--paper));
+      pointer-events: none;
+      transform-origin: top;
+      transition: transform 1300ms cubic-bezier(0.7, 0, 0.2, 1);
+      transition-delay: var(--d, 0ms);
+    }
+
+    .reveal-mask.is-in .mask-curtain {
+      transform: scaleY(0);
+    }
+
+    .rely-frame,
+    .hero-main {
+      --curtain: var(--night);
+    }
+
+    /* split-word headline reveal */
+    .split-words .w {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      padding-bottom: 0.08em;
+    }
+
+    .split-words .w > span {
+      display: inline-block;
+      transform: translateY(110%);
+      transition: transform 1000ms var(--ease-out);
+      transition-delay: calc(var(--i) * 55ms);
+    }
+
+    .split-words.is-in .w > span {
+      transform: none;
+    }
+
+    /* rotating text badge */
+    .spin-badge {
+      position: relative;
+      display: grid;
+      width: 128px;
+      height: 128px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sun);
+      color: var(--deep);
+      text-decoration: none;
+    }
+
+    .spin-badge svg {
+      position: absolute;
+      inset: 8px;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      animation: spin 16s linear infinite;
+    }
+
+    .spin-badge text {
+      fill: currentColor;
+      font-size: 10.4px;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .spin-badge b {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--deep);
+      color: var(--sun);
+      font-size: 20px;
+      transition: transform 400ms var(--ease-out);
+    }
+
+    .spin-badge:hover b,
+    .spin-badge:focus-visible b {
+      transform: rotate(-45deg) scale(1.08);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .tx-btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      gap: 22px;
+      padding: 0 8px 0 24px;
+      border-radius: 999px;
+      background: var(--sun);
+      color: var(--deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 200ms ease, transform 300ms var(--ease-out);
+    }
+
+    .tx-btn span {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--deep);
+      color: var(--sun);
+      font-size: 16px;
+      transition: transform 300ms var(--ease-out);
+    }
+
+    .tx-btn:hover,
+    .tx-btn:focus-visible {
+      background: #fff;
+    }
+
+    .tx-btn:hover span,
+    .tx-btn:focus-visible span {
+      transform: rotate(-45deg);
+    }
+
+    .tx-btn.is-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: transparent;
+      color: #fff;
+    }
+
+    .tx-btn.is-ghost span {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .tx-btn.is-ghost:hover,
+    .tx-btn.is-ghost:focus-visible {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ==========================================================
+       01 — Built around reliable production (sticky image story)
+       ========================================================== */
+    .rely-section {
+      position: relative;
+      padding: clamp(84px, 10vw, 150px) 24px;
+      overflow: clip;
+      background:
+        radial-gradient(900px 500px at 85% 0%, rgba(232, 212, 160, 0.09), transparent 60%),
+        var(--night);
+      color: #fff;
+    }
+
+    .rely-inner {
+      display: grid;
+      width: min(100%, 1280px);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 110px);
+      margin-inline: auto;
+    }
+
+    .rely-visual {
+      position: sticky;
+      top: 110px;
+      height: min(78vh, 720px);
+      align-self: start;
+    }
+
+    .rely-frame {
+      position: absolute;
+      inset: 0 12% 10% 0;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #18303f;
+    }
+
+    .rely-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.14);
+      transition: opacity 900ms ease, transform 1800ms var(--ease-out);
+    }
+
+    .rely-frame img.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .rely-frame::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(5, 14, 22, 0.75));
+      content: "";
+    }
+
+    .rely-frame-caption {
+      position: absolute;
+      z-index: 1;
+      bottom: 26px;
+      left: 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+
+    .rely-frame-caption strong {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 0.8;
+    }
+
+    .rely-frame-caption span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .rely-thumb {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 40%;
+      aspect-ratio: 0.8;
+      overflow: hidden;
+      border: 8px solid var(--night);
+      border-radius: 22px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .rely-thumb img {
+      width: 100%;
+      height: 120%;
+      object-fit: cover;
+      transform: translateY(var(--py, 0px));
+    }
+
+    .rely-visual .spin-badge {
+      position: absolute;
+      top: 34px;
+      right: calc(12% - 64px);
+    }
+
+    .rely-copy {
+      padding-top: 12px;
+    }
+
+    .rely-intro {
+      max-width: 520px;
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .rely-steps {
+      position: relative;
+      margin: 64px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rely-steps::before,
+    .rely-steps::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 22px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.14);
+      content: "";
+    }
+
+    .rely-steps::after {
+      bottom: auto;
+      height: calc(var(--progress, 0) * 100%);
+      background: linear-gradient(180deg, var(--cream), var(--sun));
+      box-shadow: 0 0 16px rgba(245, 223, 118, 0.6);
+    }
+
+    .rely-step {
+      position: relative;
+      display: grid;
+      min-height: 40vh;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 28px;
+      padding-bottom: 40px;
+      opacity: 0.32;
+      transition: opacity 500ms ease;
+    }
+
+    .rely-step:last-child {
+      min-height: 0;
+      padding-bottom: 0;
+    }
+
+    .rely-step.is-active {
+      opacity: 1;
+    }
+
+    .rely-dot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      background: var(--night);
+      color: var(--cream);
+      font-size: 12px;
+      font-weight: 800;
+      transition: background 400ms ease, color 400ms ease, border-color 400ms ease;
+    }
+
+    .rely-step.is-active .rely-dot {
+      border-color: var(--sun);
+      background: var(--sun);
+      color: var(--deep);
+    }
+
+    .rely-step h3 {
+      margin: 6px 0 12px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    .rely-step p {
+      max-width: 440px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .rely-step-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .rely-step-tags span {
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .rely-step-img {
+      display: none;
+    }
+
+    /* ==========================================================
+       02 — Trusted production (cinematic proof)
+       ========================================================== */
+    .proof-section {
+      padding: clamp(84px, 10vw, 140px) 24px;
+      background: var(--paper);
+    }
+
+    .proof-inner {
+      width: min(100%, 1320px);
+      margin-inline: auto;
+    }
+
+    .proof-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.6fr);
+      align-items: end;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .proof-head .tx-title {
+      color: var(--ink);
+    }
+
+    .proof-head p {
+      margin: 0;
+      color: #62676b;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .proof-stage {
+      position: relative;
+      height: clamp(460px, 62vw, 720px);
+      overflow: hidden;
+      border-radius: 22px;
+      background: #203c4d;
+    }
+
+    .proof-stage > img {
+      position: absolute;
+      inset: -12% 0;
+      width: 100%;
+      height: 124%;
+      object-fit: cover;
+      transform: translateY(var(--py, 0px)) scale(1.04);
+    }
+
+    .proof-stage::after {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8, 20, 30, 0.75), rgba(8, 20, 30, 0.1) 60%),
+        linear-gradient(0deg, rgba(8, 20, 30, 0.6), transparent 50%);
+      content: "";
+    }
+
+    .proof-quote {
+      position: absolute;
+      z-index: 1;
+      bottom: clamp(28px, 5vw, 64px);
+      left: clamp(28px, 5vw, 64px);
+      max-width: 540px;
+      color: #fff;
+    }
+
+    .proof-quote blockquote {
+      margin: 18px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .proof-stats {
+      position: absolute;
+      z-index: 1;
+      top: clamp(20px, 4vw, 44px);
+      right: clamp(20px, 4vw, 44px);
+      display: grid;
+      width: min(320px, 44%);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(18px) saturate(1.3);
+      -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    }
+
+    .proof-stat {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      background: rgba(10, 25, 36, 0.4);
+      color: #fff;
+    }
+
+    .proof-stat strong {
+      font-family: var(--serif);
+      font-size: clamp(34px, 3.4vw, 48px);
+      font-weight: 400;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .proof-stat strong sup {
+      color: var(--sun);
+      font-size: 0.5em;
+    }
+
+    .proof-stat > span {
+      max-width: 110px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.4;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(20px, 3vw, 40px);
+      margin-top: 56px;
+    }
+
+    .proof-card {
+      position: relative;
+      padding-top: 26px;
+    }
+
+    .proof-card::before,
+    .proof-card::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      content: "";
+    }
+
+    .proof-card::before {
+      right: 0;
+      background: rgba(20, 42, 70, 0.16);
+    }
+
+    .proof-card::after {
+      width: 0;
+      height: 2px;
+      background: var(--ink);
+      transition: width 700ms var(--ease-out);
+    }
+
+    .proof-card:hover::after {
+      width: 100%;
+    }
+
+    .proof-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 14px;
+      background: var(--ink);
+      color: var(--sun);
+      transition: transform 500ms var(--ease-out);
+    }
+
+    .proof-card:hover .proof-icon {
+      transform: rotate(-8deg) scale(1.06);
+    }
+
+    .proof-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .proof-card h3 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .proof-card p {
+      margin: 0;
+      color: #62676b;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ==========================================================
+       03 — Clients (interactive hover gallery)
+       ========================================================== */
+    .clients-section {
+      position: relative;
+      padding: clamp(84px, 10vw, 140px) 24px;
+      overflow: clip;
+      background: var(--deep);
+      color: #fff;
+    }
+
+    .clients-section::before {
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 223, 118, 0.1), transparent 65%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .clients-inner {
+      position: relative;
+      display: grid;
+      width: min(100%, 1320px);
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: center;
+      gap: clamp(40px, 6vw, 96px);
+      margin-inline: auto;
+    }
+
+    .clients-list {
+      margin: 48px 0 0;
+      padding: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      list-style: none;
+      counter-reset: client;
+    }
+
+    .client-item button {
+      position: relative;
+      display: grid;
+      width: 100%;
+      grid-template-columns: 40px minmax(0, 1fr) 40px;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 0;
+      overflow: hidden;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      background: none;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      transition: color 300ms ease, padding 400ms var(--ease-out);
+    }
+
+    .client-item button::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(245, 223, 118, 0.12), transparent);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 500ms var(--ease-out);
+    }
+
+    .client-item button:focus-visible {
+      outline: 2px solid var(--sun);
+      outline-offset: 2px;
+    }
+
+    .client-item.is-active button {
+      padding-left: 14px;
+      color: #fff;
+    }
+
+    .client-item.is-active button::before {
+      transform: scaleX(1);
+    }
+
+    .client-num {
+      color: var(--cream);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .client-name {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.6vw, 36px);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .client-name small {
+      display: block;
+      max-height: 0;
+      margin-top: 0;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.66);
+      font-family: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 1.7;
+      opacity: 0;
+      transition: max-height 500ms var(--ease-out), opacity 400ms ease, margin 400ms ease;
+    }
+
+    .client-item.is-active .client-name small {
+      max-height: 80px;
+      margin-top: 8px;
+      opacity: 1;
+    }
+
+    .client-arrow {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: background 300ms ease, color 300ms ease, transform 400ms var(--ease-out);
+    }
+
+    .client-item.is-active .client-arrow {
+      border-color: var(--sun);
+      background: var(--sun);
+      color: var(--deep);
+      transform: rotate(-45deg);
+    }
+
+    .clients-gallery {
+      position: relative;
+      aspect-ratio: 0.8;
+      overflow: hidden;
+      border-radius: 200px 200px 22px 22px;
+      background: #203c4d;
+    }
+
+    .clients-gallery img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.16);
+      transition: opacity 900ms ease, transform 1600ms var(--ease-out);
+    }
+
+    .clients-gallery img.is-active {
+      z-index: 1;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .clients-gallery img.was-active {
+      z-index: 0;
+      opacity: 1;
+    }
+
+    .clients-gallery::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8, 20, 30, 0.7), transparent 45%);
+      content: "";
+    }
+
+    .clients-tag {
+      position: absolute;
+      z-index: 3;
+      right: 24px;
+      bottom: 24px;
+      left: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px 14px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .clients-tag em {
+      color: var(--sun);
+      font-style: normal;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .clients-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px 28px;
+      margin-top: 40px;
+    }
+
+    .clients-cta p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================
+       05 — CTA (spotlight card)
+       ========================================================== */
+    .cta-section {
+      padding: clamp(84px, 9vw, 130px) 24px;
+      background: var(--paper);
+    }
+
+    .cta-card {
+      --mx: 50%;
+      --my: 40%;
+      position: relative;
+      display: grid;
+      width: min(100%, 1320px);
+      min-height: clamp(520px, 50vw, 640px);
+      place-items: center;
+      margin-inline: auto;
+      padding: 72px 28px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--night);
+      color: #fff;
+      isolation: isolate;
+      text-align: center;
+    }
+
+    .cta-card > img {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: ken-burns 22s ease-in-out infinite alternate;
+    }
+
+    .cta-card::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background:
+        radial-gradient(420px circle at var(--mx) var(--my), rgba(245, 223, 118, 0.22), transparent 60%),
+        linear-gradient(180deg, rgba(8, 20, 30, 0.72), rgba(8, 20, 30, 0.86));
+      content: "";
+    }
+
+    @keyframes ken-burns {
+      from { transform: scale(1) translate(0, 0); }
+      to { transform: scale(1.14) translate(-2%, -2%); }
+    }
+
+    .cta-content {
+      max-width: 820px;
+    }
+
+    .cta-content .tx-title {
+      font-size: clamp(42px, 6.4vw, 92px);
+    }
+
+    .cta-content > p {
+      max-width: 560px;
+      margin: 22px auto 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .cta-perks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 46px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cta-perks li {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .cta-perks li::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--sun);
+      box-shadow: 0 0 0 4px rgba(245, 223, 118, 0.2);
+      content: "";
+    }
+
+    .cta-float {
+      position: absolute;
+      z-index: -1;
+      width: clamp(110px, 12vw, 170px);
+      aspect-ratio: 0.78;
+      overflow: hidden;
+      border: 6px solid rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .cta-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta-float.is-1 { top: 12%; left: 5%; rotate: -8deg; }
+    .cta-float.is-2 { right: 5%; bottom: 12%; rotate: 7deg; animation-delay: -3.5s; }
+
+    @keyframes float {
+      50% { transform: translateY(-16px); }
+    }
+
+    /* ==========================================================
+       06 — Footer
+       ========================================================== */
+    .site-footer {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(72px, 9vw, 120px) 24px 28px;
+      background: var(--night);
+      color: #fff;
+    }
+
+    .footer-inner {
+      width: min(100%, 1320px);
+      margin-inline: auto;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-top .tx-title {
+      max-width: 820px;
+      margin: 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+      gap: 40px;
+      padding: 56px 0;
+    }
+
+    .footer-brand img {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      background: var(--paper);
+      object-fit: contain;
+    }
+
+    .footer-brand p {
+      max-width: 320px;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 18px;
+      color: var(--cream);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer-col ul {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-col a {
+      position: relative;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 200ms ease, padding 300ms var(--ease-out);
+    }
+
+    .footer-col a:hover,
+    .footer-col a:focus-visible {
+      padding-left: 14px;
+      color: var(--sun);
+    }
+
+    .footer-col a::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 6px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+
+    .footer-col a:hover::before,
+    .footer-col a:focus-visible::before {
+      opacity: 1;
+    }
+
+    .footer-wordmark {
+      margin: 0;
+      color: transparent;
+      font-family: var(--serif);
+      font-size: clamp(64px, 17vw, 260px);
+      line-height: 0.8;
+      letter-spacing: -0.04em;
+      text-align: center;
+      -webkit-text-stroke: 1px rgba(232, 212, 160, 0.35);
+      background: linear-gradient(90deg, transparent 0%, rgba(232, 212, 160, 0.5) 50%, transparent 100%) no-repeat;
+      background-size: 40% 100%;
+      background-position: var(--shine, -60%) 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      user-select: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 28px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+    }
+
+    /* ==========================================================
+       Responsive
+       ========================================================== */
+    @media (max-width: 980px) {
+      .rely-inner,
+      .clients-inner,
+      .proof-head {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .rely-visual {
+        display: none;
+      }
+
+      .rely-step {
+        min-height: 0;
+        opacity: 1;
+        padding-bottom: 48px;
+      }
+
+      .rely-step-img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        margin-top: 22px;
+        border-radius: 16px;
+        object-fit: cover;
+      }
+
+      .proof-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .clients-gallery {
+        order: -1;
+        max-width: 520px;
+        width: 100%;
+        margin-inline: auto;
+        aspect-ratio: 1;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .cta-float {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rely-section,
+      .proof-section,
+      .clients-section,
+      .cta-section,
+      .site-footer {
+        padding-inline: 16px;
+      }
+
+      .rely-steps::before,
+      .rely-steps::after {
+        left: 17px;
+      }
+
+      .rely-step {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .rely-dot {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+      }
+
+      .proof-stage {
+        height: auto;
+        min-height: 560px;
+      }
+
+      .proof-stats {
+        top: 16px;
+        right: 16px;
+        left: 16px;
+        width: calc(100% - 32px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .proof-stat {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 14px;
+      }
+
+      .proof-stat > span {
+        max-width: none;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-transform: none;
+        text-align: left;
+      }
+
+      .proof-quote {
+        right: 20px;
+        bottom: 24px;
+        left: 20px;
+      }
+
+      .proof-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .client-item button {
+        grid-template-columns: 30px minmax(0, 1fr) 34px;
+        gap: 10px;
+      }
+
+      .client-arrow {
+        width: 34px;
+        height: 34px;
+      }
+
+      .clients-gallery {
+        border-radius: 140px 140px 18px 18px;
+      }
+
+      .cta-card {
+        border-radius: 20px;
+        padding: 64px 20px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mask-curtain {
+        display: none;
+      }
+
+      .reveal,
+      .split-words .w > span {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* ==========================================================
+       V2 — global polish
+       ========================================================== */
+    body {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+      background: var(--sun);
+      color: var(--deep);
+    }
+
+    .tx-title,
+    .services-heading,
+    .make-heading {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -0.015em;
+    }
+
+    .make-heading em,
+    .services-heading em {
+      color: #947b48;
+      font-style: italic;
+    }
+
+    /* fixed header with scroll states */
+    .site-header {
+      position: fixed;
+      min-height: 0;
+      border-bottom-color: transparent;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      transition: transform 500ms var(--ease-out), background 300ms ease, border-color 300ms ease;
+    }
+
+    .header-inner {
+      min-height: 92px;
+      transition: min-height 300ms ease;
+    }
+
+    .site-header.is-scrolled {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+      background: rgba(11, 28, 41, 0.82);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    }
+
+    .site-header.is-scrolled .header-inner {
+      min-height: 72px;
+    }
+
+    .site-header.is-hidden {
+      transform: translateY(-100%);
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      transition: width 300ms ease, height 300ms ease;
+    }
+
+    .site-header.is-scrolled .brand img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .contact-link {
+      border-radius: 999px;
+    }
+
+    .menu-button {
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      border-radius: 50%;
+    }
+
+    .menu-button span {
+      background: #fff !important;
+    }
+
+    /* ==========================================================
+       V2 — Hero
+       ========================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: clip;
+      background: var(--night);
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .hero-bg {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background:
+        radial-gradient(700px 520px at 78% 30%, rgba(232, 212, 160, 0.14), transparent 60%),
+        radial-gradient(600px 400px at 0% 100%, rgba(31, 78, 110, 0.5), transparent 70%);
+    }
+
+    .hero-bg::before {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: calc(100% / 6) 100%;
+      content: "";
+      mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+      -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+    }
+
+    .hero-inner {
+      display: grid;
+      width: min(100% - 64px, 1320px);
+      min-height: inherit;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: center;
+      gap: clamp(40px, 6vw, 100px);
+      margin-inline: auto;
+      padding: 140px 0 90px;
+    }
+
+    .hero-title {
+      margin: 24px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(50px, 6.6vw, 104px);
+      font-weight: 400;
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      color: var(--cream);
+      font-style: italic;
+    }
+
+    .hero-lead {
+      max-width: 500px;
+      margin: 28px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 52px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-proof li {
+      display: grid;
+      gap: 6px;
+      padding: 0 30px;
+      border-left: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-proof li:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .hero-proof strong {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .hero-proof strong sup {
+      color: var(--sun);
+      font-size: 0.5em;
+    }
+
+    .hero-proof span {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: min(74vh, 700px);
+      min-height: 520px;
+    }
+
+    .hero-main {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 74%;
+      overflow: hidden;
+      border-radius: 260px 260px 24px 24px;
+      background: #18303f;
+    }
+
+    .hero-main img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      opacity: 0;
+      transform: scale(1.12);
+      transition: opacity 1200ms ease, transform 6500ms linear;
+    }
+
+    .hero-main img.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .hero-main::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(5, 14, 22, 0.6), transparent 40%);
+      content: "";
+    }
+
+    .hero-slide-meta {
+      position: absolute;
+      z-index: 1;
+      right: 28px;
+      bottom: 26px;
+      left: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero-slide-bar {
+      position: relative;
+      height: 2px;
+      flex: 1;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-slide-bar i {
+      position: absolute;
+      inset: 0;
+      background: var(--sun);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .hero-slide-bar i.is-running {
+      animation: hero-bar 5200ms linear forwards;
+    }
+
+    @keyframes hero-bar {
+      to { transform: scaleX(1); }
+    }
+
+    .hero-side {
+      position: absolute;
+      bottom: 8%;
+      left: 0;
+      width: 38%;
+      aspect-ratio: 0.78;
+      overflow: hidden;
+      border: 8px solid var(--night);
+      border-radius: 22px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 1000ms ease 900ms, transform 1200ms var(--ease-out) 900ms;
+    }
+
+    .hero.is-loaded .hero-side {
+      opacity: 1;
+      transform: none;
+    }
+
+    .hero-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-note {
+      position: absolute;
+      top: 14%;
+      left: 4%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px 12px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 800ms ease 1400ms, transform 1000ms var(--ease-out) 1400ms;
+      animation: float 7s ease-in-out 2.4s infinite;
+    }
+
+    .hero.is-loaded .hero-note {
+      opacity: 1;
+      transform: none;
+    }
+
+    .hero-note b {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sun);
+      color: var(--deep);
+      font-size: 15px;
+    }
+
+    .hero-note span {
+      display: grid;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .hero-note small {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .hero-visual .spin-badge {
+      position: absolute;
+      top: -10px;
+      right: -14px;
+      z-index: 2;
+      width: 112px;
+      height: 112px;
+    }
+
+    .hero-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      translate: var(--hx, 0px) var(--hy, 0px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 26px;
+      left: 50%;
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+    }
+
+    .hero-scroll i {
+      position: relative;
+      width: 1px;
+      height: 44px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-scroll i::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 40%;
+      background: var(--sun);
+      content: "";
+      animation: scroll-cue 2s var(--ease-out) infinite;
+    }
+
+    @keyframes scroll-cue {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(260%); }
+    }
+
+    /* ==========================================================
+       V2 — What brings you here (expanding photo panels)
+       ========================================================== */
+    .paths {
+      padding: clamp(84px, 10vw, 140px) 24px;
+      background: var(--paper);
+    }
+
+    .paths-inner {
+      width: min(100%, 1320px);
+      margin-inline: auto;
+    }
+
+    .paths-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.6fr);
+      align-items: end;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .paths-head .tx-title {
+      color: var(--ink);
+    }
+
+    .paths-head p {
+      margin: 0;
+      color: #62676b;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .paths-grid {
+      display: flex;
+      height: clamp(560px, 52vw, 700px);
+      gap: 18px;
+    }
+
+    .path-panel {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      flex: 1 1 0;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(24px, 3vw, 40px);
+      overflow: hidden;
+      border-radius: 24px;
+      background: #18303f;
+      color: #fff;
+      isolation: isolate;
+      transition: flex-grow 900ms var(--ease-out);
+    }
+
+    .paths-grid:hover .path-panel {
+      flex-grow: 0.75;
+    }
+
+    .paths-grid .path-panel:hover,
+    .paths-grid .path-panel:focus-within {
+      flex-grow: 1.35;
+    }
+
+    .path-panel > img {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      transform: scale(1.06);
+      transition: transform 1600ms var(--ease-out), filter 900ms ease;
+      filter: saturate(0.85);
+    }
+
+    .path-panel:hover > img,
+    .path-panel:focus-within > img {
+      transform: scale(1);
+      filter: saturate(1.05);
+    }
+
+    .path-panel::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background:
+        linear-gradient(0deg, rgba(6, 16, 25, 0.92) 0%, rgba(6, 16, 25, 0.35) 48%, rgba(6, 16, 25, 0.15) 100%);
+      content: "";
+    }
+
+    .path-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .path-index {
+      font-family: var(--serif);
+      font-size: clamp(64px, 7vw, 110px);
+      font-style: italic;
+      line-height: 0.8;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    }
+
+    .path-label {
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .path-body h3 {
+      max-width: 460px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.4vw, 50px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+    }
+
+    .path-more {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition: grid-template-rows 700ms var(--ease-out), opacity 500ms ease;
+    }
+
+    .path-more > div {
+      overflow: hidden;
+    }
+
+    .path-panel:hover .path-more,
+    .path-panel:focus-within .path-more {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .path-more p {
+      max-width: 440px;
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .path-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .path-tags span {
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .path-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .path-link::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+    }
+
+    .path-link span {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sun);
+      color: var(--deep);
+      font-size: 17px;
+      transition: transform 400ms var(--ease-out);
+    }
+
+    .path-panel:hover .path-link span,
+    .path-link:focus-visible span {
+      transform: rotate(-45deg);
+    }
+
+    .path-link:focus-visible {
+      outline: none;
+    }
+
+    .path-panel:has(.path-link:focus-visible) {
+      box-shadow: 0 0 0 3px var(--sun);
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        width: min(100% - 40px, 1320px);
+        padding: 124px 0 90px;
+      }
+
+      .hero-visual {
+        height: 560px;
+        min-height: 0;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      .paths-head {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+      }
+
+      .paths-grid {
+        height: auto;
+        flex-direction: column;
+      }
+
+      .path-panel {
+        min-height: 520px;
+      }
+
+      .path-more {
+        grid-template-rows: 1fr;
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-inner {
+        width: min(100% - 32px, 1320px);
+      }
+
+      .hero-title {
+        font-size: clamp(44px, 12.5vw, 60px);
+      }
+
+      .hero-lead {
+        font-size: 15px;
+      }
+
+      .hero-proof {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .hero-proof li {
+        padding: 0 12px;
+      }
+
+      .hero-slide-meta {
+        display: none;
+      }
+
+      .hero-proof strong {
+        font-size: 30px;
+      }
+
+      .hero-proof span {
+        font-size: 9.5px;
+      }
+
+      .hero-visual {
+        height: 460px;
+      }
+
+      .hero-main {
+        width: 82%;
+      }
+
+      .hero-side {
+        width: 42%;
+        border-width: 5px;
+      }
+
+      .hero-note {
+        top: auto;
+        bottom: 2%;
+        left: auto;
+        right: 4%;
+      }
+
+      .hero-visual .spin-badge {
+        width: 92px;
+        height: 92px;
+        top: -16px;
+        right: -6px;
+      }
+
+      .hero-visual .spin-badge b {
+        width: 36px;
+        height: 36px;
+      }
+
+      .paths {
+        padding-inline: 16px;
+      }
+
+      .path-panel {
+        min-height: 500px;
+        border-radius: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-side,
+      .hero-note {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+
+    /* ==========================================================
+       Services — cinematic slider
+       ========================================================== */
+    .svc {
+      position: relative;
+      padding: clamp(84px, 10vw, 140px) 24px;
+      overflow: clip;
+      background:
+        radial-gradient(800px 480px at 100% 0%, rgba(232, 212, 160, 0.1), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(31, 78, 110, 0.55), transparent 70%),
+        var(--deep);
+      color: #fff;
+    }
+
+    .svc-inner {
+      width: min(100%, 1320px);
+      margin-inline: auto;
+    }
+
+    .svc-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 52px;
+    }
+
+    .svc-head .tx-title {
+      max-width: 720px;
+    }
+
+    .svc-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .svc-counter {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: rgba(255, 255, 255, 0.5);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .svc-counter b {
+      color: #fff;
+      font-size: 46px;
+      font-weight: 400;
+    }
+
+    .svc-arrow {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 250ms ease, color 250ms ease, border-color 250ms ease, transform 300ms var(--ease-out);
+    }
+
+    .svc-arrow:hover,
+    .svc-arrow:focus-visible {
+      border-color: var(--sun);
+      background: var(--sun);
+      color: var(--deep);
+      outline: none;
+      transform: scale(1.06);
+    }
+
+    .svc-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      align-items: stretch;
+      gap: clamp(32px, 5vw, 80px);
+    }
+
+    /* image stage */
+    .svc-stage {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      border-radius: 26px;
+      background: #18303f;
+      isolation: isolate;
+    }
+
+    .svc-stage > img {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0;
+      transform: scale(1.15);
+      transition: opacity 1000ms ease, transform 2200ms var(--ease-out);
+    }
+
+    .svc-stage > img.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .svc-stage::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background:
+        linear-gradient(0deg, rgba(6, 16, 25, 0.85), transparent 50%),
+        linear-gradient(180deg, rgba(6, 16, 25, 0.35), transparent 22%),
+        linear-gradient(90deg, rgba(6, 16, 25, 0.35), transparent 40%);
+      content: "";
+    }
+
+    .svc-chip {
+      position: absolute;
+      top: 26px;
+      left: 26px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(10, 25, 36, 0.5);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .svc-chip::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--sun);
+      box-shadow: 0 0 0 4px rgba(245, 223, 118, 0.22);
+      content: "";
+    }
+
+    .svc-big-num {
+      position: absolute;
+      bottom: 18px;
+      left: 26px;
+      font-family: var(--serif);
+      font-size: clamp(120px, 14vw, 200px);
+      font-style: italic;
+      line-height: 0.8;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.75);
+      pointer-events: none;
+    }
+
+    .svc-next {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      display: flex;
+      width: min(300px, 60%);
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px 10px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 18px;
+      background: rgba(10, 25, 36, 0.45);
+      backdrop-filter: blur(16px) saturate(1.3);
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      transition: background 250ms ease, transform 400ms var(--ease-out);
+    }
+
+    .svc-next:hover,
+    .svc-next:focus-visible {
+      background: rgba(10, 25, 36, 0.7);
+      outline: none;
+      transform: translateY(-4px);
+    }
+
+    .svc-next img {
+      width: 64px;
+      height: 64px;
+      flex: none;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .svc-next span {
+      display: grid;
+      min-width: 0;
+      flex: 1;
+      gap: 3px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .svc-next small {
+      color: var(--cream);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .svc-next i {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex: none;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sun);
+      color: var(--deep);
+      font-style: normal;
+    }
+
+    /* copy panel */
+    .svc-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 0;
+    }
+
+    .svc-panel.is-changing > * {
+      animation: svc-in 800ms var(--ease-out) both;
+    }
+
+    .svc-panel.is-changing > *:nth-child(2) { animation-delay: 70ms; }
+    .svc-panel.is-changing > *:nth-child(3) { animation-delay: 140ms; }
+    .svc-panel.is-changing > *:nth-child(4) { animation-delay: 210ms; }
+    .svc-panel.is-changing > *:nth-child(5) { animation-delay: 280ms; }
+
+    @keyframes svc-in {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+        filter: blur(6px);
+      }
+    }
+
+    .svc-eyebrow {
+      color: var(--cream);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .svc-title {
+      margin: 18px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(36px, 3.8vw, 56px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+
+    .svc-desc {
+      max-width: 480px;
+      margin: 20px 0 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .svc-list {
+      display: grid;
+      margin: 32px 0 0;
+      padding: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      list-style: none;
+    }
+
+    .svc-list li {
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 14px;
+      font-weight: 600;
+      transition: padding 400ms var(--ease-out), color 250ms ease;
+    }
+
+    .svc-list li:hover {
+      padding-left: 8px;
+      color: var(--sun);
+    }
+
+    .svc-list li::before {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(245, 223, 118, 0.14);
+      color: var(--sun);
+      content: "✓";
+      font-size: 13px;
+    }
+
+    .svc-list li::after {
+      color: rgba(255, 255, 255, 0.35);
+      content: "0" counter(svc-item);
+      counter-increment: svc-item;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .svc-list {
+      counter-reset: svc-item;
+    }
+
+    .svc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    /* tab rail with autoplay progress */
+    .svc-rail {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 44px;
+    }
+
+    .svc-tab {
+      display: grid;
+      gap: 12px;
+      padding: 0 0 4px;
+      border: 0;
+      background: none;
+      color: rgba(255, 255, 255, 0.45);
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      transition: color 300ms ease;
+    }
+
+    .svc-tab:hover,
+    .svc-tab:focus-visible,
+    .svc-tab[aria-selected="true"] {
+      color: #fff;
+      outline: none;
+    }
+
+    .svc-tab-bar {
+      position: relative;
+      height: 2px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .svc-tab-bar i {
+      position: absolute;
+      inset: 0;
+      background: var(--sun);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .svc-tab[aria-selected="true"] .svc-tab-bar i {
+      transform: scaleX(1);
+    }
+
+    .svc-tab[aria-selected="true"] .svc-tab-bar i.is-running {
+      animation: hero-bar 6500ms linear forwards;
+    }
+
+    .svc.is-paused .svc-tab-bar i.is-running {
+      animation-play-state: paused;
+    }
+
+    .svc-tab span {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .svc-tab span em {
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .svc-tab:focus-visible span {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 980px) {
+      .svc-body {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .svc-stage {
+        min-height: 480px;
+      }
+
+      .svc-rail {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .svc {
+        padding-inline: 16px;
+      }
+
+      .svc-head {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 36px;
+      }
+
+      .svc-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .svc-counter b {
+        font-size: 36px;
+      }
+
+      .svc-arrow {
+        width: 48px;
+        height: 48px;
+      }
+
+      .svc-stage {
+        min-height: 420px;
+        border-radius: 20px;
+      }
+
+      .svc-chip {
+        top: 16px;
+        left: 16px;
+      }
+
+      .svc-next {
+        right: 14px;
+        bottom: 14px;
+        width: auto;
+        max-width: 72%;
+      }
+
+      .svc-next img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .svc-big-num {
+        left: 16px;
+        bottom: 96px;
+        font-size: 110px;
+      }
+    }
+
+    [id] { scroll-margin-top: 90px; }
   </style>
 </head>
 <body>
@@ -1107,26 +3127,55 @@
   </header>
 
   <main>
-    <section class="fashion-banner" aria-labelledby="banner-title">
-      <div class="banner-gallery" aria-hidden="true">
-        <figure><img src="fashion-banner-blue.jpg" alt=""></figure>
-        <figure><img src="fashion-banner-olive.jpg" alt=""></figure>
-        <figure><img src="fashion-banner-blue-detail.jpg" alt=""></figure>
-        <figure><img src="fashion-banner-runway.jpg" alt=""></figure>
-      </div>
+    <section class="hero" id="hero" aria-labelledby="banner-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="tx-kicker reveal">Apparel manufacturing &middot; Bangladesh</span>
+          <h1 class="hero-title split-words" id="banner-title">Reliable apparel, <em>made</em> for brands &amp; organizations</h1>
+          <p class="hero-lead reveal" style="--d: 350ms">
+            From small brand launches to structured corporate orders, TEXMORRO provides apparel production with clear processes and consistent quality, from first idea to finished product.
+          </p>
+          <div class="hero-actions reveal" style="--d: 500ms">
+            <a class="tx-btn" href="https://texmorro.netlify.app/contact">Start with a sample <span aria-hidden="true">&rarr;</span></a>
+            <a class="tx-btn is-ghost" href="#services-heading">Our services <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <ul class="hero-proof reveal" style="--d: 650ms">
+            <li><strong>5<sup>+</sup></strong><span>Years of production</span></li>
+            <li><strong>50<sup>+</sup></strong><span>Global partners</span></li>
+            <li><strong>Low</strong><span>MOQ to start</span></li>
+          </ul>
+        </div>
 
-      <div class="banner-content">
-        <span class="banner-eyebrow">Production for the people behind the clothes</span>
-        <h1 id="banner-title">Reliable Apparel Manufacturing for Brands and Organizations</h1>
-        <p class="banner-description">
-          From small brand launches to structured corporate orders, TEXMORRO provides apparel production with clear processes and consistent quality. We help you move from idea to finished product with confidence.
-        </p>
-        <div class="banner-actions">
-          <a class="banner-button" href="https://texmorro.netlify.app/contact">
-            Start with a Sample <span aria-hidden="true">&rarr;</span>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-layer" data-depth="14">
+            <div class="hero-main reveal-mask" style="--d: 250ms">
+              <img class="is-active" src="fashion-banner-blue.jpg" alt="">
+              <img src="fashion-banner-runway.jpg" alt="">
+              <img src="images/what-we-make/model-look.jpg" alt="">
+              <div class="hero-slide-meta">
+                <span id="hero-slide-num">01</span>
+                <span class="hero-slide-bar"><i id="hero-slide-bar"></i></span>
+                <span>03</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-layer" data-depth="-24">
+            <div class="hero-side"><img src="fashion-banner-olive.jpg" alt=""></div>
+          </div>
+          <div class="hero-layer" data-depth="34">
+            <div class="hero-note">
+              <b>&#10003;</b>
+              <span>Sample approved<small>Fit &middot; Fabric &middot; Finish</small></span>
+            </div>
+          </div>
+          <a class="spin-badge" href="contact.html" tabindex="-1">
+            <svg viewBox="0 0 100 100"><defs><path id="badge-circle-h" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text><textPath href="#badge-circle-h">Textiles for tomorrow • </textPath></text></svg>
+            <b>&rarr;</b>
           </a>
         </div>
       </div>
+      <a class="hero-scroll" href="#pathways-heading" aria-label="Scroll to next section">Scroll<i></i></a>
     </section>
 
     <section class="brand-marquee" aria-labelledby="brand-marquee-label">
@@ -1153,70 +3202,111 @@
       </div>
     </section>
 
-    <section class="pathways-section" aria-labelledby="pathways-heading">
-      <div class="pathways-inner">
-        <div class="pathways-intro">
+    <section class="paths" aria-labelledby="pathways-heading">
+      <div class="paths-inner">
+        <div class="paths-head">
           <div>
-            <span class="pathways-kicker">A production partner for what comes next</span>
-            <h2 class="pathways-heading" id="pathways-heading">What brings you here?</h2>
+            <span class="tx-kicker is-dark reveal">A production partner for what comes next</span>
+            <h2 class="tx-title is-dark split-words" id="pathways-heading">What brings you <em>here?</em></h2>
           </div>
-          <p class="pathways-summary">
-            Whether you are building a label or outfitting a team, we bring the right people and production support around your next apparel project.
-          </p>
+          <p class="reveal" style="--d: 200ms">Whether you are building a label or outfitting a team, we bring the right people and production support around your next apparel project.</p>
         </div>
 
-        <div class="pathway-grid">
-          <article class="pathway-card">
-            <div class="pathway-image">
-              <img src="apparel-brand-collection.svg" alt="Illustration of a detailed blue designer jacket, collection sketch, and fabric swatches" loading="lazy">
-              <span class="pathway-image-index" aria-hidden="true">01</span>
-              <span class="pathway-image-caption">For independent labels</span>
+        <div class="paths-grid">
+          <article class="path-panel reveal">
+            <img src="fashion-banner-olive.jpg" alt="Model wearing an olive embroidered jacket from an independent label collection" loading="lazy">
+            <div class="path-top">
+              <span class="path-index" aria-hidden="true">01</span>
+              <span class="path-label">Apparel brands</span>
             </div>
-            <div class="pathway-content">
-              <span class="pathway-label">Apparel brands</span>
+            <div class="path-body">
               <h3>Turn your point of view into a collection.</h3>
-              <p>
-                Develop a distinctive range with considered product development, sampling, and production support for your brand.
-              </p>
-              <div class="pathway-footer">
-                <div class="pathway-tags" aria-label="Services">
-                  <span>Development</span>
-                  <span>Sampling</span>
-                  <span>Private label</span>
-                </div>
-                <a class="pathway-link" href="brand_services_index.html" aria-label="Explore apparel brand services">&rarr;</a>
-              </div>
+              <div class="path-more"><div>
+                <p>Develop a distinctive range with considered product development, sampling and production support for your brand.</p>
+                <div class="path-tags"><span>Development</span><span>Sampling</span><span>Private label</span></div>
+              </div></div>
+              <a class="path-link" href="brand_services_index.html">Explore brand services <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
 
-          <article class="pathway-card">
-            <div class="pathway-image">
-              <img src="organization-apparel.svg" alt="Illustration of coordinated work shirts and team apparel ready for production" loading="lazy">
-              <span class="pathway-image-index" aria-hidden="true">02</span>
-              <span class="pathway-image-caption">For teams and organizations</span>
+          <article class="path-panel reveal" style="--d: 150ms">
+            <img src="images/what-we-make/polo-shirt.jpg" alt="Crisp white work shirt on a hanger, ready for a team order" loading="lazy">
+            <div class="path-top">
+              <span class="path-index" aria-hidden="true">02</span>
+              <span class="path-label">Corporate &amp; institutional</span>
             </div>
-            <div class="pathway-content">
-              <span class="pathway-label">Corporate &amp; institutional</span>
+            <div class="path-body">
               <h3>Apparel that brings your team together.</h3>
-              <p>
-                Plan apparel for teams, events, and organizations with clear requirements, dependable production, and consistent quality.
-              </p>
-              <div class="pathway-footer">
-                <div class="pathway-tags" aria-label="Use cases">
-                  <span>Teamwear</span>
-                  <span>Events</span>
-                  <span>Bulk orders</span>
-                </div>
-                <a class="pathway-link" href="https://texmorro.netlify.app/contact" aria-label="Discuss an organizational apparel order">&rarr;</a>
-              </div>
+              <div class="path-more"><div>
+                <p>Plan apparel for teams, events and organizations with clear requirements, dependable production and consistent quality.</p>
+                <div class="path-tags"><span>Teamwear</span><span>Events</span><span>Bulk orders</span></div>
+              </div></div>
+              <a class="path-link" href="https://texmorro.netlify.app/contact">Discuss a team order <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="svc" id="services" aria-labelledby="services-heading">
+      <div class="svc-inner">
+        <div class="svc-head">
+          <div>
+            <span class="tx-kicker reveal">Our services</span>
+            <h2 class="tx-title split-words" id="services-heading">Everything you need to <em>make it</em> real</h2>
+          </div>
+          <div class="svc-nav">
+            <span class="svc-counter" aria-hidden="true"><b id="svc-num">01</b> / 04</span>
+            <div style="display:flex;gap:10px">
+              <button class="svc-arrow" id="svc-prev" type="button" aria-label="Previous service">&larr;</button>
+              <button class="svc-arrow" id="svc-next-btn" type="button" aria-label="Next service">&rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-body" id="svc-slider">
+          <div class="svc-stage reveal">
+            <img class="is-active" src="fashion-banner-blue-detail.jpg" alt="Model in an embroidered blue jacket from a brand collection">
+            <img src="images/what-we-make/tee-classic.jpg" alt="Man wearing a plain white tee, an example of corporate teamwear" loading="lazy">
+            <img src="images/what-we-make/garment-detail.jpg" alt="Blank white sweatshirt ready for private-label branding" loading="lazy">
+            <img src="images/what-we-make/fashion-flatlay.jpg" alt="Garment samples hanging on a rail for review" loading="lazy">
+            <span class="svc-chip" id="svc-chip">Built around your brand</span>
+            <span class="svc-big-num" id="svc-big-num" aria-hidden="true">01</span>
+            <button class="svc-next" id="svc-next" type="button">
+              <img id="svc-next-img" src="images/what-we-make/tee-classic.jpg" alt="">
+              <span><small>Next up</small><b id="svc-next-name">Corporate apparel</b></span>
+              <i aria-hidden="true">&rarr;</i>
+            </button>
+          </div>
+
+          <div class="svc-panel" id="svc-panel" aria-live="polite">
+            <span class="svc-eyebrow" id="svc-eyebrow">Brand manufacturing</span>
+            <h3 class="svc-title" id="svc-title">Apparel manufacturing, made for your next move.</h3>
+            <p class="svc-desc" id="svc-desc">From the first product idea to a dependable production run, we bring the people, planning, and care to move your apparel project forward.</p>
+            <ul class="svc-list" id="svc-list">
+              <li>Small-batch and growing-brand production</li>
+              <li>Product development and sampling</li>
+              <li>Consistent quality, from first run onward</li>
+            </ul>
+            <div class="svc-actions">
+              <a class="tx-btn" href="contact.html">Discuss this service <span aria-hidden="true">&rarr;</span></a>
+              <a class="tx-btn is-ghost" href="#make-section">What we make <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-rail" role="tablist" aria-label="Services">
+          <button class="svc-tab" type="button" role="tab" aria-selected="true" aria-controls="svc-panel"><span class="svc-tab-bar"><i></i></span><span><em>01</em>Brand manufacturing</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span><em>02</em>Corporate apparel</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span><em>03</em>Private label</span></button>
+          <button class="svc-tab" type="button" role="tab" aria-selected="false" aria-controls="svc-panel" tabindex="-1"><span class="svc-tab-bar"><i></i></span><span><em>04</em>Development &amp; sampling</span></button>
+        </div>
+      </div>
+    </section>
+
+
     <section class="make-section" aria-labelledby="make-heading">
-      <div class="make-inner">
+      <div class="make-inner" id="make-section">
         <div class="make-intro">
           <span class="make-kicker">What We Make</span>
           <h2 class="make-heading" id="make-heading">From everyday basics to finished merchandise — we produce it all</h2>
@@ -1240,8 +3330,405 @@
         <div class="make-panel" id="make-panel" role="tabpanel" aria-labelledby="make-tab-tops"></div>
       </div>
     </section>
+
+    <section class="rely-section" aria-labelledby="rely-heading">
+      <div class="rely-inner">
+        <div class="rely-visual" aria-hidden="true">
+          <div class="rely-frame reveal-mask">
+            <img class="is-active" src="images/what-we-make/fashion-flatlay.jpg" alt="" data-step="0">
+            <img src="images/what-we-make/polo-shirt.jpg" alt="" data-step="1">
+            <img src="images/what-we-make/shirt-rack.jpg" alt="" data-step="2">
+            <img src="images/what-we-make/tee-premium.jpg" alt="" data-step="3">
+            <div class="rely-frame-caption">
+              <strong id="rely-count">01</strong>
+              <span id="rely-label">Start small</span>
+            </div>
+          </div>
+          <div class="rely-thumb reveal" style="--d: 400ms">
+            <img class="parallax" data-speed="0.12" src="images/what-we-make/knitwear.jpg" alt="">
+          </div>
+          <a class="spin-badge" href="contact.html" tabindex="-1">
+            <svg viewBox="0 0 100 100"><defs><path id="badge-circle-a" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text><textPath href="#badge-circle-a">Sample first • Then scale • </textPath></text></svg>
+            <b>&rarr;</b>
+          </a>
+        </div>
+
+        <div class="rely-copy">
+          <span class="tx-kicker reveal">How we work with you</span>
+          <h2 class="tx-title split-words" id="rely-heading">Built around <em>reliable</em> production</h2>
+          <p class="rely-intro reveal" style="--d: 200ms">
+            A clear, step-by-step way of working that keeps every order predictable, from your first sample to repeat supply.
+          </p>
+
+          <ol class="rely-steps">
+            <li class="rely-step is-active" data-label="Start small">
+              <span class="rely-dot">01</span>
+              <div>
+                <h3>Start small</h3>
+                <p>Launch with low minimums and test the market before committing to large volumes. Ideal for new labels and first drops.</p>
+                <div class="rely-step-tags"><span>Low MOQ</span><span>First drops</span></div>
+                <img class="rely-step-img" src="images/what-we-make/fashion-flatlay.jpg" alt="Garments and fabric laid out for a first small run" loading="lazy">
+              </div>
+            </li>
+            <li class="rely-step" data-label="Approve before bulk">
+              <span class="rely-dot">02</span>
+              <div>
+                <h3>Approve before bulk</h3>
+                <p>Every order begins with a physical sample. You check fit, fabric and finish, and production starts only after you sign off.</p>
+                <div class="rely-step-tags"><span>Physical samples</span><span>Fit review</span></div>
+                <img class="rely-step-img" src="images/what-we-make/polo-shirt.jpg" alt="A finished shirt being checked on the hanger" loading="lazy">
+              </div>
+            </li>
+            <li class="rely-step" data-label="Structured production">
+              <span class="rely-dot">03</span>
+              <div>
+                <h3>Structured production</h3>
+                <p>A planned workflow with quality checkpoints at each stage, so output stays consistent from the first piece to the last.</p>
+                <div class="rely-step-tags"><span>QC checkpoints</span><span>Clear timelines</span></div>
+                <img class="rely-step-img" src="images/what-we-make/shirt-rack.jpg" alt="Finished shirts hanging on a production rack" loading="lazy">
+              </div>
+            </li>
+            <li class="rely-step" data-label="Long-term supply">
+              <span class="rely-dot">04</span>
+              <div>
+                <h3>Long-term supply</h3>
+                <p>Repeat orders that match your approved standard every time, so you can grow your range on a partner you trust.</p>
+                <div class="rely-step-tags"><span>Repeat orders</span><span>Scalable</span></div>
+                <img class="rely-step-img" src="images/what-we-make/tee-premium.jpg" alt="Stacks of folded tees in multiple colours, ready for repeat orders" loading="lazy">
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" aria-labelledby="proof-heading">
+      <div class="proof-inner">
+        <div class="proof-head">
+          <div>
+            <span class="tx-kicker is-dark reveal">Why brands stay with us</span>
+            <h2 class="tx-title is-dark split-words" id="proof-heading">Trusted production, <em>backed</em> by experience</h2>
+          </div>
+          <p class="reveal" style="--d: 200ms">Years on the factory floor have taught us what consistency takes. That experience goes into every order we produce.</p>
+        </div>
+
+        <div class="proof-stage reveal-mask">
+          <img class="parallax" data-speed="-0.1" src="images/what-we-make/collection.jpg" alt="A finished apparel collection produced by Texmorro" loading="lazy">
+          <div class="proof-stats">
+            <div class="proof-stat"><strong><span data-count="5">5</span><sup>+</sup></strong><span>Years of excellence</span></div>
+            <div class="proof-stat"><strong><span data-count="50">50</span><sup>+</sup></strong><span>Global partners</span></div>
+            <div class="proof-stat"><strong><span data-count="100">100</span><sup>%</sup></strong><span>Quality assurance</span></div>
+          </div>
+          <div class="proof-quote">
+            <span class="tx-kicker">Made in Bangladesh</span>
+            <blockquote>“Every garment leaves our floor only after it meets the standard you approved.”</blockquote>
+          </div>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card reveal">
+            <span class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3>Trusted production</h3>
+            <p>Hands-on manufacturing experience behind every brand and organization we work with.</p>
+          </article>
+          <article class="proof-card reveal" style="--d: 120ms">
+            <span class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8 11h6M11 8v6"/></svg></span>
+            <h3>Quality control</h3>
+            <p>Inspections throughout production, not just at the end, so your standard holds across every piece.</p>
+          </article>
+          <article class="proof-card reveal" style="--d: 240ms">
+            <span class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg></span>
+            <h3>Responsible manufacturing</h3>
+            <p>Careful use of materials and fair working practices that your customers can feel good about.</p>
+          </article>
+          <article class="proof-card reveal" style="--d: 360ms">
+            <span class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+            <h3>Made in Bangladesh</h3>
+            <p>Production rooted in one of the world’s leading apparel hubs, shipped to clients worldwide.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="clients-section" aria-labelledby="clients-heading">
+      <div class="clients-inner" id="clients">
+        <div>
+          <span class="tx-kicker reveal">Who we work with</span>
+          <h2 class="tx-title split-words" id="clients-heading">Supporting <em>every</em> kind of client</h2>
+
+          <ul class="clients-list">
+            <li class="client-item is-active">
+              <button type="button" aria-pressed="true" data-index="0">
+                <span class="client-num">01</span>
+                <span class="client-name">Apparel startups<small>Low minimums and sampling support for your very first collection.</small></span>
+                <span class="client-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </li>
+            <li class="client-item">
+              <button type="button" aria-pressed="false" data-index="1">
+                <span class="client-num">02</span>
+                <span class="client-name">Growing clothing brands<small>Reliable capacity and consistent quality as your orders scale up.</small></span>
+                <span class="client-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </li>
+            <li class="client-item">
+              <button type="button" aria-pressed="false" data-index="2">
+                <span class="client-num">03</span>
+                <span class="client-name">Corporate organizations<small>Uniforms and branded apparel that give your whole team one consistent look.</small></span>
+                <span class="client-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </li>
+            <li class="client-item">
+              <button type="button" aria-pressed="false" data-index="3">
+                <span class="client-num">04</span>
+                <span class="client-name">NGOs &amp; institutions<small>Practical, durable apparel produced to clear specifications and budgets.</small></span>
+                <span class="client-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </li>
+            <li class="client-item">
+              <button type="button" aria-pressed="false" data-index="4">
+                <span class="client-num">05</span>
+                <span class="client-name">Event organizers<small>On-time apparel for festivals, campaigns and one-off events.</small></span>
+                <span class="client-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="clients-cta reveal">
+            <a class="tx-btn" href="contact.html">Discuss your project <span aria-hidden="true">&rarr;</span></a>
+            <p>Not sure where you fit?<br>Tell us what you need and we’ll suggest a plan.</p>
+          </div>
+        </div>
+
+        <div class="clients-gallery reveal" aria-hidden="true">
+          <img class="is-active" src="images/what-we-make/model-look.jpg" alt="" loading="lazy">
+          <img src="fashion-banner-olive.jpg" alt="" loading="lazy">
+          <img src="images/what-we-make/teamwear.jpg" alt="" loading="lazy">
+          <img src="images/what-we-make/tee-classic.jpg" alt="" loading="lazy">
+          <img src="fashion-banner-runway.jpg" alt="" loading="lazy">
+          <div class="clients-tag"><span id="clients-tag-name">Apparel startups</span><em id="clients-tag-num">01 / 05</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="cta-card reveal" id="cta-card">
+        <img src="fashion-banner-blue-detail.jpg" alt="" loading="lazy">
+        <div class="cta-float is-1" aria-hidden="true"><img src="images/what-we-make/denim.jpg" alt="" loading="lazy"></div>
+        <div class="cta-float is-2" aria-hidden="true"><img src="images/what-we-make/outerwear.jpg" alt="" loading="lazy"></div>
+        <div class="cta-content">
+          <span class="tx-kicker">Let’s make it real</span>
+          <h2 class="tx-title split-words" id="cta-heading">Ready to start <em>production?</em></h2>
+          <p>Share your idea, tech pack or reference photos. We’ll guide you through sampling, pricing and timelines, with no pressure and no surprises.</p>
+          <div class="cta-actions">
+            <a class="tx-btn" href="contact.html">Start with a sample <span aria-hidden="true">&rarr;</span></a>
+            <a class="tx-btn is-ghost" href="how_it_works.html">See how it works <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <ul class="cta-perks">
+            <li>Sample-first process</li>
+            <li>Clear, upfront quotes</li>
+            <li>Low MOQ friendly</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <h2 class="tx-title split-words">Ready to work with a manufacturer who <em>gets it right?</em></h2>
+        <a class="spin-badge" href="contact.html" aria-label="Let’s talk — contact Texmorro">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="badge-circle-b" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text><textPath href="#badge-circle-b">Let’s talk • Texmorro • </textPath></text></svg>
+          <b aria-hidden="true">&rarr;</b>
+        </a>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="texmorro-logo.png" alt="Texmorro">
+          <p>Apparel production for brands and organizations. Sample-first, quality-checked and built for long-term supply.</p>
+        </div>
+        <nav class="footer-col" aria-label="Services">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="brand_services_index.html">Brand sales</a></li>
+            <li><a href="services.html">Private label</a></li>
+            <li><a href="services.html">Corporate apparel</a></li>
+            <li><a href="#make-section">What we make</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="how_it_works.html">How it works</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="#clients">Who we serve</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Get in touch">
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="contact.html">Contact form</a></li>
+            <li><a href="contact.html">Request a sample</a></li>
+            <li><a href="contact.html">Bangladesh</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <p class="footer-wordmark" id="footer-wordmark" aria-hidden="true">TEXMORRO</p>
+
+      <div class="footer-bottom">
+        <span>© <span id="footer-year">2026</span> Texmorro. All rights reserved.</span>
+        <span>Textiles for tomorrow.</span>
+      </div>
+    </div>
+  </footer>
+
   <script>
+    const serviceSlides = [
+      {
+        name: "Brand manufacturing",
+        caption: "Built around your brand",
+        title: "Apparel manufacturing, made for your next move.",
+        description: "From the first product idea to a dependable production run, we bring the people, planning, and care to move your apparel project forward.",
+        includes: [
+          "Small-batch and growing-brand production",
+          "Product development and sampling",
+          "Consistent quality, from first run onward"
+        ]
+      },
+      {
+        name: "Corporate apparel",
+        caption: "Made for teams that move together",
+        title: "A consistent look for every team and occasion.",
+        description: "We help organizations plan practical, cohesive apparel with clear requirements and reliable production from first brief to final delivery.",
+        includes: [
+          "Teamwear, uniforms, and event apparel",
+          "Coordinated sizing and product options",
+          "Reliable support for larger orders"
+        ]
+      },
+      {
+        name: "Private label",
+        caption: "Thoughtful details, your identity",
+        title: "Create a collection that feels unmistakably yours.",
+        description: "Build a considered brand experience with the garment details and finishing that bring your identity through every product.",
+        includes: [
+          "Custom labels and garment details",
+          "Branding and packaging options",
+          "Production aligned with your collection"
+        ]
+      },
+      {
+        name: "Development & sampling",
+        caption: "From first idea to finished sample",
+        title: "Get the details right before production begins.",
+        description: "Turn an early concept into a production-ready product with thoughtful development, material decisions, and samples you can review.",
+        includes: [
+          "Fabric and construction guidance",
+          "Fit, finish, and sample review",
+          "A clear handoff into production"
+        ]
+      }
+    ];
+
+    (() => {
+      const section = document.querySelector("#services");
+      const images = [...section.querySelectorAll(".svc-stage > img")];
+      const tabs = [...section.querySelectorAll(".svc-tab")];
+      const panel = document.querySelector("#svc-panel");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const pad = (n) => String(n + 1).padStart(2, "0");
+      let active = 0;
+
+      const startBar = () => {
+        tabs.forEach((tab) => tab.querySelector("i").classList.remove("is-running"));
+        if (reduceMotion) return;
+        const bar = tabs[active].querySelector("i");
+        void bar.offsetWidth;
+        bar.classList.add("is-running");
+      };
+
+      function show(index, { focusTab = false } = {}) {
+        active = (index + serviceSlides.length) % serviceSlides.length;
+        const slide = serviceSlides[active];
+        const next = (active + 1) % serviceSlides.length;
+
+        images.forEach((img, i) => img.classList.toggle("is-active", i === active));
+        document.querySelector("#svc-num").textContent = pad(active);
+        document.querySelector("#svc-big-num").textContent = pad(active);
+        document.querySelector("#svc-chip").textContent = slide.caption;
+        document.querySelector("#svc-eyebrow").textContent = slide.name;
+        document.querySelector("#svc-title").textContent = slide.title;
+        document.querySelector("#svc-desc").textContent = slide.description;
+        document.querySelector("#svc-list").replaceChildren(...slide.includes.map((text) => {
+          const li = document.createElement("li");
+          li.textContent = text;
+          return li;
+        }));
+        document.querySelector("#svc-next-img").src = images[next].getAttribute("src");
+        document.querySelector("#svc-next-name").textContent = serviceSlides[next].name;
+
+        tabs.forEach((tab, i) => {
+          tab.setAttribute("aria-selected", String(i === active));
+          tab.tabIndex = i === active ? 0 : -1;
+        });
+        if (focusTab) tabs[active].focus();
+
+        if (!reduceMotion) {
+          panel.classList.remove("is-changing");
+          void panel.offsetWidth;
+          panel.classList.add("is-changing");
+        }
+        startBar();
+      }
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => show(i));
+        tab.querySelector("i").addEventListener("animationend", () => show(active + 1));
+        tab.addEventListener("keydown", (event) => {
+          const keys = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+          if (event.key in keys) {
+            event.preventDefault();
+            show(keys[event.key], { focusTab: true });
+          }
+        });
+      });
+      document.querySelector("#svc-prev").addEventListener("click", () => show(active - 1));
+      document.querySelector("#svc-next-btn").addEventListener("click", () => show(active + 1));
+      document.querySelector("#svc-next").addEventListener("click", () => show(active + 1));
+
+      // Pause autoplay while hovered/focused or off-screen
+      let hovering = false;
+      let visible = false;
+      const syncPause = () => section.classList.toggle("is-paused", hovering || !visible || section.contains(document.activeElement));
+      const slider = section.querySelector(".svc-inner");
+      slider.addEventListener("pointerenter", () => { hovering = true; syncPause(); });
+      slider.addEventListener("pointerleave", () => { hovering = false; syncPause(); });
+      slider.addEventListener("focusin", syncPause);
+      slider.addEventListener("focusout", () => setTimeout(syncPause));
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; syncPause(); }, { threshold: 0.3 }).observe(section);
+      } else {
+        visible = true;
+      }
+
+      // Swipe on touch devices
+      let touchX = null;
+      const stage = section.querySelector(".svc-stage");
+      stage.addEventListener("touchstart", (event) => { touchX = event.touches[0].clientX; }, { passive: true });
+      stage.addEventListener("touchend", (event) => {
+        if (touchX === null) return;
+        const dx = event.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 50) show(active + (dx < 0 ? 1 : -1));
+        touchX = null;
+      });
+
+      syncPause();
+      startBar();
+    })();
+
     const makeProducts = {
       tops: [
         ["T-shirts", "tee-classic.jpg"],
@@ -1367,6 +3854,265 @@
     });
 
     selectMakeCategory(makeTabs[0]);
+
+    /* ===== New sections: motion & interactions ===== */
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Split headings into animated words (keeps <em> styling)
+      document.querySelectorAll(".split-words").forEach((heading) => {
+        let i = 0;
+        const wrap = (node) => {
+          [...node.childNodes].forEach((child) => {
+            if (child.nodeType === Node.TEXT_NODE) {
+              const frag = document.createDocumentFragment();
+              child.textContent.split(/(\s+)/).forEach((part) => {
+                if (!part) return;
+                if (/^\s+$/.test(part)) {
+                  frag.append(document.createTextNode(" "));
+                  return;
+                }
+                const outer = document.createElement("span");
+                outer.className = "w";
+                const inner = document.createElement("span");
+                inner.style.setProperty("--i", i++);
+                inner.textContent = part;
+                outer.append(inner);
+                frag.append(outer);
+              });
+              child.replaceWith(frag);
+            } else if (child.nodeType === Node.ELEMENT_NODE) {
+              wrap(child);
+            }
+          });
+        };
+        wrap(heading);
+      });
+
+      // Curtain element for image reveals
+      document.querySelectorAll(".reveal-mask").forEach((el) => {
+        const curtain = document.createElement("span");
+        curtain.className = "mask-curtain";
+        curtain.setAttribute("aria-hidden", "true");
+        el.append(curtain);
+      });
+
+      // Reveal on scroll
+      const revealTargets = document.querySelectorAll(".reveal, .reveal-mask, .split-words");
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealTargets.forEach((el) => el.classList.add("is-in"));
+      } else {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+        // Clipped masks can't be observed reliably, so watch their parent instead
+        const maskObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll(":scope > .reveal-mask").forEach((el) => el.classList.add("is-in"));
+              maskObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0, rootMargin: "0px 0px -12% 0px" });
+        revealTargets.forEach((el) => {
+          if (el.classList.contains("reveal-mask")) maskObserver.observe(el.parentElement);
+          else revealObserver.observe(el);
+        });
+      }
+
+      // Count-up stats
+      const counters = document.querySelectorAll("[data-count]");
+      const runCounter = (el) => {
+        const target = Number(el.dataset.count);
+        if (reduceMotion) {
+          el.textContent = target;
+          return;
+        }
+        const start = performance.now();
+        const duration = 1800;
+        const tick = (now) => {
+          const t = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - t, 4)));
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      if ("IntersectionObserver" in window) {
+        const countObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runCounter(entry.target);
+              countObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.6 });
+        counters.forEach((el) => {
+          if (!reduceMotion) el.textContent = "0";
+          countObserver.observe(el);
+        });
+      } else {
+        counters.forEach(runCounter);
+      }
+
+      // Reliable production: active step swaps the sticky image
+      const relySteps = [...document.querySelectorAll(".rely-step")];
+      const relyImages = [...document.querySelectorAll(".rely-frame img")];
+      const relyCount = document.querySelector("#rely-count");
+      const relyLabel = document.querySelector("#rely-label");
+      const relyList = document.querySelector(".rely-steps");
+      const setRelyStep = (index) => {
+        relySteps.forEach((step, i) => step.classList.toggle("is-active", i <= index));
+        relyImages.forEach((img, i) => img.classList.toggle("is-active", i === index));
+        relyCount.textContent = String(index + 1).padStart(2, "0");
+        relyLabel.textContent = relySteps[index].dataset.label;
+      };
+
+      // Scroll-linked effects: parallax, step progress, footer shine
+      const parallaxEls = [...document.querySelectorAll(".parallax")];
+      const wordmark = document.querySelector("#footer-wordmark");
+      let ticking = false;
+      const onScroll = () => {
+        ticking = false;
+        const vh = window.innerHeight;
+
+        parallaxEls.forEach((el) => {
+          const rect = el.parentElement.getBoundingClientRect();
+          if (rect.bottom < 0 || rect.top > vh) return;
+          const offset = (rect.top + rect.height / 2 - vh / 2) * Number(el.dataset.speed);
+          el.style.setProperty("--py", `${offset.toFixed(1)}px`);
+        });
+
+        const listRect = relyList.getBoundingClientRect();
+        const progress = Math.min(Math.max((vh * 0.55 - listRect.top) / listRect.height, 0), 1);
+        relyList.style.setProperty("--progress", progress.toFixed(3));
+        let active = 0;
+        relySteps.forEach((step, i) => {
+          if (step.getBoundingClientRect().top < vh * 0.55) active = i;
+        });
+        setRelyStep(active);
+
+        const wmRect = wordmark.getBoundingClientRect();
+        const shine = 1 - Math.min(Math.max(wmRect.top / vh, 0), 1);
+        wordmark.style.setProperty("--shine", `${(-60 + shine * 220).toFixed(1)}%`);
+      };
+      if (!reduceMotion) {
+        window.addEventListener("scroll", () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(onScroll);
+          }
+        }, { passive: true });
+        window.addEventListener("resize", onScroll);
+        onScroll();
+      } else {
+        relyList.style.setProperty("--progress", 1);
+        relySteps.forEach((step) => step.classList.add("is-active"));
+      }
+
+      // Clients: hover / focus / tap swaps the arched gallery image
+      const clientItems = [...document.querySelectorAll(".client-item")];
+      const clientImages = [...document.querySelectorAll(".clients-gallery img")];
+      const clientTagName = document.querySelector("#clients-tag-name");
+      const clientTagNum = document.querySelector("#clients-tag-num");
+      let activeClient = 0;
+      const setClient = (index) => {
+        if (index === activeClient) return;
+        clientImages.forEach((img) => img.classList.remove("was-active"));
+        clientImages[activeClient].classList.add("was-active");
+        activeClient = index;
+        clientItems.forEach((item, i) => {
+          item.classList.toggle("is-active", i === index);
+          item.querySelector("button").setAttribute("aria-pressed", String(i === index));
+        });
+        clientImages.forEach((img, i) => img.classList.toggle("is-active", i === index));
+        clientTagName.textContent = clientItems[index].querySelector(".client-name").firstChild.textContent;
+        clientTagNum.textContent = `${String(index + 1).padStart(2, "0")} / ${String(clientItems.length).padStart(2, "0")}`;
+      };
+      clientItems.forEach((item, i) => {
+        const button = item.querySelector("button");
+        button.addEventListener("click", () => setClient(i));
+        button.addEventListener("focus", () => setClient(i));
+        button.addEventListener("pointerenter", (event) => {
+          if (event.pointerType === "mouse") setClient(i);
+        });
+      });
+
+      // CTA: cursor-following spotlight
+      const ctaCard = document.querySelector("#cta-card");
+      ctaCard.addEventListener("pointermove", (event) => {
+        const rect = ctaCard.getBoundingClientRect();
+        ctaCard.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+        ctaCard.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      });
+
+      document.querySelector("#footer-year").textContent = new Date().getFullYear();
+    })();
+
+    /* ===== V2: hero, header ===== */
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const hero = document.querySelector("#hero");
+      requestAnimationFrame(() => hero.classList.add("is-loaded"));
+
+      // Hero slideshow with progress bar
+      const slides = [...hero.querySelectorAll(".hero-main img")];
+      const slideNum = document.querySelector("#hero-slide-num");
+      const slideBar = document.querySelector("#hero-slide-bar");
+      let slide = 0;
+      const runBar = () => {
+        slideBar.classList.remove("is-running");
+        void slideBar.offsetWidth;
+        slideBar.classList.add("is-running");
+      };
+      if (!reduceMotion) {
+        runBar();
+        slideBar.addEventListener("animationend", () => {
+          slides[slide].classList.remove("is-active");
+          slide = (slide + 1) % slides.length;
+          slides[slide].classList.add("is-active");
+          slideNum.textContent = String(slide + 1).padStart(2, "0");
+          runBar();
+        });
+      }
+
+      // Mouse depth parallax
+      const layers = [...hero.querySelectorAll(".hero-layer")];
+      if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
+        let raf = 0;
+        hero.addEventListener("pointermove", (event) => {
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const x = event.clientX / window.innerWidth - 0.5;
+            const y = event.clientY / window.innerHeight - 0.5;
+            layers.forEach((layer) => {
+              const depth = Number(layer.dataset.depth);
+              layer.style.setProperty("--hx", `${(x * depth).toFixed(1)}px`);
+              layer.style.setProperty("--hy", `${(y * depth).toFixed(1)}px`);
+            });
+          });
+        });
+        layers.forEach((layer) => { layer.style.transition = "translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1)"; });
+      }
+
+      // Header: solid after scroll, hides on scroll down
+      const header = document.querySelector(".site-header");
+      const menuToggle = document.querySelector("#menu-toggle");
+      let lastY = window.scrollY;
+      const onHeaderScroll = () => {
+        const y = window.scrollY;
+        header.classList.toggle("is-scrolled", y > 40);
+        const hide = y > lastY && y > 400 && !menuToggle.checked;
+        header.classList.toggle("is-hidden", hide);
+        lastY = y;
+      };
+      window.addEventListener("scroll", onHeaderScroll, { passive: true });
+      onHeaderScroll();
+    })();
   </script>
 </body>
 </html>
