@@ -2972,8 +2972,10 @@
     @media (max-width: 980px) {
       .hero-inner {
         grid-template-columns: minmax(0, 1fr);
+        align-content: start;
         width: min(100% - 40px, 1320px);
-        padding: 124px 0 90px;
+        min-height: 0;
+        padding: 124px 0 72px;
       }
 
       .hero-visual {
@@ -3554,14 +3556,15 @@
   </header>
 
   <main>
+    <!-- Hero photos: Unsplash License (free commercial use). Credits: Sou Jest, byhome work, Yves Monrique, Liubov Yelisieieva, Charlota Blunarova -->
     <section class="hero" id="hero" aria-labelledby="banner-title">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <span class="tx-kicker reveal">Apparel manufacturing &middot; Bangladesh</span>
-          <h1 class="hero-title split-words" id="banner-title">Reliable apparel, <em>made</em> for brands &amp; organizations</h1>
+          <span class="tx-kicker reveal">Fashion design &amp; dress manufacturing &middot; Bangladesh</span>
+          <h1 class="hero-title split-words" id="banner-title">Dresses <em>designed</em> &amp; made for your brand</h1>
           <p class="hero-lead reveal" style="--d: 350ms">
-            From small brand launches to structured corporate orders, TEXMORRO provides apparel production with clear processes and consistent quality, from first idea to finished product.
+            From the first sketch to the final stitch, TEXMORRO designs, samples and manufactures dresses and apparel for fashion brands and organizations, with clear processes and consistent quality.
           </p>
           <div class="hero-actions reveal" style="--d: 500ms">
             <a class="tx-btn" href="https://texmorro.netlify.app/contact">Start with a sample <span aria-hidden="true">&rarr;</span></a>
@@ -3577,23 +3580,24 @@
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-layer" data-depth="14">
             <div class="hero-main reveal-mask" style="--d: 250ms">
-              <img class="is-active" src="fashion-banner-blue.jpg" alt="">
-              <img src="fashion-banner-runway.jpg" alt="">
-              <img src="images/what-we-make/model-look.jpg" alt="">
+              <img class="is-active" src="images/hero/hero-designer-studio.jpg" alt="" data-label="Design" fetchpriority="high">
+              <img src="images/hero/hero-dressmaker-cutting.jpg" alt="" data-label="Cut &amp; sew">
+              <img src="images/hero/hero-embroidered-dress.jpg" alt="" data-label="Finish">
+              <img src="images/hero/hero-evening-dress.jpg" alt="" data-label="Wear">
               <div class="hero-slide-meta">
-                <span id="hero-slide-num">01</span>
+                <span><span id="hero-slide-num">01</span> &middot; <span id="hero-slide-label">Design</span></span>
                 <span class="hero-slide-bar"><i id="hero-slide-bar"></i></span>
-                <span>03</span>
+                <span>04</span>
               </div>
             </div>
           </div>
           <div class="hero-layer" data-depth="-24">
-            <div class="hero-side"><img src="fashion-banner-olive.jpg" alt=""></div>
+            <div class="hero-side"><img src="images/hero/hero-fashion-sketches.jpg" alt=""></div>
           </div>
           <div class="hero-layer" data-depth="34">
             <div class="hero-note">
               <b>&#10003;</b>
-              <span>Sample approved<small>Fit &middot; Fabric &middot; Finish</small></span>
+              <span>From sketch to stitch<small>Design &middot; Sample &middot; Produce</small></span>
             </div>
           </div>
           <a class="spin-badge" href="contact.html" tabindex="-1">
@@ -3921,6 +3925,7 @@
       </div>
     </section>
 
+    <!-- Client photos: Unsplash License (free commercial use). Credits: Taylor Heery, Cam Morin, Brian Kungu, Hayes, Thuy Duong Nguyen -->
     <section class="clients-section" aria-labelledby="clients-heading">
       <div class="clients-inner" id="clients">
         <div>
@@ -3977,11 +3982,11 @@
         </div>
 
         <div class="clients-gallery reveal" aria-hidden="true">
-          <img class="is-active" src="images/what-we-make/model-look.jpg" alt="" loading="lazy">
-          <img src="fashion-banner-olive.jpg" alt="" loading="lazy">
-          <img src="images/what-we-make/teamwear.jpg" alt="" loading="lazy">
-          <img src="images/what-we-make/tee-classic.jpg" alt="" loading="lazy">
-          <img src="fashion-banner-runway.jpg" alt="" loading="lazy">
+          <img class="is-active" src="images/clients/client-apparel-startup.jpg" alt="" loading="lazy">
+          <img src="images/clients/client-growing-brand.jpg" alt="" loading="lazy">
+          <img src="images/clients/client-corporate-uniform.jpg" alt="" loading="lazy">
+          <img src="images/clients/client-ngo-volunteers.jpg" alt="" loading="lazy">
+          <img src="images/clients/client-event-staff.jpg" alt="" loading="lazy">
           <div class="clients-tag"><span id="clients-tag-name">Apparel startups</span><em id="clients-tag-num">01 / 05</em></div>
         </div>
       </div>
@@ -4654,6 +4659,7 @@
       const slides = [...hero.querySelectorAll(".hero-main img")];
       const slideNum = document.querySelector("#hero-slide-num");
       const slideBar = document.querySelector("#hero-slide-bar");
+      const slideLabel = document.querySelector("#hero-slide-label");
       let slide = 0;
       const runBar = () => {
         slideBar.classList.remove("is-running");
@@ -4667,6 +4673,7 @@
           slide = (slide + 1) % slides.length;
           slides[slide].classList.add("is-active");
           slideNum.textContent = String(slide + 1).padStart(2, "0");
+          slideLabel.textContent = slides[slide].dataset.label;
           runBar();
         });
       }
