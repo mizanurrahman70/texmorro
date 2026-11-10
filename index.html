@@ -689,8 +689,7 @@
       transform: scaleY(0);
     }
 
-    .rely-frame,
-    .hero-main {
+    .rely-frame {
       --curtain: var(--night);
     }
 
@@ -2433,322 +2432,9 @@
     /* ==========================================================
        V2 — Hero
        ========================================================== */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      min-height: 100svh;
-      overflow: clip;
-      background: var(--night);
-      color: #fff;
-      isolation: isolate;
-    }
-
-    .hero-bg {
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background:
-        radial-gradient(700px 520px at 78% 30%, rgba(232, 212, 160, 0.14), transparent 60%),
-        radial-gradient(600px 400px at 0% 100%, rgba(31, 78, 110, 0.5), transparent 70%);
-    }
-
-    .hero-bg::before {
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-      background-size: calc(100% / 6) 100%;
-      content: "";
-      mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
-      -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
-    }
-
-    .hero-inner {
-      display: grid;
-      width: min(100% - 64px, 1320px);
-      min-height: inherit;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      align-items: center;
-      gap: clamp(40px, 6vw, 100px);
-      margin-inline: auto;
-      padding: 140px 0 90px;
-    }
-
-    .hero-title {
-      margin: 24px 0 0;
-      font-family: var(--serif);
-      font-size: clamp(50px, 6.6vw, 104px);
-      font-weight: 400;
-      line-height: 0.96;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-title em {
-      color: var(--cream);
-      font-style: italic;
-    }
-
-    .hero-lead {
-      max-width: 500px;
-      margin: 28px 0 0;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 36px;
-    }
-
-    .hero-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      margin: 52px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .hero-proof li {
-      display: grid;
-      gap: 6px;
-      padding: 0 30px;
-      border-left: 1px solid rgba(255, 255, 255, 0.16);
-    }
-
-    .hero-proof li:first-child {
-      padding-left: 0;
-      border-left: 0;
-    }
-
-    .hero-proof strong {
-      font-family: var(--serif);
-      font-size: 38px;
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .hero-proof strong sup {
-      color: var(--sun);
-      font-size: 0.5em;
-    }
-
-    .hero-proof span {
-      color: rgba(255, 255, 255, 0.55);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .hero-visual {
-      position: relative;
-      height: min(74vh, 700px);
-      min-height: 520px;
-    }
-
-    .hero-main {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 74%;
-      overflow: hidden;
-      border-radius: 260px 260px 24px 24px;
-      background: #18303f;
-    }
-
-    .hero-main img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 22%;
-      opacity: 0;
-      transform: scale(1.12);
-      transition: opacity 1200ms ease, transform 6500ms linear;
-    }
-
-    .hero-main img.is-active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .hero-main::after {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(5, 14, 22, 0.6), transparent 40%);
-      content: "";
-    }
-
-    .hero-slide-meta {
-      position: absolute;
-      z-index: 1;
-      right: 28px;
-      bottom: 26px;
-      left: 28px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .hero-slide-bar {
-      position: relative;
-      height: 2px;
-      flex: 1;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .hero-slide-bar i {
-      position: absolute;
-      inset: 0;
-      background: var(--sun);
-      transform: scaleX(0);
-      transform-origin: left;
-    }
-
-    .hero-slide-bar i.is-running {
-      animation: hero-bar 5200ms linear forwards;
-    }
-
     @keyframes hero-bar {
       to { transform: scaleX(1); }
     }
-
-    .hero-side {
-      position: absolute;
-      bottom: 8%;
-      left: 0;
-      width: 38%;
-      aspect-ratio: 0.78;
-      overflow: hidden;
-      border: 8px solid var(--night);
-      border-radius: 22px;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
-      opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 1000ms ease 900ms, transform 1200ms var(--ease-out) 900ms;
-    }
-
-    .hero.is-loaded .hero-side {
-      opacity: 1;
-      transform: none;
-    }
-
-    .hero-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-note {
-      position: absolute;
-      top: 14%;
-      left: 4%;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 18px 12px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 800ms ease 1400ms, transform 1000ms var(--ease-out) 1400ms;
-      animation: float 7s ease-in-out 2.4s infinite;
-    }
-
-    .hero.is-loaded .hero-note {
-      opacity: 1;
-      transform: none;
-    }
-
-    .hero-note b {
-      display: grid;
-      width: 34px;
-      height: 34px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--sun);
-      color: var(--deep);
-      font-size: 15px;
-    }
-
-    .hero-note span {
-      display: grid;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .hero-note small {
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 11px;
-      font-weight: 500;
-    }
-
-    .hero-visual .spin-badge {
-      position: absolute;
-      top: -10px;
-      right: -14px;
-      z-index: 2;
-      width: 112px;
-      height: 112px;
-    }
-
-    .hero-layer {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      translate: var(--hx, 0px) var(--hy, 0px);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 26px;
-      left: 50%;
-      display: grid;
-      justify-items: center;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transform: translateX(-50%);
-    }
-
-    .hero-scroll i {
-      position: relative;
-      width: 1px;
-      height: 44px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.18);
-    }
-
-    .hero-scroll i::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 1px;
-      height: 40%;
-      background: var(--sun);
-      content: "";
-      animation: scroll-cue 2s var(--ease-out) infinite;
-    }
-
     @keyframes scroll-cue {
       from { transform: translateY(-100%); }
       to { transform: translateY(260%); }
@@ -2850,15 +2536,6 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
-    }
-
-    .path-index {
-      font-family: var(--serif);
-      font-size: clamp(64px, 7vw, 110px);
-      font-style: italic;
-      line-height: 0.8;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
     }
 
     .path-label {
@@ -2970,23 +2647,6 @@
     }
 
     @media (max-width: 980px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        align-content: start;
-        width: min(100% - 40px, 1320px);
-        min-height: 0;
-        padding: 124px 0 72px;
-      }
-
-      .hero-visual {
-        height: 560px;
-        min-height: 0;
-      }
-
-      .hero-scroll {
-        display: none;
-      }
-
       .paths-head {
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
@@ -3008,71 +2668,6 @@
     }
 
     @media (max-width: 640px) {
-      .hero-inner {
-        width: min(100% - 32px, 1320px);
-      }
-
-      .hero-title {
-        font-size: clamp(44px, 12.5vw, 60px);
-      }
-
-      .hero-lead {
-        font-size: 15px;
-      }
-
-      .hero-proof {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .hero-proof li {
-        padding: 0 12px;
-      }
-
-      .hero-slide-meta {
-        display: none;
-      }
-
-      .hero-proof strong {
-        font-size: 30px;
-      }
-
-      .hero-proof span {
-        font-size: 9.5px;
-      }
-
-      .hero-visual {
-        height: 460px;
-      }
-
-      .hero-main {
-        width: 82%;
-      }
-
-      .hero-side {
-        width: 42%;
-        border-width: 5px;
-      }
-
-      .hero-note {
-        top: auto;
-        bottom: 2%;
-        left: auto;
-        right: 4%;
-      }
-
-      .hero-visual .spin-badge {
-        width: 92px;
-        height: 92px;
-        top: -16px;
-        right: -6px;
-      }
-
-      .hero-visual .spin-badge b {
-        width: 36px;
-        height: 36px;
-      }
-
       .paths {
         padding-inline: 16px;
       }
@@ -3084,11 +2679,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-side,
-      .hero-note {
-        opacity: 1 !important;
-        transform: none !important;
-      }
     }
 
 
@@ -3524,6 +3114,291 @@
       }
     }
 
+
+    /* ==========================================================
+       Hero — full-width slideshow, centered text
+       ========================================================== */
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 100vh;
+      min-height: 100svh;
+      flex-direction: column;
+      overflow: clip;
+      background: var(--night);
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .hero-slides {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+    }
+
+    .hero-slides img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0;
+      transform: scale(1.12);
+      transition: opacity 1200ms ease, transform 4800ms linear;
+    }
+
+    .hero-slides img.is-active {
+      z-index: 1;
+      opacity: 1;
+      transform: scale(1.02);
+    }
+
+    .hero-shade {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 48%, rgba(6, 16, 25, 0.55), rgba(6, 16, 25, 0.2) 70%),
+        linear-gradient(180deg, rgba(6, 16, 25, 0.7) 0%, rgba(6, 16, 25, 0.1) 26%, rgba(6, 16, 25, 0.15) 60%, rgba(6, 16, 25, 0.85) 100%);
+    }
+
+    .hero-center {
+      display: flex;
+      width: min(100% - 48px, 980px);
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-inline: auto;
+      padding: 150px 0 40px;
+      text-align: center;
+    }
+
+    .hero-kicker::after {
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .hero-title {
+      margin: 24px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(52px, 7.4vw, 118px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 40px rgba(0, 0, 0, 0.35);
+      text-wrap: balance;
+    }
+
+    .hero-title em {
+      color: var(--cream);
+      font-style: italic;
+    }
+
+    .hero-lead {
+      max-width: 600px;
+      margin: 26px auto 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 17px;
+      line-height: 1.75;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .hero-actions .tx-btn.is-ghost {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hero-bottom {
+      display: flex;
+      width: min(100% - 64px, 1320px);
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin: 0 auto;
+      padding: 0 0 36px;
+    }
+
+    .hero-proof {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-proof li {
+      display: grid;
+      gap: 6px;
+      padding: 0 28px;
+      border-left: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .hero-proof li:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .hero-proof strong {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .hero-proof strong sup {
+      color: var(--sun);
+      font-size: 0.5em;
+    }
+
+    .hero-proof span {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-dots {
+      display: grid;
+      width: min(420px, 40vw);
+      gap: 14px;
+    }
+
+    .hero-dots-label {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .hero-dots-label b {
+      color: var(--sun);
+    }
+
+    .hero-dots-bars {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      gap: 8px;
+    }
+
+    .hero-dot {
+      position: relative;
+      height: 22px;
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    .hero-dot::before,
+    .hero-dot i {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      height: 2px;
+      margin-top: -1px;
+      content: "";
+    }
+
+    .hero-dot::before {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-dot i {
+      background: var(--sun);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .hero-dot.is-done i {
+      transform: scaleX(1);
+    }
+
+    .hero-dot.is-current i {
+      animation: hero-bar var(--hero-ms, 3000ms) linear forwards;
+    }
+
+    .hero-dot:focus-visible {
+      outline: 2px solid var(--sun);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 760px) {
+      .hero-center {
+        width: min(100% - 32px, 980px);
+        padding: 130px 0 32px;
+      }
+
+      .hero-title {
+        font-size: clamp(44px, 12.5vw, 64px);
+      }
+
+      .hero-lead {
+        font-size: 15px;
+      }
+
+      .hero-actions .tx-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: space-between;
+      }
+
+      .hero-bottom {
+        width: min(100% - 32px, 1320px);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        padding-bottom: 24px;
+      }
+
+      .hero-proof {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .hero-proof li {
+        padding: 0 12px;
+      }
+
+      .hero-proof strong {
+        font-size: 28px;
+      }
+
+      .hero-proof span {
+        font-size: 9px;
+      }
+
+      .hero-dots {
+        width: 100%;
+      }
+
+      .hero-dots-label {
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slides img {
+        transform: none !important;
+      }
+    }
+
     [id] { scroll-margin-top: 90px; }
   </style>
 </head>
@@ -3556,57 +3431,40 @@
   </header>
 
   <main>
-    <!-- Hero photos: Unsplash License (free commercial use). Credits: Sou Jest, byhome work, Yves Monrique, Liubov Yelisieieva, Charlota Blunarova -->
+    <!-- Hero photos: Unsplash License (free commercial use). Credits: Bulbul Ahmed, Vitaly Gariev, Tomáš Petz, Khaled Ghareeb -->
     <section class="hero" id="hero" aria-labelledby="banner-title">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="tx-kicker reveal">Fashion design &amp; dress manufacturing &middot; Bangladesh</span>
-          <h1 class="hero-title split-words" id="banner-title">Dresses <em>designed</em> &amp; made for your brand</h1>
-          <p class="hero-lead reveal" style="--d: 350ms">
-            From the first sketch to the final stitch, TEXMORRO designs, samples and manufactures dresses and apparel for fashion brands and organizations, with clear processes and consistent quality.
-          </p>
-          <div class="hero-actions reveal" style="--d: 500ms">
-            <a class="tx-btn" href="https://texmorro.netlify.app/contact">Start with a sample <span aria-hidden="true">&rarr;</span></a>
-            <a class="tx-btn is-ghost" href="#services-heading">Our services <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <ul class="hero-proof reveal" style="--d: 650ms">
-            <li><strong>5<sup>+</sup></strong><span>Years of production</span></li>
-            <li><strong>50<sup>+</sup></strong><span>Global partners</span></li>
-            <li><strong>Low</strong><span>MOQ to start</span></li>
-          </ul>
-        </div>
+      <div class="hero-slides" aria-hidden="true">
+        <img class="is-active" src="images/hero/wide-gown.jpg" alt="" data-label="Couture gowns" fetchpriority="high">
+        <img src="images/hero/wide-atelier-fitting.jpg" alt="" data-label="Design &amp; fitting">
+        <img src="images/hero/wide-sewing.jpg" alt="" data-label="Expert stitching">
+        <img src="images/hero/wide-couture.jpg" alt="" data-label="Statement dresses">
+        <img src="images/hero/wide-designer-studio.jpg" alt="" data-label="Our design studio">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-layer" data-depth="14">
-            <div class="hero-main reveal-mask" style="--d: 250ms">
-              <img class="is-active" src="images/hero/hero-designer-studio.jpg" alt="" data-label="Design" fetchpriority="high">
-              <img src="images/hero/hero-dressmaker-cutting.jpg" alt="" data-label="Cut &amp; sew">
-              <img src="images/hero/hero-embroidered-dress.jpg" alt="" data-label="Finish">
-              <img src="images/hero/hero-evening-dress.jpg" alt="" data-label="Wear">
-              <div class="hero-slide-meta">
-                <span><span id="hero-slide-num">01</span> &middot; <span id="hero-slide-label">Design</span></span>
-                <span class="hero-slide-bar"><i id="hero-slide-bar"></i></span>
-                <span>04</span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-layer" data-depth="-24">
-            <div class="hero-side"><img src="images/hero/hero-fashion-sketches.jpg" alt=""></div>
-          </div>
-          <div class="hero-layer" data-depth="34">
-            <div class="hero-note">
-              <b>&#10003;</b>
-              <span>From sketch to stitch<small>Design &middot; Sample &middot; Produce</small></span>
-            </div>
-          </div>
-          <a class="spin-badge" href="contact.html" tabindex="-1">
-            <svg viewBox="0 0 100 100"><defs><path id="badge-circle-h" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text><textPath href="#badge-circle-h">Textiles for tomorrow • </textPath></text></svg>
-            <b>&rarr;</b>
-          </a>
+      <div class="hero-center">
+        <span class="tx-kicker hero-kicker reveal">Fashion design &amp; dress manufacturing &middot; Bangladesh</span>
+        <h1 class="hero-title split-words" id="banner-title">Dresses <em>designed</em> &amp; made for your brand</h1>
+        <p class="hero-lead reveal" style="--d: 350ms">
+          From the first sketch to the final stitch, TEXMORRO designs, samples and manufactures dresses and apparel for fashion brands and organizations.
+        </p>
+        <div class="hero-actions reveal" style="--d: 500ms">
+          <a class="tx-btn" href="https://texmorro.netlify.app/contact">Start with a sample <span aria-hidden="true">&rarr;</span></a>
+          <a class="tx-btn is-ghost" href="#services-heading">Our services <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
-      <a class="hero-scroll" href="#pathways-heading" aria-label="Scroll to next section">Scroll<i></i></a>
+
+      <div class="hero-bottom">
+        <ul class="hero-proof reveal" style="--d: 650ms">
+          <li><strong>5<sup>+</sup></strong><span>Years of production</span></li>
+          <li><strong>50<sup>+</sup></strong><span>Global partners</span></li>
+          <li><strong>Low</strong><span>MOQ to start</span></li>
+        </ul>
+        <div class="hero-dots" role="group" aria-label="Hero slides">
+          <span class="hero-dots-label"><b id="hero-slide-num">01</b> &middot; <span id="hero-slide-label">Couture gowns</span></span>
+          <div class="hero-dots-bars" id="hero-dots"></div>
+        </div>
+      </div>
     </section>
 
     <section class="brand-marquee" aria-labelledby="brand-marquee-label">
@@ -3647,7 +3505,6 @@
           <article class="path-panel reveal">
             <img src="fashion-banner-olive.jpg" alt="Model wearing an olive embroidered jacket from an independent label collection" loading="lazy">
             <div class="path-top">
-              <span class="path-index" aria-hidden="true">01</span>
               <span class="path-label">Apparel brands</span>
             </div>
             <div class="path-body">
@@ -3663,7 +3520,6 @@
           <article class="path-panel reveal" style="--d: 150ms">
             <img src="images/what-we-make/polo-shirt.jpg" alt="Crisp white work shirt on a hanger, ready for a team order" loading="lazy">
             <div class="path-top">
-              <span class="path-index" aria-hidden="true">02</span>
               <span class="path-label">Corporate &amp; institutional</span>
             </div>
             <div class="path-body">
@@ -4655,47 +4511,57 @@
       const hero = document.querySelector("#hero");
       requestAnimationFrame(() => hero.classList.add("is-loaded"));
 
-      // Hero slideshow with progress bar
-      const slides = [...hero.querySelectorAll(".hero-main img")];
+      // Hero: full-width slideshow, changes every 3 seconds
+      const SLIDE_MS = 3000;
+      const slides = [...hero.querySelectorAll(".hero-slides img")];
       const slideNum = document.querySelector("#hero-slide-num");
-      const slideBar = document.querySelector("#hero-slide-bar");
       const slideLabel = document.querySelector("#hero-slide-label");
+      const dotsWrap = document.querySelector("#hero-dots");
+      hero.style.setProperty("--hero-ms", `${SLIDE_MS}ms`);
       let slide = 0;
-      const runBar = () => {
-        slideBar.classList.remove("is-running");
-        void slideBar.offsetWidth;
-        slideBar.classList.add("is-running");
-      };
-      if (!reduceMotion) {
-        runBar();
-        slideBar.addEventListener("animationend", () => {
-          slides[slide].classList.remove("is-active");
-          slide = (slide + 1) % slides.length;
-          slides[slide].classList.add("is-active");
-          slideNum.textContent = String(slide + 1).padStart(2, "0");
-          slideLabel.textContent = slides[slide].dataset.label;
-          runBar();
+
+      const dots = slides.map((img, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "hero-dot";
+        dot.setAttribute("aria-label", `Show slide ${i + 1}: ${img.dataset.label}`);
+        dot.append(document.createElement("i"));
+        dot.addEventListener("click", () => goTo(i));
+        dotsWrap.append(dot);
+        return dot;
+      });
+
+      function goTo(index) {
+        slides[slide].classList.remove("is-active");
+        slide = (index + slides.length) % slides.length;
+        slides[slide].classList.add("is-active");
+        slideNum.textContent = String(slide + 1).padStart(2, "0");
+        slideLabel.textContent = slides[slide].dataset.label;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("is-done", i < slide);
+          dot.classList.remove("is-current");
+          dot.setAttribute("aria-current", String(i === slide));
         });
+        if (!reduceMotion) {
+          const current = dots[slide];
+          void current.offsetWidth;
+          current.classList.add("is-current");
+          schedule();
+        } else {
+          dots[slide].classList.add("is-done");
+        }
       }
 
-      // Mouse depth parallax
-      const layers = [...hero.querySelectorAll(".hero-layer")];
-      if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
-        let raf = 0;
-        hero.addEventListener("pointermove", (event) => {
-          cancelAnimationFrame(raf);
-          raf = requestAnimationFrame(() => {
-            const x = event.clientX / window.innerWidth - 0.5;
-            const y = event.clientY / window.innerHeight - 0.5;
-            layers.forEach((layer) => {
-              const depth = Number(layer.dataset.depth);
-              layer.style.setProperty("--hx", `${(x * depth).toFixed(1)}px`);
-              layer.style.setProperty("--hy", `${(y * depth).toFixed(1)}px`);
-            });
-          });
-        });
-        layers.forEach((layer) => { layer.style.transition = "translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1)"; });
-      }
+      // Timer drives the slides (reliable 3s cadence); CSS bar is visual only
+      let timer = 0;
+      const schedule = () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => goTo(slide + 1), SLIDE_MS);
+      };
+
+      // Preload the other slides after the first paint so changes are instant
+      window.addEventListener("load", () => slides.slice(1).forEach((img) => img.decode && img.decode().catch(() => {})));
+      goTo(0);
 
       // Header: solid after scroll, hides on scroll down
       const header = document.querySelector(".site-header");
