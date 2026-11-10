@@ -1044,24 +1044,24 @@
     }
 
     /* ==========================================================
-       02 — Trusted production (cinematic proof)
+       02 — Trusted production
        ========================================================== */
     .proof-section {
-      padding: clamp(84px, 10vw, 140px) 24px;
-      background: var(--paper);
+      padding: clamp(68px, 8vw, 108px) 24px;
+      background: #fff;
     }
 
     .proof-inner {
-      width: min(100%, 1320px);
+      width: min(100%, 1200px);
       margin-inline: auto;
     }
 
     .proof-head {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.6fr);
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.65fr);
       align-items: end;
-      gap: 48px;
-      margin-bottom: 48px;
+      gap: 40px;
+      margin-bottom: 32px;
     }
 
     .proof-head .tx-title {
@@ -1075,150 +1075,72 @@
       line-height: 1.8;
     }
 
-    .proof-stage {
-      position: relative;
-      height: clamp(460px, 62vw, 720px);
-      overflow: hidden;
-      border-radius: 22px;
-      background: #203c4d;
-    }
-
-    .proof-stage > img {
-      position: absolute;
-      inset: -12% 0;
-      width: 100%;
-      height: 124%;
-      object-fit: cover;
-      transform: translateY(var(--py, 0px)) scale(1.04);
-    }
-
-    .proof-stage::after {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(8, 20, 30, 0.75), rgba(8, 20, 30, 0.1) 60%),
-        linear-gradient(0deg, rgba(8, 20, 30, 0.6), transparent 50%);
-      content: "";
-    }
-
-    .proof-quote {
-      position: absolute;
-      z-index: 1;
-      bottom: clamp(28px, 5vw, 64px);
-      left: clamp(28px, 5vw, 64px);
-      max-width: 540px;
-      color: #fff;
-    }
-
-    .proof-quote blockquote {
-      margin: 18px 0 0;
-      font-family: var(--serif);
-      font-size: clamp(26px, 3vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-
     .proof-stats {
-      position: absolute;
-      z-index: 1;
-      top: clamp(20px, 4vw, 44px);
-      right: clamp(20px, 4vw, 44px);
       display: grid;
-      width: min(320px, 44%);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(18px) saturate(1.3);
-      -webkit-backdrop-filter: blur(18px) saturate(1.3);
+      margin-bottom: 36px;
+      border: 1px solid rgba(20, 42, 70, 0.12);
+      border-radius: 12px;
+      background: rgba(20, 42, 70, 0.12);
     }
 
     .proof-stat {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px 24px;
-      background: rgba(10, 25, 36, 0.4);
-      color: #fff;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 22px 26px;
+      background: #f7f6f2;
+      color: var(--ink);
     }
 
     .proof-stat strong {
       font-family: var(--serif);
-      font-size: clamp(34px, 3.4vw, 48px);
+      font-size: clamp(32px, 4vw, 46px);
       font-weight: 400;
       line-height: 1;
       font-variant-numeric: tabular-nums;
     }
 
     .proof-stat strong sup {
-      color: var(--sun);
+      color: #947b48;
       font-size: 0.5em;
     }
 
     .proof-stat > span {
-      max-width: 110px;
-      color: rgba(255, 255, 255, 0.75);
+      color: #62676b;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       line-height: 1.4;
-      text-align: right;
       text-transform: uppercase;
     }
 
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(20px, 3vw, 40px);
-      margin-top: 56px;
+      gap: 16px;
+      margin-top: 0;
     }
 
     .proof-card {
-      position: relative;
-      padding-top: 26px;
-    }
-
-    .proof-card::before,
-    .proof-card::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 1px;
-      content: "";
-    }
-
-    .proof-card::before {
-      right: 0;
-      background: rgba(20, 42, 70, 0.16);
-    }
-
-    .proof-card::after {
-      width: 0;
-      height: 2px;
-      background: var(--ink);
-      transition: width 700ms var(--ease-out);
-    }
-
-    .proof-card:hover::after {
-      width: 100%;
+      padding: 24px 20px;
+      border: 1px solid rgba(20, 42, 70, 0.1);
+      border-radius: 10px;
+      background: #fff;
     }
 
     .proof-icon {
       display: grid;
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
       place-items: center;
-      margin-bottom: 22px;
-      border-radius: 14px;
-      background: var(--ink);
-      color: var(--sun);
-      transition: transform 500ms var(--ease-out);
-    }
-
-    .proof-card:hover .proof-icon {
-      transform: rotate(-8deg) scale(1.06);
+      margin-bottom: 18px;
+      border-radius: 8px;
+      background: #f5df76;
+      color: var(--ink);
     }
 
     .proof-icon svg {
@@ -1239,6 +1161,145 @@
       color: #62676b;
       font-size: 14px;
       line-height: 1.75;
+    }
+
+    /* ==========================================================
+       03 — Markets and production programs
+       ========================================================== */
+    .markets-section {
+      position: relative;
+      padding: clamp(76px, 8.5vw, 116px) 0 48px;
+      overflow: hidden;
+      border-top: 1px solid rgba(20, 42, 70, 0.1);
+      background:
+        radial-gradient(ellipse at 82% 0, rgba(245, 223, 118, 0.16), transparent 34%),
+        linear-gradient(180deg, #fff 0%, #fbfaf6 100%);
+      color: var(--ink);
+    }
+
+    .markets-inner {
+      width: min(100% - 48px, 1280px);
+      margin-inline: auto;
+    }
+
+    .markets-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.75fr);
+      align-items: end;
+      gap: clamp(32px, 7vw, 104px);
+      margin-bottom: 52px;
+    }
+
+    .markets-copy .tx-title {
+      max-width: 760px;
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: clamp(42px, 5.7vw, 72px);
+      letter-spacing: -0.055em;
+      line-height: 1;
+    }
+
+    .markets-copy .tx-title em {
+      color: #8c7650;
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .markets-intro {
+      max-width: 440px;
+      margin: 0 0 3px;
+      color: #616d70;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .markets-lanes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mq-row {
+      display: flex;
+      flex: none;
+      gap: 14px;
+      padding-right: 14px;
+    }
+
+    .markets-lane {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+    }
+
+    .markets-track {
+      display: flex;
+      width: max-content;
+      animation: markets-scroll-left 48s linear infinite;
+      will-change: transform;
+    }
+
+    .markets-lane--reverse .markets-track {
+      animation-name: markets-scroll-right;
+      animation-duration: 54s;
+    }
+
+    .brand {
+      display: flex;
+      width: clamp(220px, 19vw, 250px);
+      min-height: 126px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 1px solid rgba(72, 128, 99, 0.16);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 12px 30px rgba(20, 42, 70, 0.045);
+      transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+    }
+
+    .markets-section .brand:hover {
+      transform: translateY(-4px);
+      border-color: rgba(166, 141, 84, 0.48);
+      box-shadow: 0 18px 36px rgba(20, 42, 70, 0.1);
+    }
+
+    .markets-section .brand img {
+      display: block;
+      width: min(100%, 180px);
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .markets-caption {
+      margin: 24px 24px 0;
+      color: #718078;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .markets-section:hover .markets-track,
+    .markets-lane:focus-within .markets-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes markets-scroll-left {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes markets-scroll-right {
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
     }
 
     /* ==========================================================
@@ -1497,7 +1558,331 @@
     }
 
     /* ==========================================================
-       05 — CTA (spotlight card)
+       05 — Client reviews
+       ========================================================== */
+    .reviews-section {
+      position: relative;
+      padding: clamp(82px, 9vw, 124px) 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 8% 12%, rgba(245, 223, 118, 0.1), transparent 34%),
+        radial-gradient(ellipse at 92% 78%, rgba(255, 255, 255, 0.045), transparent 36%),
+        var(--night);
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .reviews-section::before {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 24px;
+      left: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(245, 223, 118, 0.42), transparent);
+      content: "";
+    }
+
+    .reviews-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 1480px);
+      margin-inline: auto;
+    }
+
+    .reviews-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.65fr);
+      align-items: end;
+      gap: clamp(32px, 7vw, 104px);
+      margin: 0 0 50px;
+      text-align: left;
+    }
+
+    .reviews-head .tx-title {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: #fff;
+      font-size: clamp(42px, 6.2vw, 78px);
+      letter-spacing: -0.055em;
+      line-height: 0.99;
+    }
+
+    .reviews-head .tx-title em {
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .reviews-context {
+      position: relative;
+      padding: 4px 0 4px 24px;
+      border-left: 1px solid rgba(245, 223, 118, 0.48);
+    }
+
+    .reviews-note {
+      max-width: 410px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .reviews-summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .reviews-summary-avatars {
+      display: flex;
+      align-items: center;
+      padding-left: 5px;
+    }
+
+    .reviews-summary-avatars img {
+      width: 34px;
+      height: 34px;
+      margin-left: -7px;
+      border: 2px solid var(--night);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 24%;
+    }
+
+    .reviews-summary-stars {
+      color: var(--sun);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .reviews-summary-label {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+    }
+
+    .reviews-demo-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .reviews-demo-label::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sun);
+      content: "";
+    }
+
+    .reviews-marquees {
+      display: grid;
+      gap: 14px;
+      margin-inline: calc((min(100vw, 1600px) - min(100%, 1480px)) / -2);
+    }
+
+    .reviews-marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent);
+    }
+
+    .reviews-track {
+      display: flex;
+      width: max-content;
+      animation: reviews-marquee-left 56s linear infinite;
+      will-change: transform;
+    }
+
+    .reviews-marquee--reverse .reviews-track {
+      animation-name: reviews-marquee-right;
+      animation-duration: 62s;
+    }
+
+    .reviews-group {
+      display: flex;
+      flex: none;
+      align-items: stretch;
+      gap: 14px;
+      padding-right: 14px;
+    }
+
+    .review-card {
+      position: relative;
+      display: flex;
+      width: clamp(310px, 30vw, 390px);
+      min-height: 288px;
+      flex-direction: column;
+      padding: 29px 30px 25px;
+      overflow: hidden;
+      border: 1px solid rgba(20, 42, 70, 0.1);
+      border-radius: 10px;
+      background: linear-gradient(145deg, #fffefa, #f3f0e7);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.24);
+    }
+
+    .review-card::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--sun), rgba(245, 223, 118, 0.12));
+      content: "";
+    }
+
+    .reviews-marquee--reverse .review-card:nth-child(even) {
+      background: linear-gradient(145deg, #ece8dc, #e1ddcf);
+    }
+
+    .review-rating {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 0.13em;
+      line-height: 1;
+    }
+
+    .review-quote {
+      position: relative;
+      flex: 1;
+      margin: 20px 0 24px;
+      color: #24384b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      font-weight: 400;
+      letter-spacing: -0.012em;
+      line-height: 1.65;
+    }
+
+    .review-quote::before {
+      position: absolute;
+      top: -25px;
+      right: 0;
+      color: rgba(180, 145, 57, 0.12);
+      content: "”";
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 98px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .review-profile {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(20, 42, 70, 0.12);
+    }
+
+    .review-avatar {
+      display: block;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(20, 42, 70, 0.14);
+      object-fit: cover;
+      object-position: center 24%;
+    }
+
+    .review-profile-name {
+      display: block;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+    }
+
+    .review-profile-role {
+      display: block;
+      margin-top: 5px;
+      color: #777b7e;
+      font-size: 10px;
+    }
+
+    .reviews-pause {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 24px auto 0;
+      padding: 9px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.68);
+      cursor: pointer;
+      font: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+    }
+
+    @media (max-width: 900px) {
+      .reviews-head {
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 0.75fr);
+        gap: 36px;
+      }
+
+      .reviews-head .tx-title {
+        font-size: clamp(42px, 7vw, 64px);
+      }
+    }
+
+    .reviews-pause:hover,
+    .reviews-pause:focus-visible {
+      border-color: var(--sun);
+      background: rgba(245, 223, 118, 0.1);
+      color: #fff;
+    }
+
+    .reviews-pause:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .reviews-section.is-paused .reviews-track,
+    .reviews-section:not(.is-visible) .reviews-track,
+    .reviews-marquee:hover .reviews-track,
+    .reviews-marquee:focus-within .reviews-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes reviews-marquee-left {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes reviews-marquee-right {
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    /* ==========================================================
+       06 — CTA (spotlight card)
        ========================================================== */
     .cta-section {
       padding: clamp(84px, 9vw, 130px) 24px;
@@ -1762,7 +2147,8 @@
        ========================================================== */
     @media (max-width: 980px) {
       .rely-inner,
-      .proof-head {
+      .proof-head,
+      .markets-head {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -1806,9 +2192,47 @@
       .rely-section,
       .proof-section,
       .clients-section,
+      .reviews-section,
       .cta-section,
       .site-footer {
         padding-inline: 16px;
+      }
+
+      .markets-section {
+        padding-block: 64px 32px;
+      }
+
+      .markets-inner {
+        width: calc(100% - 32px);
+      }
+
+      .markets-head {
+        gap: 28px;
+        margin-bottom: 32px;
+      }
+
+      .markets-copy .tx-title {
+        font-size: clamp(42px, 11.5vw, 58px);
+      }
+
+      .markets-intro {
+        font-size: 14px;
+      }
+
+      .brand {
+        width: 230px;
+        min-height: 112px;
+        padding: 14px;
+      }
+
+      .markets-section .brand img {
+        width: min(100%, 155px);
+        height: 64px;
+      }
+
+      .markets-caption {
+        margin-top: 18px;
+        font-size: 9px;
       }
 
       .clients-inner {
@@ -1832,6 +2256,35 @@
 
       .clients-inner > div:first-child > #clients-heading {
         grid-area: heading;
+      }
+
+      .reviews-head {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+
+      .reviews-head .tx-title {
+        max-width: 480px;
+        font-size: clamp(42px, 12vw, 58px);
+      }
+
+      .reviews-context {
+        padding-left: 16px;
+      }
+
+      .reviews-summary {
+        margin-top: 16px;
+      }
+
+      .review-card {
+        width: min(82vw, 350px);
+        min-height: 270px;
+        padding: 25px 24px 22px;
+      }
+
+      .review-quote {
+        font-size: 16px;
       }
 
       .clients-gallery {
@@ -1869,39 +2322,12 @@
         font-size: 11px;
       }
 
-      .proof-stage {
-        height: auto;
-        min-height: 560px;
-      }
-
       .proof-stats {
-        top: 16px;
-        right: 16px;
-        left: 16px;
-        width: calc(100% - 32px);
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-bottom: 28px;
       }
 
       .proof-stat {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-        padding: 14px;
-      }
-
-      .proof-stat > span {
-        max-width: none;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0;
-        text-transform: none;
-        text-align: left;
-      }
-
-      .proof-quote {
-        right: 20px;
-        bottom: 24px;
-        left: 20px;
+        padding: 16px 14px;
       }
 
       .proof-grid {
@@ -1936,6 +2362,26 @@
     @media (prefers-reduced-motion: reduce) {
       .mask-curtain {
         display: none;
+      }
+
+      .reviews-track {
+        animation: none !important;
+      }
+
+      .markets-track {
+        animation: none !important;
+      }
+
+      .reviews-marquee {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+
+      .markets-lane {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
       }
 
       .reveal,
@@ -3481,17 +3927,10 @@
           <p class="reveal" style="--d: 200ms">Years on the factory floor have taught us what consistency takes. That experience goes into every order we produce.</p>
         </div>
 
-        <div class="proof-stage reveal-mask">
-          <img class="parallax" data-speed="-0.1" src="images/what-we-make/collection.jpg" alt="A finished apparel collection produced by Texmorro" loading="lazy">
-          <div class="proof-stats">
-            <div class="proof-stat"><strong><span data-count="5">5</span><sup>+</sup></strong><span>Years of excellence</span></div>
-            <div class="proof-stat"><strong><span data-count="50">50</span><sup>+</sup></strong><span>Global partners</span></div>
-            <div class="proof-stat"><strong><span data-count="100">100</span><sup>%</sup></strong><span>Quality assurance</span></div>
-          </div>
-          <div class="proof-quote">
-            <span class="tx-kicker">Made in Bangladesh</span>
-            <blockquote>“Every garment leaves our floor only after it meets the standard you approved.”</blockquote>
-          </div>
+        <div class="proof-stats">
+          <div class="proof-stat"><strong><span data-count="5">5</span><sup>+</sup></strong><span>Years of excellence</span></div>
+          <div class="proof-stat"><strong><span data-count="50">50</span><sup>+</sup></strong><span>Global partners</span></div>
+          <div class="proof-stat"><strong><span data-count="100">100</span><sup>%</sup></strong><span>Quality assurance</span></div>
         </div>
 
         <div class="proof-grid">
@@ -3516,6 +3955,58 @@
             <p>Production rooted in one of the world’s leading apparel hubs, shipped to clients worldwide.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="markets-section" aria-labelledby="markets-heading">
+      <div class="markets-inner">
+        <div class="markets-head">
+          <div class="markets-copy">
+            <span class="tx-kicker is-dark reveal">A global production partner</span>
+            <h2 class="tx-title is-dark split-words" id="markets-heading">Trusted by brands<br><em>across five markets.</em></h2>
+          </div>
+          <p class="markets-intro reveal" style="--d: 160ms">From first samples to repeat production, we help established labels bring considered apparel to customers around the world.</p>
+        </div>
+
+        <div class="markets-lanes" aria-label="Brands and licenses produced for">
+          <div class="markets-lane" tabindex="0" role="region" aria-label="Brand logos, first row">
+            <div class="markets-track">
+              <div class="mq-row" id="mqA">
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img1.png" alt="H&amp;M" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img2.png" alt="La Senza" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img3.png" alt="Etam" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img4.png" alt="Gisela" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img5.png" alt="ICA" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img6.png" alt="Women'secret" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img7.png" alt="HEMA" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img8.png" alt="Sielei" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img9.png" alt="TenCate" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img10.png" alt="Triumph" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img11.png" alt="U.S. Polo Assn." loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img12.png" alt="Diesel" loading="lazy"></div>
+              </div>
+            </div>
+          </div>
+          <div class="markets-lane markets-lane--reverse" tabindex="0" role="region" aria-label="Brand logos, second row">
+            <div class="markets-track">
+              <div class="mq-row" id="mqB">
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img12.png" alt="Diesel" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img11.png" alt="U.S. Polo Assn." loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img10.png" alt="Triumph" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img9.png" alt="TenCate" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img8.png" alt="Sielei" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img7.png" alt="HEMA" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img6.png" alt="Women'secret" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img5.png" alt="ICA" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img4.png" alt="Gisela" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img3.png" alt="Etam" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img2.png" alt="La Senza" loading="lazy"></div>
+                <div class="brand"><img src="https://www.strugglestyle.net/images/license/img1.png" alt="H&amp;M" loading="lazy"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="markets-caption">Brands &amp; licenses produced for · Logos shown with permission</p>
       </div>
     </section>
 
@@ -3582,6 +4073,95 @@
           <img src="fashion-banner-runway.jpg" alt="" loading="lazy">
           <div class="clients-tag"><span id="clients-tag-name">Apparel startups</span><em id="clients-tag-num">01 / 05</em></div>
         </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" aria-labelledby="reviews-heading">
+      <div class="reviews-inner">
+        <div class="reviews-head">
+          <div class="reviews-heading-copy">
+            <span class="tx-kicker is-dark reveal">Client feedback</span>
+            <h2 class="tx-title is-dark split-words" id="reviews-heading">Good work is built <em>together.</em></h2>
+          </div>
+          <div class="reviews-context">
+            <p class="reviews-note reveal" style="--d: 180ms">Thoughtful production, clear communication and a partner you can count on — from the first sample to every repeat run.</p>
+            <div class="reviews-summary reveal" style="--d: 260ms">
+              <span class="reviews-summary-avatars" aria-hidden="true">
+                <img src="images/what-we-make/model-look.jpg" alt="">
+                <img src="fashion-banner-olive.jpg" alt="">
+                <img src="fashion-banner-runway.jpg" alt="">
+              </span>
+              <span class="reviews-summary-stars" aria-label="Illustrative five-star ratings">★★★★★</span>
+              <span class="reviews-summary-label">Illustrative sample reviews</span>
+            </div>
+            <span class="reviews-demo-label">Demo content · Replace with verified feedback before publishing</span>
+          </div>
+        </div>
+
+        <div class="reviews-marquees" aria-label="Illustrative sample reviews">
+          <div class="reviews-marquee" tabindex="0" role="region" aria-label="First row of sample reviews">
+            <div class="reviews-track" id="reviews-track-one">
+              <div class="reviews-group">
+                <article class="review-card">
+                  <div class="review-rating" role="img" aria-label="Sample rating: 5 out of 5">★★★★★</div>
+                  <blockquote class="review-quote">“The sample-first process made it easier to review the details before moving ahead with production.”</blockquote>
+                  <div class="review-profile">
+                    <img class="review-avatar" src="images/what-we-make/model-look.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span><span class="review-profile-name">Sample client 01</span><span class="review-profile-role">Demo portrait · Apparel startup</span></span>
+                  </div>
+                </article>
+                <article class="review-card">
+                  <div class="review-rating" role="img" aria-label="Sample rating: 5 out of 5">★★★★★</div>
+                  <blockquote class="review-quote">“Clear communication and a structured process helped us plan apparel for our growing team.”</blockquote>
+                  <div class="review-profile">
+                    <img class="review-avatar" src="fashion-banner-olive.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span><span class="review-profile-name">Sample client 02</span><span class="review-profile-role">Demo portrait · Corporate team</span></span>
+                  </div>
+                </article>
+                <article class="review-card">
+                  <div class="review-rating" role="img" aria-label="Sample rating: 5 out of 5">★★★★★</div>
+                  <blockquote class="review-quote">“Having one partner for product development and repeat orders made the next steps feel straightforward.”</blockquote>
+                  <div class="review-profile">
+                    <img class="review-avatar" src="fashion-banner-runway.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span><span class="review-profile-name">Sample client 03</span><span class="review-profile-role">Demo portrait · Growing clothing brand</span></span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="reviews-marquee reviews-marquee--reverse" tabindex="0" role="region" aria-label="Second row of sample reviews">
+            <div class="reviews-track" id="reviews-track-two">
+              <div class="reviews-group">
+                <article class="review-card">
+                  <div class="review-rating" role="img" aria-label="Sample rating: 5 out of 5">★★★★★</div>
+                  <blockquote class="review-quote">“The sample-first process made it easier to review the details before moving ahead with production.”</blockquote>
+                  <div class="review-profile">
+                    <img class="review-avatar" src="images/what-we-make/model-look.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span><span class="review-profile-name">Sample client 01</span><span class="review-profile-role">Demo portrait · Apparel startup</span></span>
+                  </div>
+                </article>
+                <article class="review-card">
+                  <div class="review-rating" role="img" aria-label="Sample rating: 5 out of 5">★★★★★</div>
+                  <blockquote class="review-quote">“Clear communication and a structured process helped us plan apparel for our growing team.”</blockquote>
+                  <div class="review-profile">
+                    <img class="review-avatar" src="fashion-banner-olive.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span><span class="review-profile-name">Sample client 02</span><span class="review-profile-role">Demo portrait · Corporate team</span></span>
+                  </div>
+                </article>
+                <article class="review-card">
+                  <div class="review-rating" role="img" aria-label="Sample rating: 5 out of 5">★★★★★</div>
+                  <blockquote class="review-quote">“Having one partner for product development and repeat orders made the next steps feel straightforward.”</blockquote>
+                  <div class="review-profile">
+                    <img class="review-avatar" src="fashion-banner-runway.jpg" alt="" aria-hidden="true" loading="lazy">
+                    <span><span class="review-profile-name">Sample client 03</span><span class="review-profile-role">Demo portrait · Growing clothing brand</span></span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="reviews-pause" id="reviews-pause" type="button" aria-pressed="false">Pause reviews</button>
       </div>
     </section>
 
@@ -4237,6 +4817,53 @@
       };
       window.addEventListener("scroll", onHeaderScroll, { passive: true });
       onHeaderScroll();
+    })();
+
+    (() => {
+      document.querySelectorAll(".markets-track").forEach((track) => {
+        const row = track.querySelector(".mq-row");
+        const duplicate = row.cloneNode(true);
+        duplicate.removeAttribute("id");
+        duplicate.setAttribute("aria-hidden", "true");
+        duplicate.querySelectorAll("img").forEach((image) => {
+          image.alt = "";
+        });
+        track.append(duplicate);
+      });
+    })();
+
+    (() => {
+      const section = document.querySelector(".reviews-section");
+      const tracks = [...section.querySelectorAll(".reviews-track")];
+      const pauseButton = document.querySelector("#reviews-pause");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      tracks.forEach((track) => {
+        const duplicate = track.firstElementChild.cloneNode(true);
+        duplicate.setAttribute("aria-hidden", "true");
+        track.append(duplicate);
+      });
+
+      pauseButton.addEventListener("click", () => {
+        const paused = section.classList.toggle("is-paused");
+        pauseButton.setAttribute("aria-pressed", String(paused));
+        pauseButton.textContent = paused ? "Resume reviews" : "Pause reviews";
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        section.classList.toggle("is-hidden", document.visibilityState === "hidden");
+      });
+
+      if (reduceMotion) {
+        section.classList.add("is-visible");
+      } else if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(([entry]) => {
+          section.classList.toggle("is-visible", entry.isIntersecting);
+        }, { threshold: 0.1 });
+        observer.observe(section);
+      } else {
+        section.classList.add("is-visible");
+      }
     })();
   </script>
 </body>
