@@ -1269,7 +1269,7 @@
       display: grid;
       width: min(100%, 1320px);
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      align-items: center;
+      align-items: start;
       gap: clamp(40px, 6vw, 96px);
       margin-inline: auto;
     }
@@ -1377,11 +1377,48 @@
       transform: rotate(-45deg);
     }
 
+    .client-progress {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.16);
+      pointer-events: none;
+    }
+
+    .client-progress-fill {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--sun);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .client-progress-fill.is-running {
+      animation: client-progress-fill 4s linear forwards;
+    }
+
+    .clients-section:is(:hover, :focus-within) .client-progress-fill.is-running {
+      animation-play-state: paused;
+    }
+
+    @keyframes client-progress-fill {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
     .clients-gallery {
       position: relative;
+      position: sticky;
+      top: 24px;
+      align-self: start;
       aspect-ratio: 0.8;
       overflow: hidden;
-      border-radius: 200px 200px 22px 22px;
+      border-radius: 5px;
       background: #203c4d;
     }
 
@@ -1392,14 +1429,17 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transform: scale(1.16);
-      transition: opacity 900ms ease, transform 1600ms var(--ease-out);
+      transform: none;
+      transition: opacity 450ms ease;
+    }
+
+    .clients-gallery:hover img {
+      transform: none;
     }
 
     .clients-gallery img.is-active {
       z-index: 1;
       opacity: 1;
-      transform: scale(1);
     }
 
     .clients-gallery img.was-active {
@@ -1722,7 +1762,6 @@
        ========================================================== */
     @media (max-width: 980px) {
       .rely-inner,
-      .clients-inner,
       .proof-head {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -1750,14 +1789,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .clients-gallery {
-        order: -1;
-        max-width: 520px;
-        width: 100%;
-        margin-inline: auto;
-        aspect-ratio: 1;
-      }
-
       .footer-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -1778,6 +1809,48 @@
       .cta-section,
       .site-footer {
         padding-inline: 16px;
+      }
+
+      .clients-inner {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "eyebrow"
+          "heading"
+          "gallery"
+          "list"
+          "cta";
+        gap: 0;
+      }
+
+      .clients-inner > div:first-child {
+        display: contents;
+      }
+
+      .clients-inner > div:first-child > .tx-kicker {
+        grid-area: eyebrow;
+      }
+
+      .clients-inner > div:first-child > #clients-heading {
+        grid-area: heading;
+      }
+
+      .clients-gallery {
+        position: relative;
+        top: auto;
+        grid-area: gallery;
+        width: 100%;
+        margin-top: 28px;
+        aspect-ratio: 1;
+      }
+
+      .clients-list {
+        grid-area: list;
+        margin-top: 28px;
+      }
+
+      .clients-cta {
+        grid-area: cta;
+        margin-top: 28px;
       }
 
       .rely-steps::before,
@@ -1843,10 +1916,6 @@
       .client-arrow {
         width: 34px;
         height: 34px;
-      }
-
-      .clients-gallery {
-        border-radius: 140px 140px 18px 18px;
       }
 
       .cta-card {
@@ -3462,6 +3531,7 @@
                 <span class="client-num">01</span>
                 <span class="client-name">Apparel startups<small>Low minimums and sampling support for your very first collection.</small></span>
                 <span class="client-arrow" aria-hidden="true">&rarr;</span>
+                <span class="client-progress" aria-hidden="true"><span class="client-progress-fill is-running"></span></span>
               </button>
             </li>
             <li class="client-item">
@@ -3469,6 +3539,7 @@
                 <span class="client-num">02</span>
                 <span class="client-name">Growing clothing brands<small>Reliable capacity and consistent quality as your orders scale up.</small></span>
                 <span class="client-arrow" aria-hidden="true">&rarr;</span>
+                <span class="client-progress" aria-hidden="true"><span class="client-progress-fill"></span></span>
               </button>
             </li>
             <li class="client-item">
@@ -3476,6 +3547,7 @@
                 <span class="client-num">03</span>
                 <span class="client-name">Corporate organizations<small>Uniforms and branded apparel that give your whole team one consistent look.</small></span>
                 <span class="client-arrow" aria-hidden="true">&rarr;</span>
+                <span class="client-progress" aria-hidden="true"><span class="client-progress-fill"></span></span>
               </button>
             </li>
             <li class="client-item">
@@ -3483,6 +3555,7 @@
                 <span class="client-num">04</span>
                 <span class="client-name">NGOs &amp; institutions<small>Practical, durable apparel produced to clear specifications and budgets.</small></span>
                 <span class="client-arrow" aria-hidden="true">&rarr;</span>
+                <span class="client-progress" aria-hidden="true"><span class="client-progress-fill"></span></span>
               </button>
             </li>
             <li class="client-item">
@@ -3490,6 +3563,7 @@
                 <span class="client-num">05</span>
                 <span class="client-name">Event organizers<small>On-time apparel for festivals, campaigns and one-off events.</small></span>
                 <span class="client-arrow" aria-hidden="true">&rarr;</span>
+                <span class="client-progress" aria-hidden="true"><span class="client-progress-fill"></span></span>
               </button>
             </li>
           </ul>
@@ -4014,25 +4088,76 @@
         relySteps.forEach((step) => step.classList.add("is-active"));
       }
 
-      // Clients: hover / focus / tap swaps the arched gallery image
+      // Clients: the progress bar advances the active copy and gallery image.
       const clientItems = [...document.querySelectorAll(".client-item")];
       const clientImages = [...document.querySelectorAll(".clients-gallery img")];
       const clientTagName = document.querySelector("#clients-tag-name");
       const clientTagNum = document.querySelector("#clients-tag-num");
+      const clientsSection = document.querySelector(".clients-section");
       let activeClient = 0;
-      const setClient = (index) => {
-        if (index === activeClient) return;
-        clientImages.forEach((img) => img.classList.remove("was-active"));
-        clientImages[activeClient].classList.add("was-active");
-        activeClient = index;
-        clientItems.forEach((item, i) => {
-          item.classList.toggle("is-active", i === index);
-          item.querySelector("button").setAttribute("aria-pressed", String(i === index));
-        });
-        clientImages.forEach((img, i) => img.classList.toggle("is-active", i === index));
-        clientTagName.textContent = clientItems[index].querySelector(".client-name").firstChild.textContent;
-        clientTagNum.textContent = `${String(index + 1).padStart(2, "0")} / ${String(clientItems.length).padStart(2, "0")}`;
+      let clientTimer;
+      let clientPaused = false;
+      const scheduleClientAdvance = () => {
+        window.clearTimeout(clientTimer);
+        if (!reduceMotion && !clientPaused && document.visibilityState === "visible") {
+          clientTimer = window.setTimeout(() => setClient(activeClient + 1), 4000);
+        }
       };
+      const restartClientProgress = () => {
+        const fills = clientItems.map((item) => item.querySelector(".client-progress-fill"));
+        fills.forEach((fill) => fill.classList.remove("is-running"));
+        if (!reduceMotion) {
+          const activeFill = clientItems[activeClient].querySelector(".client-progress-fill");
+          void activeFill.offsetWidth;
+          activeFill.classList.add("is-running");
+        }
+        scheduleClientAdvance();
+      };
+      const setClient = (index) => {
+        const nextClient = (index + clientItems.length) % clientItems.length;
+        if (nextClient !== activeClient) {
+          clientImages.forEach((img) => img.classList.remove("was-active"));
+          clientImages[activeClient].classList.add("was-active");
+          activeClient = nextClient;
+        }
+        clientItems.forEach((item, i) => {
+          item.classList.toggle("is-active", i === activeClient);
+          item.querySelector("button").setAttribute("aria-pressed", String(i === activeClient));
+        });
+        clientImages.forEach((img, i) => img.classList.toggle("is-active", i === activeClient));
+        clientTagName.textContent = clientItems[activeClient].querySelector(".client-name").firstChild.textContent;
+        clientTagNum.textContent = `${String(activeClient + 1).padStart(2, "0")} / ${String(clientItems.length).padStart(2, "0")}`;
+        restartClientProgress();
+      };
+      const pauseClientSlider = () => {
+        clientPaused = true;
+        window.clearTimeout(clientTimer);
+      };
+      const resumeClientSlider = () => {
+        if (!clientPaused) return;
+        clientPaused = false;
+        restartClientProgress();
+      };
+      clientsSection.addEventListener("pointerenter", (event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") pauseClientSlider();
+      });
+      clientsSection.addEventListener("pointerleave", (event) => {
+        if ((event.pointerType === "mouse" || event.pointerType === "pen") && !clientsSection.contains(event.relatedTarget)) {
+          resumeClientSlider();
+        }
+      });
+      clientsSection.addEventListener("focusin", pauseClientSlider);
+      clientsSection.addEventListener("focusout", (event) => {
+        if (!clientsSection.contains(event.relatedTarget)) resumeClientSlider();
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          window.clearTimeout(clientTimer);
+        } else if (!clientPaused) {
+          restartClientProgress();
+        }
+      });
+      restartClientProgress();
       clientItems.forEach((item, i) => {
         const button = item.querySelector("button");
         button.addEventListener("click", () => setClient(i));
