@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c29">
+  <link rel="icon" href="logo/texmorro-logo-header.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Product — Texmorro</title>
+  <meta name="description" content="Explore this Texmorro style, choose fabric, colour and sizes, and order directly on WhatsApp.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Texmorro home">
+        <img src="logo/texmorro-logo-header.svg" alt="Texmorro — Textiles for Tomorrow">
+      </a>
+      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Toggle navigation">
+      <label class="menu-button" for="menu-toggle" aria-hidden="true"><span></span><span></span></label>
+      <div class="navigation-area">
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="brand_services_index.html">Brand Sales</a>
+          <a href="services.html">Services</a>
+          <a href="how_it_works.html">How It Works</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="custom-order.html">Custom Order</a>
+        </nav>
+        <div class="contact-wrap">
+          <a class="contact-link" href="contact.html">Let’s talk <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shop-main">
+    <section class="pd" id="pd">
+      <div class="pd-inner">
+        <nav class="pd-crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span>
+          <a href="index.html#lookbook" id="pd-crumb-cat">Lookbook</a><span aria-hidden="true">/</span>
+          <span id="pd-crumb-name" aria-current="page">Product</span>
+        </nav>
+
+        <div class="pd-grid">
+          <div class="pd-gallery">
+            <div class="pd-zoom" id="pd-zoom">
+              <img id="pd-image" src="images/collection/royal-blue-jacket-front.jpg" alt="">
+              <span class="pd-zoom-hint" aria-hidden="true">Hover to zoom</span>
+            </div>
+            <div class="pd-thumbs" id="pd-thumbs" role="group" aria-label="More photos"></div>
+          </div>
+
+          <div class="pd-info">
+            <span class="pd-cat" id="pd-cat">Bridal</span>
+            <h1 class="pd-title" id="pd-title">Product</h1>
+            <p class="pd-summary" id="pd-summary"></p>
+
+            <ul class="pd-details" id="pd-details"></ul>
+
+            <form class="pd-form" id="pd-form">
+              <fieldset class="pd-opt">
+                <legend>Fabric</legend>
+                <div class="chips" id="pd-fabrics"></div>
+              </fieldset>
+              <fieldset class="pd-opt">
+                <legend>Colour</legend>
+                <div class="chips" id="pd-colors"></div>
+              </fieldset>
+              <fieldset class="pd-opt">
+                <legend>Sizes needed <small>(choose any)</small></legend>
+                <div class="chips" id="pd-sizes"></div>
+              </fieldset>
+              <div class="pd-opt">
+                <label for="pd-qty" class="pd-opt-label">Estimated quantity</label>
+                <div class="qty">
+                  <button type="button" class="qty-btn" data-step="-10" aria-label="Decrease quantity by 10">&minus;</button>
+                  <input id="pd-qty" type="number" min="1" step="1" value="50" inputmode="numeric">
+                  <button type="button" class="qty-btn" data-step="10" aria-label="Increase quantity by 10">+</button>
+                  <span class="qty-note">pieces &middot; we confirm minimums with you</span>
+                </div>
+              </div>
+
+              <div class="pd-actions">
+                <button class="tx-btn" type="submit">Order this style <span aria-hidden="true">&rarr;</span></button>
+                <a class="tx-btn is-wa" id="pd-wa" href="#" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.02 3.2a12.55 12.55 0 0 0-10.7 19.1L3.7 28.8l6.65-1.58A12.56 12.56 0 1 0 16.02 3.2Zm0 22.83c-1.87 0-3.7-.5-5.3-1.46l-.38-.23-3.94.94 1.05-3.84-.25-.4a10.27 10.27 0 1 1 8.82 4.99Z"/></svg>
+                  Ask on WhatsApp
+                </a>
+              </div>
+              <a class="pd-custom" id="pd-custom" href="custom-order.html">Want changes? <b>Customize this design &rarr;</b></a>
+            </form>
+
+            <ul class="pd-trust">
+              <li>Sample before bulk</li>
+              <li>Quality checked</li>
+              <li>Made in Bangladesh</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-inner">
+        <div class="steps-head">
+          <span class="tx-kicker is-dark">How ordering works</span>
+          <h2 class="steps-title">Three simple steps</h2>
+        </div>
+        <ol class="steps">
+          <li><b>01</b><h3>Send your order</h3><p>Choose your options and send the order. It opens WhatsApp with every detail filled in.</p></li>
+          <li><b>02</b><h3>Confirm price &amp; sample</h3><p>We reply with pricing and timelines, then make a sample for you to approve.</p></li>
+          <li><b>03</b><h3>Production &amp; delivery</h3><p>After approval we produce, quality-check and pack your order.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="page-section related-section">
+      <div class="page-inner">
+        <div class="steps-head">
+          <span class="tx-kicker is-dark">You may also like</span>
+          <h2 class="steps-title">More from the lookbook</h2>
+        </div>
+        <div class="related" id="pd-related"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <h2 class="tx-title">Ready to work with a manufacturer who <em>gets it right?</em></h2>
+        <a class="spin-badge" href="contact.html" aria-label="Let’s talk — contact Texmorro">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="badge-circle-c" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs><text><textPath href="#badge-circle-c">Let’s talk • Texmorro • </textPath></text></svg>
+          <b aria-hidden="true">&rarr;</b>
+        </a>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="texmorro-logo.png" alt="Texmorro">
+          <p>Apparel production for brands and organizations. Sample-first, quality-checked and built for long-term supply.</p>
+        </div>
+        <nav class="footer-col" aria-label="Services">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="brand_services_index.html">Brand sales</a></li>
+            <li><a href="services.html">Private label</a></li>
+            <li><a href="services.html">Corporate apparel</a></li>
+            <li><a href="index.html#make-section">What we make</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="how_it_works.html">How it works</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="index.html#clients">Who we serve</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Get in touch">
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="contact.html">Contact form</a></li>
+            <li><a href="custom-order.html">Request a sample</a></li>
+            <li><a class="footer-contact" href="mailto:texmorro@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+              <span>texmorro@gmail.com</span>
+            </a></li>
+            <li><a class="footer-contact" href="tel:+8801756375660">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.5h3l1.5 4-2 1.4a13 13 0 0 0 6 6l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17.5 17.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+              <span>+880 1756-375660</span>
+            </a></li>
+            <li><a class="footer-contact" href="https://www.google.com/maps/search/?api=1&amp;query=273%2F2%2C%20Shantibag%2C%20Dhaka%2C%20Bangladesh%201214" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5.2-8 11-8 11S4 15.2 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg>
+              <span>273/2, Shantibag, Dhaka, Bangladesh, 1214</span>
+            </a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <p class="footer-wordmark" aria-hidden="true">TEXMORRO</p>
+
+      <div class="footer-bottom">
+        <span>© <span id="footer-year">2026</span> Texmorro. All rights reserved.</span>
+        <span>Textiles for tomorrow.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="shop.js"></script>
+  <script>
+    document.querySelector("#footer-year").textContent = new Date().getFullYear();
+    (() => {
+      const header = document.querySelector(".site-header");
+      const menuToggle = document.querySelector("#menu-toggle");
+      let lastY = window.scrollY;
+      const onScroll = () => {
+        const y = window.scrollY;
+        header.classList.toggle("is-scrolled", y > 40);
+        const hide = y > lastY && y > 400 && !menuToggle.checked;
+        header.classList.toggle("is-hidden", hide);
+        lastY = y;
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

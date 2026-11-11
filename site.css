@@ -3506,3 +3506,497 @@
         animation: none;
       }
     }
+
+    /* ==========================================================
+       Lookbook — scroll-driven horizontal product showcase
+       ========================================================== */
+    .lookbook {
+      --lb-h: min(64vh, 620px);
+      position: relative;
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(166, 141, 84, 0.16), transparent 60%),
+        #efe9dd;
+      color: var(--ink);
+    }
+
+    .lb-sticky {
+      position: sticky;
+      top: 0;
+      display: flex;
+      height: 100vh;
+      height: 100svh;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lb-bgword {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin: 0;
+      color: transparent;
+      font-family: var(--serif);
+      font-size: clamp(160px, 26vw, 420px);
+      font-style: italic;
+      line-height: 1;
+      white-space: nowrap;
+      -webkit-text-stroke: 1px rgba(20, 42, 70, 0.12);
+      transform: translate3d(var(--lb-word, 0px), -50%, 0);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .lb-viewport {
+      position: relative;
+      padding-top: 40px;
+    }
+
+    .lb-track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: clamp(28px, 3.5vw, 56px);
+      padding: 0 max(24px, calc((100vw - 1320px) / 2));
+      transform: translate3d(var(--lb-x, 0px), 0, 0);
+      will-change: transform;
+    }
+
+    .lb-intro {
+      width: min(440px, 80vw);
+      flex: none;
+    }
+
+    .lb-intro .tx-title {
+      font-size: clamp(44px, 5vw, 76px);
+    }
+
+    .lb-intro p {
+      max-width: 360px;
+      margin: 22px 0 0;
+      color: #5c6166;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .lb-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+      color: #947b48;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .lb-hint i {
+      font-style: normal;
+      animation: lb-nudge 1.6s ease-in-out infinite;
+    }
+
+    @keyframes lb-nudge {
+      50% { transform: translateX(8px); }
+    }
+
+    .lb-card {
+      position: relative;
+      width: calc(var(--lb-h) * 0.72);
+      flex: none;
+    }
+
+    .lb-card.is-low {
+      margin-top: calc(var(--lb-h) * 0.22);
+    }
+
+    .lb-card:not(.is-low) {
+      margin-bottom: calc(var(--lb-h) * 0.22);
+    }
+
+    .lb-media {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 0.78;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 18px;
+      background: #d8cfbf;
+      cursor: none;
+      box-shadow: 0 30px 60px -30px rgba(20, 42, 70, 0.45);
+      transition: border-radius 600ms var(--ease-out), box-shadow 600ms var(--ease-out);
+    }
+
+    .lb-media img {
+      position: absolute;
+      inset: 0 -8%;
+      width: 116%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate3d(var(--lb-px, 0px), 0, 0) scale(1.02);
+      transition: scale 900ms var(--ease-out), filter 600ms ease;
+    }
+
+    .lb-card:hover .lb-media img,
+    .lb-media:focus-visible img {
+      scale: 1.07;
+    }
+
+    .lb-card:hover .lb-media {
+      border-radius: 120px 120px 18px 18px;
+      box-shadow: 0 40px 70px -30px rgba(20, 42, 70, 0.6);
+    }
+
+    .lb-media:focus-visible {
+      outline: 3px solid var(--sun);
+      outline-offset: 4px;
+    }
+
+    .lb-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      background: rgba(10, 25, 36, 0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .lb-meta {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .lb-num {
+      color: #947b48;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-style: italic;
+    }
+
+    .lb-meta h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .lb-meta p {
+      margin: 4px 0 0;
+      color: #6b6f73;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .lb-link {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(20, 42, 70, 0.25);
+      border-radius: 50%;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 250ms ease, color 250ms ease, transform 400ms var(--ease-out);
+    }
+
+    .lb-card:hover .lb-link,
+    .lb-link:focus-visible {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--sun);
+      transform: rotate(-45deg);
+      outline: none;
+    }
+
+    .lb-end {
+      display: flex;
+      width: min(400px, 80vw);
+      flex: none;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 44px 40px;
+      border-radius: 24px;
+      background: var(--deep);
+      color: #fff;
+    }
+
+    .lb-end-mark {
+      color: var(--sun);
+      font-size: 28px;
+    }
+
+    .lb-end h3 {
+      margin: 20px 0 0;
+      font-family: var(--serif);
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .lb-end h3 em {
+      color: var(--cream);
+    }
+
+    .lb-end p {
+      margin: 18px 0 28px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .lb-progress {
+      display: flex;
+      width: min(100% - 48px, 1320px);
+      align-items: center;
+      gap: 20px;
+      margin: 36px auto 0;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .lb-count {
+      color: #8a8f93;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .lb-count b {
+      color: var(--ink);
+    }
+
+    .lb-bar {
+      position: relative;
+      height: 2px;
+      flex: 1;
+      overflow: hidden;
+      background: rgba(20, 42, 70, 0.14);
+    }
+
+    .lb-bar i {
+      position: absolute;
+      inset: 0;
+      background: var(--ink);
+      transform: scaleX(var(--lb-p, 0));
+      transform-origin: left;
+    }
+
+    .lb-label {
+      min-width: 160px;
+      color: #947b48;
+      text-align: right;
+    }
+
+    /* follow cursor */
+    .lb-cursor {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      display: grid;
+      width: 92px;
+      height: 92px;
+      margin: -46px 0 0 -46px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sun);
+      color: var(--deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(var(--cx, -200px), var(--cy, -200px), 0) scale(0.3);
+      transition: opacity 250ms ease, scale 300ms var(--ease-out);
+    }
+
+    .lb-cursor.is-on {
+      opacity: 1;
+      scale: 3.333;
+    }
+
+    /* lightbox */
+    .lb-lightbox {
+      width: 100vw;
+      max-width: none;
+      height: 100vh;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: rgba(8, 18, 27, 0.94);
+      color: #fff;
+    }
+
+    .lb-lightbox[open] {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr) 80px;
+      align-items: center;
+      animation: lb-fade 400ms ease;
+    }
+
+    .lb-lightbox::backdrop {
+      background: transparent;
+    }
+
+    @keyframes lb-fade {
+      from { opacity: 0; }
+    }
+
+    .lb-lightbox figure {
+      display: grid;
+      height: 100vh;
+      grid-template-rows: minmax(0, 1fr) auto;
+      justify-items: center;
+      gap: 18px;
+      margin: 0;
+      padding: 40px 0 28px;
+    }
+
+    .lb-lightbox img {
+      max-width: 100%;
+      height: 100%;
+      min-height: 0;
+      border-radius: 14px;
+      object-fit: contain;
+      animation: lb-zoom 600ms var(--ease-out);
+    }
+
+    @keyframes lb-zoom {
+      from { opacity: 0; transform: scale(0.94); }
+    }
+
+    .lb-lightbox figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px 22px;
+      font-family: var(--serif);
+      font-size: 28px;
+    }
+
+    .lb-lightbox figcaption b {
+      color: var(--cream);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .lb-close,
+    .lb-nav {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      justify-self: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      transition: background 250ms ease, color 250ms ease;
+    }
+
+    .lb-close {
+      position: absolute;
+      z-index: 1;
+      top: 22px;
+      right: 22px;
+      font-size: 28px;
+    }
+
+    .lb-close:hover,
+    .lb-nav:hover,
+    .lb-close:focus-visible,
+    .lb-nav:focus-visible {
+      border-color: var(--sun);
+      background: var(--sun);
+      color: var(--deep);
+      outline: none;
+    }
+
+    /* Native swipe mode (touch, small screens, reduced motion) */
+    .lookbook.is-native {
+      height: auto !important;
+      padding: 90px 0 80px;
+    }
+
+    .lookbook.is-native .lb-sticky {
+      position: relative;
+      height: auto;
+    }
+
+    .lookbook.is-native .lb-viewport {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding-bottom: 8px;
+    }
+
+    .lookbook.is-native .lb-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .lookbook.is-native .lb-track {
+      transform: none;
+      padding: 0 16px;
+    }
+
+    .lookbook.is-native .lb-card,
+    .lookbook.is-native .lb-intro,
+    .lookbook.is-native .lb-end {
+      scroll-snap-align: center;
+    }
+
+    .lookbook.is-native .lb-media {
+      cursor: zoom-in;
+    }
+
+    @media (max-width: 900px) {
+      .lookbook {
+        --lb-h: 440px;
+      }
+
+      .lb-card.is-low,
+      .lb-card:not(.is-low) {
+        margin: 0;
+      }
+
+      .lb-intro {
+        width: 78vw;
+      }
+
+      .lb-progress {
+        width: min(100% - 32px, 1320px);
+      }
+
+      .lb-label {
+        display: none;
+      }
+
+      .lb-lightbox[open] {
+        grid-template-columns: 56px minmax(0, 1fr) 56px;
+      }
+
+      .lb-close,
+      .lb-nav {
+        width: 44px;
+        height: 44px;
+      }
+    }
