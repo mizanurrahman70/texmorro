@@ -3229,6 +3229,16 @@
       transition: opacity 1200ms ease, transform 4800ms linear;
     }
 
+    /* Framing safety: keep the subject visible when cover crops the slide
+       on narrow (mobile) or ultrawide screens. */
+    .hero-slides img.pos-face-right {
+      object-position: 62% 60%;
+    }
+
+    .hero-slides img.pos-mid {
+      object-position: center 55%;
+    }
+
     .hero-slides img.is-active {
       z-index: 1;
       opacity: 1;
