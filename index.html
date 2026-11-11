@@ -215,7 +215,7 @@
               <span class="tx-kicker is-dark">The lookbook</span>
               <h2 class="tx-title is-dark split-words" id="lookbook-heading">Pieces we <em>bring to life</em></h2>
               <p>Real pieces from our own collection: block-printed jackets, embroidered outerwear, co-ord sets and shirts, designed and made by our team.</p>
-              <span class="lb-hint" aria-hidden="true">Scroll to explore <i>&rarr;</i></span>
+              <span class="lb-hint" aria-hidden="true">Hold to auto-scroll <i>&rarr;</i></span>
             </div>
 
             <article class="lb-card" data-index="0">
@@ -1426,6 +1426,96 @@
         if (e.key === "ArrowRight") show(open + 1);
         if (e.key === "ArrowLeft") show(open - 1);
       });
+
+      // Press & hold anywhere on the lookbook: auto-scroll through the pieces.
+      // Desktop (scroll-driven) mode advances the page; native swipe mode
+      // advances the horizontal viewport. Release (or drag) to stop.
+      let holdTimer = 0;
+      let holding = false;   // press active: waiting for the hold or scrolling
+      let autoScroll = false;
+      let holdUsed = false;  // this press used hold-scroll -> swallow its release click
+      let lastT = 0;
+
+      const stopAuto = () => {
+        if (!autoScroll) return;
+        autoScroll = false;
+        viewport.style.scrollSnapType = "";
+      };
+
+      const step = (t) => {
+        if (!autoScroll) return;
+        const dt = Math.min((t - lastT) / 1000, 0.05);
+        lastT = t;
+        if (native) {
+          viewport.scrollLeft += 420 * dt;
+          if (viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 1) return stopAuto();
+        } else {
+          window.scrollBy(0, 560 * dt);
+          const r = section.getBoundingClientRect();
+          const atEnd = window.scrollY >= document.documentElement.scrollHeight - window.innerHeight - 1;
+          if (r.bottom <= window.innerHeight + 1 || atEnd) return stopAuto();
+        }
+        requestAnimationFrame(step);
+      };
+
+      const startAuto = () => {
+        if (autoScroll || box.open) return;
+        autoScroll = true;
+        holdUsed = true;
+        lastT = performance.now();
+        viewport.style.scrollSnapType = "none";
+        requestAnimationFrame(step);
+      };
+
+      section.addEventListener("pointerdown", (e) => {
+        if (e.button !== 0 || box.open) return;
+        holding = true;
+        holdUsed = false;
+        // Press state right away: no text selection / image drags while pressed
+        section.classList.add("is-hold");
+        clearTimeout(holdTimer);
+        holdTimer = setTimeout(startAuto, 220);
+        const sx = e.clientX;
+        const sy = e.clientY;
+        const onMove = (ev) => {
+          // A finger swipe takes over; mouse movement never cancels the hold
+          if (ev.pointerType !== "mouse" && Math.hypot(ev.clientX - sx, ev.clientY - sy) > 10) {
+            clearTimeout(holdTimer);
+            stopAuto();
+          }
+        };
+        const onUp = () => {
+          holding = false;
+          clearTimeout(holdTimer);
+          stopAuto();
+          section.classList.remove("is-hold");
+          setTimeout(() => { holdUsed = false; }, 0); // let the release click pass first
+          window.removeEventListener("pointermove", onMove);
+          window.removeEventListener("pointerup", onUp);
+          window.removeEventListener("pointercancel", onUp);
+        };
+        window.addEventListener("pointermove", onMove, { passive: true });
+        window.addEventListener("pointerup", onUp);
+        window.addEventListener("pointercancel", onUp);
+      });
+
+      // Native image/text drags cancel the pointer and would kill the hold
+      section.addEventListener("dragstart", (e) => e.preventDefault());
+
+      // A hold ends over a card: don't open the lightbox / follow a link
+      track.addEventListener("click", (e) => {
+        if (holdUsed) { e.preventDefault(); e.stopPropagation(); }
+      }, true);
+
+      // User takes over manually (wheel) or the window loses focus mid-hold
+      window.addEventListener("wheel", () => { if (autoScroll) stopAuto(); }, { passive: true });
+      window.addEventListener("blur", () => {
+        holding = false;
+        clearTimeout(holdTimer);
+        stopAuto();
+        section.classList.remove("is-hold");
+      });
+      section.addEventListener("contextmenu", (e) => { if (holding || autoScroll) e.preventDefault(); });
     })();
   </script>
 </body>

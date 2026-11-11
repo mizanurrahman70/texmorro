@@ -3941,6 +3941,18 @@
       outline: none;
     }
 
+    /* Press & hold: auto-scroll state */
+    .lookbook.is-hold {
+      cursor: grabbing;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    .lookbook.is-hold .lb-cursor {
+      opacity: 0;
+    }
+
     /* Native swipe mode (touch, small screens, reduced motion) */
     .lookbook.is-native {
       height: auto !important;
