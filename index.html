@@ -141,36 +141,52 @@
           <p class="reveal" style="--d: 200ms">Whether you are building a label or outfitting a team, we bring the right people and production support around your next apparel project.</p>
         </div>
 
-        <div class="paths-grid">
-          <article class="path-panel reveal">
-            <img src="fashion-banner-olive.jpg" alt="Model wearing an olive embroidered jacket from an independent label collection" loading="lazy">
-            <div class="path-top">
-              <span class="path-label">Apparel brands</span>
-            </div>
-            <div class="path-body">
-              <h3>Turn your point of view into a collection.</h3>
-              <div class="path-more"><div>
-                <p>Develop a distinctive range with considered product development, sampling and production support for your brand.</p>
-                <div class="path-tags"><span>Development</span><span>Sampling</span><span>Private label</span></div>
-              </div></div>
-              <a class="path-link" href="brand_services_index.html">Explore brand services <span aria-hidden="true">&rarr;</span></a>
-            </div>
-          </article>
+        <!-- Visitor picks who they are; photo + content switch to match -->
+        <div class="paths-picker reveal" style="--d: 250ms" data-active="brand">
+          <div class="paths-switch" role="tablist" aria-label="Choose what fits you">
+            <span class="paths-switch-pill" aria-hidden="true"></span>
+            <button class="paths-tab" type="button" role="tab" id="path-tab-brand" aria-controls="path-brand" aria-selected="true" data-path="brand">I&rsquo;m building a brand</button>
+            <button class="paths-tab" type="button" role="tab" id="path-tab-team" aria-controls="path-team" aria-selected="false" tabindex="-1" data-path="team">I&rsquo;m outfitting a team</button>
+          </div>
 
-          <article class="path-panel reveal" style="--d: 150ms">
-            <img src="images/what-we-make/polo-shirt.jpg" alt="Crisp white work shirt on a hanger, ready for a team order" loading="lazy">
-            <div class="path-top">
-              <span class="path-label">Corporate &amp; institutional</span>
+          <div class="paths-stage">
+            <div class="paths-media">
+              <img class="is-active" src="fashion-banner-olive.jpg" alt="Model wearing an olive embroidered jacket from an independent label collection" loading="lazy" data-path="brand">
+              <img src="images/what-we-make/polo-shirt.jpg" alt="Crisp white work shirt on a hanger, ready for a team order" loading="lazy" data-path="team">
             </div>
-            <div class="path-body">
-              <h3>Apparel that brings your team together.</h3>
-              <div class="path-more"><div>
+
+            <div class="paths-panels">
+              <div class="paths-panel is-active" role="tabpanel" id="path-brand" aria-labelledby="path-tab-brand" data-path="brand">
+                <span class="paths-panel-label">For apparel brands</span>
+                <h3>Turn your point of view into a <em>collection.</em></h3>
+                <p>Develop a distinctive range with considered product development, sampling and production support for your brand.</p>
+                <ol class="paths-steps">
+                  <li><b>01</b><div><strong>Share your idea</strong><span>Sketches, a tech pack or reference photos.</span></div></li>
+                  <li><b>02</b><div><strong>Approve your sample</strong><span>We develop, fit and refine it with you.</span></div></li>
+                  <li><b>03</b><div><strong>We produce &amp; ship</strong><span>Your collection, made under your own label.</span></div></li>
+                </ol>
+                <ul class="paths-perks">
+                  <li>Low MOQ</li><li>Development</li><li>Sampling</li><li>Private label</li>
+                </ul>
+                <a class="tx-btn" href="brand_services_index.html">Explore brand services <span aria-hidden="true">&rarr;</span></a>
+              </div>
+
+              <div class="paths-panel" role="tabpanel" id="path-team" aria-labelledby="path-tab-team" data-path="team">
+                <span class="paths-panel-label">For companies &amp; organizations</span>
+                <h3>Apparel that brings your <em>team together.</em></h3>
                 <p>Plan apparel for teams, events and organizations with clear requirements, dependable production and consistent quality.</p>
-                <div class="path-tags"><span>Teamwear</span><span>Events</span><span>Bulk orders</span></div>
-              </div></div>
-              <a class="path-link" href="contact.html">Discuss a team order <span aria-hidden="true">&rarr;</span></a>
+                <ol class="paths-steps">
+                  <li><b>01</b><div><strong>Tell us what you need</strong><span>Garments, quantities, sizes and deadline.</span></div></li>
+                  <li><b>02</b><div><strong>Approve a sample</strong><span>Check fabric, fit and your logo placement.</span></div></li>
+                  <li><b>03</b><div><strong>Receive your order</strong><span>Consistent quality across every size and piece.</span></div></li>
+                </ol>
+                <ul class="paths-perks">
+                  <li>Uniforms</li><li>Teamwear</li><li>Events</li><li>Bulk orders</li>
+                </ul>
+                <a class="tx-btn" href="contact.html">Discuss a team order <span aria-hidden="true">&rarr;</span></a>
+              </div>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1339,6 +1355,43 @@
       };
       window.addEventListener("scroll", onHeaderScroll, { passive: true });
       onHeaderScroll();
+    })();
+
+    /* ===== What brings you here: brand / team picker ===== */
+    (() => {
+      const picker = document.querySelector(".paths-picker");
+      if (!picker) return;
+      const tabs = [...picker.querySelectorAll(".paths-tab")];
+      const photos = [...picker.querySelectorAll(".paths-media img")];
+      const panels = [...picker.querySelectorAll(".paths-panel")];
+
+      const select = (tab, focus) => {
+        const path = tab.dataset.path;
+        picker.dataset.active = path;
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute("aria-selected", String(on));
+          t.tabIndex = on ? 0 : -1;
+        });
+        photos.forEach((img) => img.classList.toggle("is-active", img.dataset.path === path));
+        panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.path === path));
+        if (focus) tab.focus();
+      };
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => select(tab));
+        // Arrow keys move between tabs (standard tab pattern)
+        tab.addEventListener("keydown", (e) => {
+          const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+          if (step) {
+            e.preventDefault();
+            select(tabs[(i + step + tabs.length) % tabs.length], true);
+          } else if (e.key === "Home" || e.key === "End") {
+            e.preventDefault();
+            select(tabs[e.key === "Home" ? 0 : tabs.length - 1], true);
+          }
+        });
+      });
     })();
 
     (() => {

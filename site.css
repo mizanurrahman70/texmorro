@@ -2522,7 +2522,7 @@
     }
 
     /* ==========================================================
-       V2 — What brings you here (expanding photo panels)
+       V2 — What brings you here (brand / team picker)
        ========================================================== */
     .paths {
       padding: clamp(84px, 10vw, 140px) 24px;
@@ -2553,178 +2553,229 @@
       line-height: 1.8;
     }
 
-    .paths-grid {
-      display: flex;
-      height: clamp(560px, 52vw, 700px);
-      gap: 18px;
-    }
-
-    .path-panel {
+    /* Picker: "I'm building a brand" / "I'm outfitting a team" */
+    .paths-switch {
       position: relative;
-      display: flex;
-      min-width: 0;
-      flex: 1 1 0;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: clamp(24px, 3vw, 40px);
-      overflow: hidden;
-      border-radius: 24px;
-      background: #18303f;
-      color: #fff;
+      display: grid;
+      width: min(100%, 560px);
+      grid-template-columns: 1fr 1fr;
+      margin: 0 0 28px;
+      padding: 6px;
+      border: 1px solid rgba(20, 42, 70, 0.12);
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(16, 43, 62, 0.06);
       isolation: isolate;
-      transition: flex-grow 900ms var(--ease-out);
     }
 
-    .paths-grid:hover .path-panel {
-      flex-grow: 0.75;
-    }
-
-    .paths-grid .path-panel:hover,
-    .paths-grid .path-panel:focus-within {
-      flex-grow: 1.35;
-    }
-
-    .path-panel > img {
+    .paths-switch-pill {
       position: absolute;
-      z-index: -2;
+      z-index: -1;
+      top: 6px;
+      bottom: 6px;
+      left: 6px;
+      width: calc(50% - 6px);
+      border-radius: 999px;
+      background: var(--deep);
+      transition: transform 600ms var(--ease-out);
+    }
+
+    .paths-picker[data-active="team"] .paths-switch-pill {
+      transform: translateX(100%);
+    }
+
+    .paths-tab {
+      min-height: 52px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 999px;
+      background: none;
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      transition: color 400ms ease;
+    }
+
+    .paths-tab[aria-selected="true"] {
+      color: #fff;
+    }
+
+    .paths-tab:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* Stage: photo left, content right */
+    .paths-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      overflow: hidden;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(16, 43, 62, 0.08);
+    }
+
+    .paths-media {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      background: #18303f;
+    }
+
+    .paths-media img {
+      position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 25%;
-      transform: scale(1.06);
-      transition: transform 1600ms var(--ease-out), filter 900ms ease;
-      filter: saturate(0.85);
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 800ms ease, transform 1600ms var(--ease-out);
     }
 
-    .path-panel:hover > img,
-    .path-panel:focus-within > img {
+    .paths-media img.is-active {
+      opacity: 1;
       transform: scale(1);
-      filter: saturate(1.05);
     }
 
-    .path-panel::before {
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background:
-        linear-gradient(0deg, rgba(6, 16, 25, 0.92) 0%, rgba(6, 16, 25, 0.35) 48%, rgba(6, 16, 25, 0.15) 100%);
-      content: "";
+    /* Both panels share one grid cell, so the card keeps the taller height */
+    .paths-panels {
+      display: grid;
     }
 
-    .path-top {
+    .paths-panel {
       display: flex;
+      grid-area: 1 / 1;
+      flex-direction: column;
       align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
+      justify-content: center;
+      padding: clamp(32px, 4.5vw, 64px);
+      opacity: 0;
+      transform: translateY(16px);
+      visibility: hidden;
+      transition: opacity 450ms ease, transform 600ms var(--ease-out), visibility 0s linear 600ms;
     }
 
-    .path-label {
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    .paths-panel.is-active {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+      transition: opacity 600ms ease 150ms, transform 800ms var(--ease-out) 150ms, visibility 0s;
+    }
+
+    .paths-panel-label {
+      color: #947b48;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
-    .path-body h3 {
-      max-width: 460px;
-      margin: 0;
+    .paths-panel h3 {
+      max-width: 480px;
+      margin: 16px 0 0;
+      color: var(--ink);
       font-family: var(--serif);
-      font-size: clamp(32px, 3.4vw, 50px);
+      font-size: clamp(34px, 3.4vw, 50px);
       font-weight: 400;
       line-height: 1.02;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
-    .path-more {
-      display: grid;
-      grid-template-rows: 0fr;
-      opacity: 0;
-      transition: grid-template-rows 700ms var(--ease-out), opacity 500ms ease;
+    .paths-panel h3 em {
+      color: var(--gold);
+      font-style: italic;
     }
 
-    .path-more > div {
-      overflow: hidden;
-    }
-
-    .path-panel:hover .path-more,
-    .path-panel:focus-within .path-more {
-      grid-template-rows: 1fr;
-      opacity: 1;
-    }
-
-    .path-more p {
-      max-width: 440px;
-      margin: 16px 0 0;
-      color: rgba(255, 255, 255, 0.78);
+    .paths-panel > p {
+      max-width: 460px;
+      margin: 18px 0 0;
+      color: #62676b;
       font-size: 15px;
       line-height: 1.75;
     }
 
-    .path-tags {
+    .paths-steps {
+      display: grid;
+      width: 100%;
+      max-width: 480px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .paths-steps li {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      align-items: start;
+      gap: 14px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(20, 42, 70, 0.1);
+    }
+
+    .paths-steps b {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .paths-steps strong {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .paths-steps span {
+      display: block;
+      margin-top: 2px;
+      color: #6b7075;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .paths-perks {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 18px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
     }
 
-    .path-tags span {
-      padding: 7px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+    .paths-perks li {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 13px;
       border-radius: 999px;
-      font-size: 11px;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 12px;
       font-weight: 600;
     }
 
-    .path-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 24px;
-      color: #fff;
-      font-size: 12px;
+    .paths-perks li::before {
+      color: var(--gold);
+      content: "\2713";
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      text-transform: uppercase;
     }
 
-    .path-link::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-    }
-
-    .path-link span {
-      display: grid;
-      width: 46px;
-      height: 46px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--sun);
-      color: var(--deep);
-      font-size: 17px;
-      transition: transform 400ms var(--ease-out);
-    }
-
-    .path-panel:hover .path-link span,
-    .path-link:focus-visible span {
-      transform: rotate(-45deg);
-    }
-
-    .path-link:focus-visible {
-      outline: none;
-    }
-
-    .path-panel:has(.path-link:focus-visible) {
-      box-shadow: 0 0 0 3px var(--sun);
+    /* Default yellow button turns white on hover; on a white card use navy */
+    .paths-panel .tx-btn:hover,
+    .paths-panel .tx-btn:focus-visible {
+      background: var(--deep);
+      color: #fff;
     }
 
     @media (max-width: 980px) {
@@ -2733,18 +2784,12 @@
         gap: 20px;
       }
 
-      .paths-grid {
-        height: auto;
-        flex-direction: column;
+      .paths-stage {
+        grid-template-columns: minmax(0, 1fr);
       }
 
-      .path-panel {
-        min-height: 520px;
-      }
-
-      .path-more {
-        grid-template-rows: 1fr;
-        opacity: 1;
+      .paths-media {
+        min-height: 380px;
       }
     }
 
@@ -2753,13 +2798,32 @@
         padding-inline: 16px;
       }
 
-      .path-panel {
-        min-height: 500px;
+      .paths-tab {
+        min-height: 46px;
+        padding: 0 10px;
+        font-size: 12.5px;
+      }
+
+      .paths-stage {
         border-radius: 20px;
+      }
+
+      .paths-media {
+        min-height: 300px;
+      }
+
+      .paths-panel {
+        padding: 28px 22px 32px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .paths-switch-pill,
+      .paths-media img,
+      .paths-panel,
+      .paths-panel.is-active {
+        transition: none;
+      }
     }
 
 
