@@ -3226,7 +3226,7 @@
       object-position: center 30%;
       opacity: 0;
       transform: scale(1.12);
-      transition: opacity 1200ms ease, transform 4800ms linear;
+      transition: opacity 1200ms ease, transform 5200ms linear;
     }
 
     /* Framing safety: keep the subject visible when cover crops the slide
@@ -3273,6 +3273,16 @@
       content: "";
     }
 
+    /* Headline + paragraph change with each process step */
+    .hero-copy {
+      transition: opacity 380ms ease, transform 380ms ease;
+    }
+
+    .hero-copy.is-swapping {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
     .hero-title {
       margin: 24px 0 0;
       font-family: var(--serif);
@@ -3282,6 +3292,18 @@
       letter-spacing: -0.02em;
       text-shadow: 0 4px 40px rgba(0, 0, 0, 0.35);
       text-wrap: balance;
+    }
+
+    /* Reserve two lines for the headline and three for the paragraph
+       so the buttons don't jump when the step text changes */
+    @media (min-width: 761px) {
+      .hero-title {
+        min-height: 1.9em;
+      }
+
+      .hero-lead {
+        min-height: 5.25em;
+      }
     }
 
     .hero-title em {
@@ -3423,6 +3445,10 @@
 
     .hero-dot.is-current i {
       animation: hero-bar var(--hero-ms, 3000ms) linear forwards;
+    }
+
+    .hero.is-paused .hero-dot.is-current i {
+      animation-play-state: paused;
     }
 
     .hero-dot:focus-visible {

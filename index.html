@@ -41,26 +41,53 @@
   </header>
 
   <main>
-    <!-- Hero photos: Texmorro collection (realImg) -->
+    <!-- Hero photos: the manufacturing process, one step per slide, in order.
+         data-title / data-lead replace the headline and paragraph on each slide. -->
     <section class="hero" id="hero" aria-labelledby="banner-title">
       <div class="hero-slides" aria-hidden="true">
-        <img class="is-active" src="images/hero/wide-designer-studio.jpg" alt="" data-label="Studio craftsmanship" fetchpriority="high">
-        <img src="images/hero/wide-atelier-fitting.jpg" alt="" data-label="Atelier fitting">
-        <img src="images/hero/wide-sewing.jpg" alt="" data-label="Precision sewing">
-        <img src="images/hero/real-royal-blue.jpg" alt="" data-label="Royal blue block-print">
-        <img src="images/hero/real-olive-jacket.jpg" alt="" data-label="Olive embroidered jacket">
-        <img src="images/hero/real-tailoring.jpg" alt="" data-label="Runway &amp; co-ords">
-        <img class="pos-mid" src="images/hero/hero-designer-studio.jpg" alt="" data-label="Designer studio">
-        <img class="pos-face-right" src="images/hero/hero-dressmaker-cutting.jpg" alt="" data-label="Dressmaker cutting">
+        <img class="is-active" src="images/hero/wide-designer-studio.jpg" alt="" fetchpriority="high"
+          data-label="Design &amp; sketch"
+          data-title="Every garment starts as a <em>sketch</em>"
+          data-lead="Our designers turn your idea, mood board or tech pack into clear sketches and specs, ready for development.">
+        <img src="images/services/pattern-cutting-sampling.jpg" alt=""
+          data-label="Pattern making"
+          data-title="Patterns drafted to your <em>exact fit</em>"
+          data-lead="Each style is drafted and graded into a full set of paper patterns, so every size fits the way you planned.">
+        <img class="pos-face-right" src="images/hero/hero-dressmaker-cutting.jpg" alt=""
+          data-label="Fabric cutting"
+          data-title="Fabric cut with <em>precision</em>"
+          data-lead="Patterns are laid on your chosen fabric and cut carefully, keeping every panel consistent and waste low.">
+        <img src="images/hero/wide-sewing.jpg" alt=""
+          data-label="Sewing"
+          data-title="Stitched by <em>skilled</em> hands"
+          data-lead="Experienced operators assemble each garment seam by seam, with the right machine and thread for every fabric.">
+        <img src="images/hero/wide-atelier-fitting.jpg" alt=""
+          data-label="Sample fitting"
+          data-title="Fitted &amp; approved <em>before bulk</em>"
+          data-lead="We fit the sample, refine the details and send it to you for approval before production begins.">
+        <img src="images/services/garment-factory-floor.jpg" alt=""
+          data-label="Bulk production"
+          data-title="Bulk production <em>at scale</em>"
+          data-lead="Once you approve, our lines produce your order in volume, with quality checks at every stage.">
+        <img class="pos-mid" src="images/services/private-label-hang-tag.jpg" alt=""
+          data-label="Finishing &amp; labels"
+          data-title="Finished with <em>your label</em>"
+          data-lead="Every piece is inspected, pressed and finished with your own labels and hang tags, then packed to ship.">
+        <img src="images/hero/real-olive-jacket.jpg" alt=""
+          data-label="Ready for your brand"
+          data-title="Fashion <em>designed</em> &amp; made for your brand"
+          data-lead="From the first sketch to the final stitch, TEXMORRO designs, samples and manufactures jackets, co-ords, shirts and dresses for fashion brands and organizations.">
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
 
       <div class="hero-center">
         <span class="tx-kicker hero-kicker reveal">Fashion design &amp; apparel manufacturing &middot; Bangladesh</span>
-        <h1 class="hero-title split-words" id="banner-title">Fashion <em>designed</em> &amp; made for your brand</h1>
-        <p class="hero-lead reveal" style="--d: 350ms">
-          From the first sketch to the final stitch, TEXMORRO designs, samples and manufactures jackets, co-ords, shirts and dresses for fashion brands and organizations.
-        </p>
+        <div class="hero-copy" id="hero-copy">
+          <h1 class="hero-title split-words" id="banner-title">Every garment starts as a <em>sketch</em></h1>
+          <p class="hero-lead reveal" style="--d: 350ms">
+            Our designers turn your idea, mood board or tech pack into clear sketches and specs, ready for development.
+          </p>
+        </div>
         <div class="hero-actions reveal" style="--d: 500ms">
           <a class="tx-btn" href="custom-order.html">Start with a sample <span aria-hidden="true">&rarr;</span></a>
           <a class="tx-btn is-ghost" href="#services-heading">Our services <span aria-hidden="true">&rarr;</span></a>
@@ -74,7 +101,7 @@
           <li><strong>Low</strong><span>MOQ to start</span></li>
         </ul>
         <div class="hero-dots" role="group" aria-label="Hero slides">
-          <span class="hero-dots-label"><b id="hero-slide-num">01</b> &middot; <span id="hero-slide-label">Studio craftsmanship</span></span>
+          <span class="hero-dots-label">Step <b id="hero-slide-num">01</b> / <span id="hero-slide-total">08</span> &middot; <span id="hero-slide-label">Design &amp; sketch</span></span>
           <div class="hero-dots-bars" id="hero-dots"></div>
         </div>
       </div>
@@ -1188,14 +1215,35 @@
       const hero = document.querySelector("#hero");
       requestAnimationFrame(() => hero.classList.add("is-loaded"));
 
-      // Hero: full-width slideshow, changes every 3 seconds
-      const SLIDE_MS = 3000;
+      // Hero: manufacturing process slideshow, one step every 5 seconds.
+      // Each slide's data-title / data-lead replace the headline and paragraph.
+      const SLIDE_MS = 5000;
+      const SWAP_MS = 380;
       const slides = [...hero.querySelectorAll(".hero-slides img")];
       const slideNum = document.querySelector("#hero-slide-num");
       const slideLabel = document.querySelector("#hero-slide-label");
       const dotsWrap = document.querySelector("#hero-dots");
+      const copy = document.querySelector("#hero-copy");
+      const title = document.querySelector("#banner-title");
+      const lead = copy.querySelector(".hero-lead");
       hero.style.setProperty("--hero-ms", `${SLIDE_MS}ms`);
+      document.querySelector("#hero-slide-total").textContent = String(slides.length).padStart(2, "0");
       let slide = 0;
+      let started = false;
+
+      // Fade the text out, swap it, fade back in (in step with the image crossfade)
+      let swapTimer = 0;
+      const showText = (img) => {
+        const apply = () => {
+          title.innerHTML = img.dataset.title;
+          lead.textContent = img.dataset.lead;
+          copy.classList.remove("is-swapping");
+        };
+        clearTimeout(swapTimer);
+        if (reduceMotion) return apply();
+        copy.classList.add("is-swapping");
+        swapTimer = setTimeout(apply, SWAP_MS);
+      };
 
       const dots = slides.map((img, i) => {
         const dot = document.createElement("button");
@@ -1214,6 +1262,9 @@
         slides[slide].classList.add("is-active");
         slideNum.textContent = String(slide + 1).padStart(2, "0");
         slideLabel.textContent = slides[slide].dataset.label;
+        // First slide's text is already in the HTML (and animates in on load)
+        if (started) showText(slides[slide]);
+        started = true;
         dots.forEach((dot, i) => {
           dot.classList.toggle("is-done", i < slide);
           dot.classList.remove("is-current");
@@ -1223,18 +1274,53 @@
           const current = dots[slide];
           void current.offsetWidth;
           current.classList.add("is-current");
-          schedule();
+          if (paused) remaining = SLIDE_MS;
+          else schedule(SLIDE_MS);
         } else {
           dots[slide].classList.add("is-done");
         }
       }
 
-      // Timer drives the slides (reliable 3s cadence); CSS bar is visual only
+      // Timer drives the slides; CSS bar is visual only
       let timer = 0;
-      const schedule = () => {
+      let startedAt = 0;
+      let remaining = SLIDE_MS;
+      let paused = false;
+      const schedule = (ms) => {
         clearTimeout(timer);
-        timer = setTimeout(() => goTo(slide + 1), SLIDE_MS);
+        remaining = ms;
+        startedAt = performance.now();
+        timer = setTimeout(() => goTo(slide + 1), ms);
       };
+
+      // Pause while the visitor reads (hover) or uses the keyboard inside the hero
+      const pause = () => {
+        if (paused || reduceMotion) return;
+        paused = true;
+        clearTimeout(timer);
+        remaining = Math.max(0, remaining - (performance.now() - startedAt));
+        hero.classList.add("is-paused");
+      };
+      const resume = () => {
+        if (!paused) return;
+        paused = false;
+        hero.classList.remove("is-paused");
+        schedule(remaining);
+      };
+      const keyboardFocusIn = () => hero.querySelector(":focus-visible") !== null;
+      const hoverZones = [copy, document.querySelector(".hero-dots")];
+      hoverZones.forEach((zone) => {
+        zone.addEventListener("mouseenter", pause);
+        zone.addEventListener("mouseleave", () => {
+          if (!keyboardFocusIn()) resume();
+        });
+      });
+      hero.addEventListener("focusin", (e) => {
+        if (e.target.matches(":focus-visible")) pause();
+      });
+      hero.addEventListener("focusout", (e) => {
+        if (!hero.contains(e.relatedTarget) && !hoverZones.some((zone) => zone.matches(":hover"))) resume();
+      });
 
       // Preload the other slides after the first paint so changes are instant
       window.addEventListener("load", () => slides.slice(1).forEach((img) => img.decode && img.decode().catch(() => {})));
